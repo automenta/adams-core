@@ -27,6 +27,7 @@ import adams.flow.condition.test.TestConditionSupporter;
 import adams.flow.condition.test.True;
 import adams.flow.core.AbstractActor;
 import adams.flow.core.ActorHandler;
+import adams.flow.core.Flushable;
 
 /**
  * Abstract superclass for actors that need to fullfil a test condition before
@@ -444,7 +445,7 @@ public abstract class AbstractConditionalActor
    */
   public void flushExecution() {
     if (m_BaseActor instanceof ActorHandler)
-      ((ActorHandler) m_BaseActor).flushExecution();
+      ((Flushable) m_BaseActor).flushExecution();
   }
 
   /**

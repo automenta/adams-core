@@ -71,6 +71,7 @@ import adams.gui.core.BaseTextAreaWithButtons;
 import adams.gui.core.GUIHelper;
 import adams.gui.core.MouseUtils;
 import adams.gui.core.ParameterPanel;
+import java.awt.Window;
 
 /**
  * Displays a property sheet where (supported) properties of the target
@@ -743,14 +744,14 @@ public class PropertySheetPanel extends BasePanel
 
 	      Component jf;
 	      if(evt.getSource() instanceof JPanel)
-		jf = ((JPanel)evt.getSource()).getParent();
+		jf = ((Component)evt.getSource()).getParent();
 	      else
 		jf = new JFrame();
 	      JOptionPane.showMessageDialog(jf, message,
 		  "error",
 		  JOptionPane.WARNING_MESSAGE);
 	      if(jf instanceof JFrame)
-		((JFrame)jf).dispose();
+		((Window)jf).dispose();
 
 	    }
 	    else {
@@ -758,7 +759,7 @@ public class PropertySheetPanel extends BasePanel
 		  " while updating "+ property.getName() +":", ex);
 	      Component jf;
 	      if(evt.getSource() instanceof JPanel)
-		jf = ((JPanel)evt.getSource()).getParent();
+		jf = ((Component)evt.getSource()).getParent();
 	      else
 		jf = new JFrame();
 	      JOptionPane.showMessageDialog(jf,
@@ -769,7 +770,7 @@ public class PropertySheetPanel extends BasePanel
 		  "error",
 		  JOptionPane.WARNING_MESSAGE);
 	      if (jf instanceof JFrame)
-		((JFrame)jf).dispose();
+		((Window)jf).dispose();
 
 	    }
 	  }

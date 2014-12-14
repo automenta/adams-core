@@ -39,6 +39,8 @@ import adams.core.logging.LoggingObject;
 import adams.env.Environment;
 import adams.gui.event.RecentItemEvent;
 import adams.gui.event.RecentItemListener;
+import java.awt.Component;
+import java.awt.Container;
 
 /**
  * Ancestor for classes that handle a list of recent items. Reads/writes them from/to
@@ -314,12 +316,12 @@ public abstract class AbstractRecentItemsHandler<M, T>
 
     // clear menu
     if (m_Menu instanceof JMenu) {
-      ((JMenu) m_Menu).removeAll();
-      ((JMenu) m_Menu).setEnabled(m_RecentItems.size() > 0);
+      ((Container) m_Menu).removeAll();
+      ((Component) m_Menu).setEnabled(m_RecentItems.size() > 0);
     }
     else if (m_Menu instanceof JPopupMenu) {
-      ((JPopupMenu) m_Menu).removeAll();
-      ((JPopupMenu) m_Menu).setEnabled(m_RecentItems.size() > 0);
+      ((Container) m_Menu).removeAll();
+      ((Component) m_Menu).setEnabled(m_RecentItems.size() > 0);
     }
 
     // add menu items

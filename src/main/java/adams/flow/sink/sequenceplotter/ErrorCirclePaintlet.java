@@ -126,7 +126,7 @@ public class ErrorCirclePaintlet
     currY = Integer.MIN_VALUE;
 
     for (i = 0; i < data.size(); i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
 
       // determine coordinates
       currX = axisX.valueToPos(XYSequencePoint.toDouble(curr.getX()));

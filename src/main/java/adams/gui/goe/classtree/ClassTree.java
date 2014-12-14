@@ -37,6 +37,7 @@ import javax.swing.tree.TreePath;
 import adams.gui.core.BaseScrollPane;
 import adams.gui.core.BaseTreeNode;
 import adams.gui.core.DragAndDropTreeNodeCollection;
+import adams.gui.core.dotnotationtree.DotNotationNode;
 import adams.gui.core.dotnotationtree.DotNotationTree;
 
 /**
@@ -107,7 +108,7 @@ public class ClassTree
     
     root = getModel().getRoot();
     if (root != null)
-      expandAllAfterSearch(new TreePath((TreeNode) root));
+      expandAllAfterSearch(new TreePath(root));
   }
 
   /**
@@ -127,7 +128,7 @@ public class ClassTree
       for (e = node.children(); e.hasMoreElements(); ) {
 	n = (TreeNode) e.nextElement();
 	if (n instanceof ClassNode) {
-	  if (!((ClassNode) n).isItemLeaf()) {
+	  if (!((DotNotationNode) n).isItemLeaf()) {
 	    path = parent.pathByAddingChild(n);
 	    expandAllAfterSearch(path);
 	  }

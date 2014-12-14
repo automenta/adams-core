@@ -23,7 +23,7 @@ public class ReqInteger implements Requirement {
 	bd.setData(i);
 	return(null);
       } catch (Exception e){
-	return("Unable to parse to Integer ("+(String)o+")");	
+	return("Unable to parse to Integer ("+o+")");	
       }
     } else {
       return("Type Error: Expecting Integer got "+o.getClass().getCanonicalName());

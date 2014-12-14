@@ -75,7 +75,7 @@ public class Section
     while (i < getChildCount()) {
       element = (AbstractTag) getChildAt(i);
       if (element instanceof Paragraph) {
-	if (onlyEmpty && !((Paragraph) element).hasContent())
+	if (onlyEmpty && !element.hasContent())
 	  remove(i);
 	else if (!onlyEmpty)
 	  remove(i);

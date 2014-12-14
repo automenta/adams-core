@@ -24,8 +24,10 @@ package adams.flow.core;
 import java.util.Hashtable;
 
 import adams.core.QuickInfoHelper;
+import adams.core.Stoppable;
 import adams.core.base.BaseText;
 import adams.core.io.PlaceholderFile;
+import adams.core.logging.LoggingLevelHandler;
 import adams.core.scripting.FileBasedScriptingWithOptions;
 
 /**
@@ -213,7 +215,7 @@ public abstract class AbstractScriptedActor
 	  ((Actor) m_ScriptObject).setParent(this);
 	  ((Actor) m_ScriptObject).setHeadless(isHeadless());
 	  ((Actor) m_ScriptObject).setVariables(getVariables());
-	  ((Actor) m_ScriptObject).setLoggingLevel(getLoggingLevel());
+	  ((LoggingLevelHandler) m_ScriptObject).setLoggingLevel(getLoggingLevel());
 	}
       }
     }
@@ -245,7 +247,7 @@ public abstract class AbstractScriptedActor
   public void stopExecution() {
     if (m_ScriptObject != null) {
       if (m_ScriptObject instanceof Actor)
-	((Actor) m_ScriptObject).stopExecution();;
+	((Stoppable) m_ScriptObject).stopExecution();;
     }
     
     super.stopExecution();

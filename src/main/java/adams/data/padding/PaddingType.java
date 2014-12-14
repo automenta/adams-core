@@ -77,7 +77,7 @@ public enum PaddingType
    * @return		the enum or null if not found
    */
   public PaddingType parse(String s) {
-    return (PaddingType) valueOf((AbstractOption) null, s);
+    return valueOf((AbstractOption) null, s);
   }
 
   /**
@@ -98,7 +98,7 @@ public enum PaddingType
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((PaddingType) object).toRaw();
+    return ((EnumWithCustomDisplay<PaddingType>) object).toRaw();
   }
 
   /**

@@ -23,6 +23,7 @@ package adams.gui.visualization.container;
 import javax.swing.SwingUtilities;
 
 import adams.core.CleanUpHandler;
+import adams.data.id.DatabaseIDHandler;
 import adams.gui.core.AbstractBaseTableModel;
 import adams.gui.event.DataChangeEvent;
 import adams.gui.event.DataChangeEvent.Type;
@@ -71,7 +72,7 @@ public class ContainerModel<M extends AbstractContainerManager, C extends Abstra
    * @param manager	the managing object to obtain the data from
    */
   public ContainerModel(ContainerListManager<M> manager) {
-    this((manager == null) ? (M) null : manager.getContainerManager());
+    this((manager == null) ? null : manager.getContainerManager());
   }
 
   /**
@@ -370,7 +371,7 @@ public class ContainerModel<M extends AbstractContainerManager, C extends Abstra
       if (columnIndex == getVisibilityColumn())
         return new Boolean(((VisibilityContainerManager) getManager()).isVisible(rowIndex));
       else if (columnIndex == getDatabaseIDColumn())
-        return new Integer(((DatabaseContainer) getManager().get(rowIndex)).getDatabaseID());
+        return new Integer(((DatabaseIDHandler) getManager().get(rowIndex)).getDatabaseID());
       else if (columnIndex == getDataColumn())
 	return m_Generator.getDisplay(getManager().get(rowIndex));
 

@@ -449,7 +449,7 @@ public abstract class AbstractReportDbUpdater
 	result = "No data found: " + query;
       
       if (isHandler) {
-	((MutableReportHandler) handler).setReport(report);
+	handler.setReport(report);
 	m_OutputToken = new Token(handler);
       }
       else {

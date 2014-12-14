@@ -20,6 +20,7 @@
 package adams.data.conversion;
 
 import adams.data.blob.BlobContainer;
+import adams.data.container.AbstractSimpleContainer;
 
 /**
  <!-- globalinfo-start -->
@@ -82,6 +83,6 @@ public class BlobContainerToByteArray
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((BlobContainer) m_Input).getContent();
+    return ((AbstractSimpleContainer<byte[]>) m_Input).getContent();
   }
 }

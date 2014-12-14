@@ -30,6 +30,7 @@ import javax.swing.JTable;
 
 import adams.core.DateUtils;
 import adams.data.io.output.NullWriter;
+import adams.data.spreadsheet.SpreadSheetSupporter;
 import adams.flow.container.AbstractContainer;
 import adams.flow.core.Token;
 import adams.gui.core.BasePanel;
@@ -212,7 +213,7 @@ public class ContainerDisplay
    */
   @Override
   protected void display(Token token) {
-    m_TableModel = new SpreadSheetTableModel(((AbstractContainer) token.getPayload()).toSpreadSheet());
+    m_TableModel = new SpreadSheetTableModel(((SpreadSheetSupporter) token.getPayload()).toSpreadSheet());
     m_Table.setModel(m_TableModel);
   }
 
@@ -239,7 +240,7 @@ public class ContainerDisplay
       }
       @Override
       public void display(Token token) {
-	m_TableModel = new SpreadSheetTableModel(((AbstractContainer) token.getPayload()).toSpreadSheet());
+	m_TableModel = new SpreadSheetTableModel(((SpreadSheetSupporter) token.getPayload()).toSpreadSheet());
 	m_Table.setModel(m_TableModel);
       }
       @Override

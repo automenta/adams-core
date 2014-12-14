@@ -94,5 +94,5 @@ public class BooleanOption
    */
   @Override
   protected boolean compareValues(Object value, Object defValue) {
-    return ((Boolean) value).equals((Boolean) defValue);  }
+    return value.equals(defValue);  }
 }

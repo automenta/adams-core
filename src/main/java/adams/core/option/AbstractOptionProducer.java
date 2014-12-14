@@ -482,7 +482,7 @@ public abstract class AbstractOptionProducer<O,I>
     result = null;
 
     try {
-      producer = (OptionProducer) cls.newInstance();
+      producer = cls.newInstance();
       producer.produce(handler);
       result   = producer.toString();
       producer.cleanUp();
@@ -509,7 +509,7 @@ public abstract class AbstractOptionProducer<O,I>
     result = null;
 
     try {
-      producer = (OptionProducer) cls.newInstance();
+      producer = cls.newInstance();
       producer.produce(handler);
       result = producer.getOutput();
       producer.cleanUp();

@@ -30,6 +30,7 @@ import adams.core.QuickInfoHelper;
 import adams.core.base.JsonPathExpression;
 
 import com.jayway.jsonpath.JsonPath;
+import java.util.Collection;
 
 /**
  <!-- globalinfo-start -->
@@ -346,7 +347,7 @@ public class GetJsonValue
 	path = m_Path.toJsonPath();
 	val  = path.read(json);
 	if (val instanceof List)
-	  m_Queue.addAll((List) val);
+	  m_Queue.addAll((Collection) val);
 	else
 	  m_Queue.add(val);
       }

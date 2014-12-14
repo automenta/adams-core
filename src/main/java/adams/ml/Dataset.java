@@ -322,7 +322,7 @@ public class Dataset implements Serializable,Cloneable{
   public void use(Dataset d){
     m_rows=new Vector<>();
     for (DataRow dr:d.m_rows){
-      add((DataRow)dr.copy());
+      add(dr.copy());
     }
   }
   public String getName(){

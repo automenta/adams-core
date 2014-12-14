@@ -231,7 +231,7 @@ public abstract class AbstractArrayStatistic<T extends Serializable>
 	for (i = 0; i < m_Data[n].length; i++) {
 	  cell = row.addCell("" + (i+1));
 	  if (m_Data[n][i] != null)
-	    cell.setContent("" + (T) m_Data[n][i]);
+	    cell.setContent("" + m_Data[n][i]);
 	}
       }
 

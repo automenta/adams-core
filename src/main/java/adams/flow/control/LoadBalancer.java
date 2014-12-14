@@ -36,6 +36,7 @@ import adams.flow.core.ActorExecution;
 import adams.flow.core.ActorHandler;
 import adams.flow.core.ActorHandlerInfo;
 import adams.flow.core.ActorUtils;
+import adams.flow.core.Flushable;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.MutableActorHandler;
 import adams.flow.core.Token;
@@ -357,7 +358,7 @@ public class LoadBalancer
      */
     public void flushExecution() {
       if (m_Actor instanceof ActorHandler)
-	((ActorHandler) m_Actor).flushExecution();
+	((Flushable) m_Actor).flushExecution();
     }
   }
 
@@ -995,7 +996,7 @@ public class LoadBalancer
   public void flushExecution() {
     for (AbstractActor actor: m_ToCleanUp) {
       if (actor instanceof ActorHandler)
-	((ActorHandler) actor).flushExecution();
+	((Flushable) actor).flushExecution();
     }
   }
 

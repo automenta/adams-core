@@ -240,9 +240,9 @@ public class Expression
     symbols   = new HashMap();
     if ((token != null) && (token.getPayload() != null)) {
       if (token.getPayload() instanceof Integer)
-	symbols.put("X", ((Integer) token.getPayload()).doubleValue());
+	symbols.put("X", ((Number) token.getPayload()).doubleValue());
       else if (token.getPayload() instanceof Double)
-	symbols.put("X", ((Double) token.getPayload()).doubleValue());
+	symbols.put("X", ((Number) token.getPayload()).doubleValue());
       else if (token.getPayload().getClass().isArray())
 	symbols.put("X", token.getPayload());
       else if ((token.getPayload() instanceof String) && hasString)

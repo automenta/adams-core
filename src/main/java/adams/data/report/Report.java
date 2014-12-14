@@ -406,15 +406,15 @@ public class Report
   public void setValue(AbstractField key, Object value) {
     // correct type if necessary (Boolean/Double/String)
     if (value instanceof Byte)
-      value = new Double(((Byte) value).doubleValue());
+      value = new Double(((Number) value).doubleValue());
     else if (value instanceof Short)
-      value = new Double(((Short) value).doubleValue());
+      value = new Double(((Number) value).doubleValue());
     else if (value instanceof Integer)
-      value = new Double(((Integer) value).doubleValue());
+      value = new Double(((Number) value).doubleValue());
     else if (value instanceof Long)
-      value = new Double(((Long) value).doubleValue());
+      value = new Double(((Number) value).doubleValue());
     else if (value instanceof Float)
-      value = new Double(((Float) value).doubleValue());
+      value = new Double(((Number) value).doubleValue());
     else if (value instanceof Character)
       value = new String(value.toString());
 
@@ -813,7 +813,7 @@ public class Report
     Report	result;
 
     try {
-      result = (Report) report.getClass().newInstance();
+      result = report.getClass().newInstance();
     }
     catch (Exception e) {
       e.printStackTrace();
@@ -907,7 +907,7 @@ public class Report
 	continue;
       if (name.equals(PROPERTY_PARENTID))
 	result.setDatabaseID(props.getInteger(PROPERTY_PARENTID, -1));
-      type = (DataType) DataType.valueOf((AbstractOption) null, props.getProperty(name + DATATYPE_SUFFIX, "U"));
+      type = DataType.valueOf((AbstractOption) null, props.getProperty(name + DATATYPE_SUFFIX, "U"));
       if (type == null)
 	type = DataType.UNKNOWN;
       if (type == DataType.NUMERIC)

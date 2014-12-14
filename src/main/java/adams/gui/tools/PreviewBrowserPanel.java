@@ -669,7 +669,7 @@ public class PreviewBrowserPanel
     // notify user
     displayCreatingView();
 
-    selFiles = (Object[]) m_ListArchiveFiles.getSelectedValues();
+    selFiles = m_ListArchiveFiles.getSelectedValues();
     tmpFiles = new File[selFiles.length];
     for (i = 0; i < selFiles.length; i++) {
       try {

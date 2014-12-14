@@ -67,7 +67,7 @@ public abstract class BaseObject
     BaseObject	result;
 
     try {
-      result = (BaseObject) getClass().newInstance();
+      result = getClass().newInstance();
       result.setValue(getValue());
     }
     catch (Exception e) {
@@ -97,7 +97,7 @@ public abstract class BaseObject
     
     if (o instanceof String) {
       try {
-	other = (BaseObject) getClass().newInstance();
+	other = getClass().newInstance();
 	other.setValue((String) o);
       }
       catch (Exception e) {
@@ -135,7 +135,7 @@ public abstract class BaseObject
     if (!(o instanceof BaseObject))
       return false;
     else
-      return (compareTo((BaseObject) o) == 0);
+      return (compareTo(o) == 0);
   }
 
   /**

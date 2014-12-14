@@ -183,28 +183,28 @@ public class Min
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(doublesO)));
 	else
-	  m_OutputToken = new Token((Double) (StatUtils.min(doublesO)));
+	  m_OutputToken = new Token((StatUtils.min(doublesO)));
       }
       else if (m_InputToken.getPayload() instanceof double[]) {
 	doublesP = (double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(doublesP)));
 	else
-	  m_OutputToken = new Token((Double) (StatUtils.min(doublesP)));
+	  m_OutputToken = new Token((StatUtils.min(doublesP)));
       }
       else if (m_InputToken.getPayload() instanceof Integer[]) {
 	integersO = (Integer[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(integersO)));
 	else
-	  m_OutputToken = new Token((Integer) (StatUtils.min(integersO)));
+	  m_OutputToken = new Token((StatUtils.min(integersO)));
       }
       else if (m_InputToken.getPayload() instanceof int[]) {
 	integersP = (int[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(integersP)));
 	else
-	  m_OutputToken = new Token((Integer) (StatUtils.min(integersP)));
+	  m_OutputToken = new Token((StatUtils.min(integersP)));
       }
       else {
 	result = "Unhandled class: " + Utils.classToString(m_InputToken.getPayload().getClass());

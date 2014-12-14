@@ -33,6 +33,7 @@ import adams.flow.core.ActorExecution;
 import adams.flow.core.ActorHandler;
 import adams.flow.core.ActorHandlerInfo;
 import adams.flow.core.FixedNameActorHandler;
+import adams.flow.core.Flushable;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.Token;
 import adams.flow.sink.Null;
@@ -652,8 +653,8 @@ public class JavaExec
    */
   public void flushExecution() {
     if (m_StdOut instanceof ActorHandler)
-      ((ActorHandler) m_StdOut).flushExecution();
+      ((Flushable) m_StdOut).flushExecution();
     if (m_StdErr instanceof ActorHandler)
-      ((ActorHandler) m_StdErr).flushExecution();
+      ((Flushable) m_StdErr).flushExecution();
   }
 }

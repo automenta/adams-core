@@ -107,7 +107,7 @@ public class IEEE754 {
   public static double[] toIntBitsArray(double[] in) {
     double ret[] = new double[in.length];
     for (int i=0;i<in.length;i++) {
-      ret[i]=(double)IEEE754.toIntBits(in[i]);
+      ret[i]=IEEE754.toIntBits(in[i]);
     }
     return(ret);
   }

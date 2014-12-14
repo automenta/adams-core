@@ -38,6 +38,7 @@ import adams.core.Properties;
 import adams.data.Notes;
 import adams.data.NotesHandler;
 import adams.data.id.DatabaseIDHandler;
+import adams.data.id.IDHandler;
 import adams.data.report.ReportHandler;
 import adams.env.Environment;
 import adams.env.ScriptingDialogDefinition;
@@ -291,7 +292,7 @@ public class NotesFactory {
 
         text = getTextPane(m_Data.get(i));
         if (m_Data.get(i) instanceof NamedContainer) {
-          title = ((NamedContainer) m_Data.get(i)).getID();
+          title = ((IDHandler) m_Data.get(i)).getID();
           if (m_Data.get(i).getPayload() instanceof DatabaseIDHandler)
             title += " (" +  ((DatabaseIDHandler) m_Data.get(i).getPayload()).getDatabaseID() + ")";
         }

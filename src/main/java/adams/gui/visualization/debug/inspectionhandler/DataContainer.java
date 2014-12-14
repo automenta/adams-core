@@ -22,6 +22,7 @@ package adams.gui.visualization.debug.inspectionhandler;
 import java.util.Hashtable;
 
 import adams.core.ClassLocator;
+import java.util.Collection;
 
 /**
  * Provides further insight into data containers.
@@ -55,7 +56,7 @@ public class DataContainer
 
     result = new Hashtable<>();
 
-    result.put("data points", ((adams.data.container.DataContainer) obj).toArray());
+    result.put("data points", ((Collection) obj).toArray());
 
     return result;
   }

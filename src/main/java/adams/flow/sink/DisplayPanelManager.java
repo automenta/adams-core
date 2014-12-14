@@ -20,6 +20,7 @@
 
 package adams.flow.sink;
 
+import adams.core.Mergeable;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -63,6 +64,7 @@ import adams.gui.print.JComponentWriterFileChooser;
 import adams.gui.print.PNGWriter;
 import adams.gui.sendto.SendToActionSupporter;
 import adams.gui.sendto.SendToActionUtils;
+import java.awt.Component;
 
 /**
  <!-- globalinfo-start -->
@@ -229,7 +231,7 @@ public class DisplayPanelManager
       if (name != null) {
         // update panel
         if (hasEntry(name)) {
-          m_Panel.add((JPanel) getEntry(name));
+          m_Panel.add((Component) getEntry(name));
           m_Panel.getParent().invalidate();
           m_Panel.getParent().validate();
           m_Panel.getParent().repaint();
@@ -388,7 +390,7 @@ public class DisplayPanelManager
       add = true;
       if (m_History.hasEntry(id) && m_Owner.getAllowMerge()) {
 	if (result instanceof MergeableDisplayPanel) {
-	  ((MergeableDisplayPanel) m_History.getEntry(id)).mergeWith((MergeableDisplayPanel) result);
+	  ((Mergeable) m_History.getEntry(id)).mergeWith((MergeableDisplayPanel) result);
 	  add = false;
 	}
 	else {
@@ -923,7 +925,7 @@ public class DisplayPanelManager
       fileChooser = new TextFileChooser();
       filter      = null;
       if (this instanceof TextSupplier)
-	filter = ((TextSupplier) this).getCustomTextFileFilter();
+	filter = this.getCustomTextFileFilter();
       if (filter != null) {
 	fileChooser.resetChoosableFileFilters();
 	fileChooser.addChoosableFileFilter(filter);
@@ -943,7 +945,7 @@ public class DisplayPanelManager
    */
   public Class[] accepts() {
     if ((m_PanelProvider != null) && (m_PanelProvider instanceof InputConsumer))
-      return ((InputConsumer) m_PanelProvider).accepts();
+      return m_PanelProvider.accepts();
     else
       return new Class[]{Object.class};
   }

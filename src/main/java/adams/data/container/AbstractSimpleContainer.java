@@ -107,7 +107,7 @@ public abstract class AbstractSimpleContainer<T>
     AbstractSimpleContainer<T>	result;
     
     try {
-      result = (AbstractSimpleContainer<T>) getClass().newInstance();
+      result = getClass().newInstance();
       result.setReport(getReport().getClone());
       result.m_Notes = getNotes().getClone();
     }

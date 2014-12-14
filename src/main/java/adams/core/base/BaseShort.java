@@ -113,7 +113,7 @@ public class BaseShort
    */
   @Override
   public String getValue() {
-    return ((Short) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -122,7 +122,7 @@ public class BaseShort
    * @return		the short value
    */
   public short shortValue() {
-    return ((Short) m_Internal).shortValue();
+    return ((Number) m_Internal).shortValue();
   }
 
   /**

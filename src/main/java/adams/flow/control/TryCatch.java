@@ -30,6 +30,7 @@ import adams.flow.core.ActorHandler;
 import adams.flow.core.ActorHandlerInfo;
 import adams.flow.core.ActorUtils;
 import adams.flow.core.FixedNameActorHandler;
+import adams.flow.core.Flushable;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.InternalActorHandler;
 import adams.flow.core.OutputProducer;
@@ -555,7 +556,7 @@ public class TryCatch
     m_ErrorOccurred = source.getFullName() + "/" + type + ": " + msg;
     // stop further processing of tokens in m_Try
     if (m_Try instanceof ActorHandler)
-      ((ActorHandler) m_Try).flushExecution();
+      ((Flushable) m_Try).flushExecution();
     return m_ErrorOccurred;
   }
 
@@ -639,9 +640,9 @@ public class TryCatch
    */
   public void flushExecution() {
     if (m_Try instanceof ActorHandler)
-      ((ActorHandler) m_Try).flushExecution();
+      ((Flushable) m_Try).flushExecution();
     if (m_Catch instanceof ActorHandler)
-      ((ActorHandler) m_Catch).flushExecution();
+      ((Flushable) m_Catch).flushExecution();
   }
 
   /**

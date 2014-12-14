@@ -150,11 +150,11 @@ public class BaseData {
 
     protected double toDecimalDegree(){
       long seconds=(minute*60)+second;
-      double frac=(double)seconds/3600.0;
+      double frac=seconds/3600.0;
       if (degree < 0){
-	return(-((double)-degree+frac));
+	return(-(-degree+frac));
       } else {
-	return((double)degree+frac);
+	return(degree+frac);
       }
       
     }

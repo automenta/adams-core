@@ -32,6 +32,7 @@ import net.minidev.json.parser.JSONParser;
 import adams.core.Utils;
 import adams.core.Variables;
 import adams.core.io.FileFormatHandler;
+import java.util.Collection;
 
 /**
  * Recreates objects from a JSON representation.
@@ -185,7 +186,7 @@ public class JsonConsumer
 	doConsume(handler.getOptionManager(), object);
       }
       else {
-	strOptions = (String[]) ((JSONArray) object.get(KEY_OPTIONS)).toArray(new String[0]);
+	strOptions = ((Collection<Object>) object.get(KEY_OPTIONS)).toArray(new String[0]);
 	obj        = OptionUtils.forName(Object.class, obj.getClass().getName(), strOptions);
 	Array.set(objects, 0, obj);
       }
@@ -203,7 +204,7 @@ public class JsonConsumer
 	  doConsume(handler.getOptionManager(), object);
 	}
 	else {
-	  strOptions = (String[]) ((JSONArray) object.get(KEY_OPTIONS)).toArray(new String[0]);
+	  strOptions = ((Collection<Object>) object.get(KEY_OPTIONS)).toArray(new String[0]);
 	  obj        = OptionUtils.forName(Object.class, obj.getClass().getName(), strOptions);
 	  Array.set(objects, i, obj);
 	}

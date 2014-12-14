@@ -82,6 +82,6 @@ public class FloatToDouble
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Float) m_Input).doubleValue();
+    return ((Number) m_Input).doubleValue();
   }
 }

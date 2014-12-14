@@ -49,7 +49,7 @@ public class PrefixFieldEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((PrefixField) object).toString();
+    return object.toString();
   }
 
   /**

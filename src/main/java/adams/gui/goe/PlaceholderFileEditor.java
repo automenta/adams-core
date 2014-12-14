@@ -38,6 +38,7 @@ import adams.gui.core.BasePanel;
 import adams.gui.core.GUIHelper;
 import adams.gui.dialog.PreviewBrowserDialog;
 import adams.gui.goe.PropertyPanel.PopupMenuCustomizer;
+import java.io.File;
 
 /**
  * A PropertyEditor for FlowFile objects that lets the user select a file.
@@ -64,7 +65,7 @@ public class PlaceholderFileEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((PlaceholderFile) object).getPath();
+    return ((File) object).getPath();
   }
 
   /**
@@ -215,7 +216,7 @@ public class PlaceholderFileEditor
    * @return		the current value
    */
   public String getInlineValue() {
-    return ((PlaceholderFile) getValue()).toString();
+    return getValue().toString();
   }
 
   /**

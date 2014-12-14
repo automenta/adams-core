@@ -19,6 +19,7 @@
  */
 package adams.gui.goe;
 
+import adams.gui.core.CheckedTextField;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
@@ -68,7 +69,7 @@ public abstract class AbstractFloatingPointNumberEditor
    */
   @Override
   protected void updateBounds() {
-    ((NumberTextField) m_CustomEditor).setCheckModel(createCheckModel());
+    ((CheckedTextField) m_CustomEditor).setCheckModel(createCheckModel());
   }
 
   /**

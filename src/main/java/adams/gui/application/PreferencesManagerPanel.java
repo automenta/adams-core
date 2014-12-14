@@ -31,6 +31,7 @@ import adams.gui.core.BaseMultiPagePane;
 import adams.gui.core.BasePanel;
 import adams.gui.core.BaseScrollPane;
 import adams.gui.core.GUIHelper;
+import java.awt.Component;
 
 /**
  * Panel that combines all the preference panels.
@@ -91,11 +92,11 @@ public class PreferencesManagerPanel
     for (PreferencesPanel panel: m_Panels) {
       if (panel.requiresWrapper()) {
 	wrapper = new JPanel(new BorderLayout());
-	wrapper.add(new BaseScrollPane((JComponent) panel), BorderLayout.NORTH);
+	wrapper.add(new BaseScrollPane((Component) panel), BorderLayout.NORTH);
 	m_MultiPagePanel.addPage(panel.getTitle(), wrapper);
       }
       else {
-	m_MultiPagePanel.addPage(panel.getTitle(), (JComponent) panel);
+	m_MultiPagePanel.addPage(panel.getTitle(), (Component) panel);
       }
     }
   }

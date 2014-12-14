@@ -19,6 +19,7 @@
  */
 package adams.data.conversion;
 
+import adams.data.container.AbstractSimpleContainer;
 import adams.data.text.TextContainer;
 
 /**
@@ -72,6 +73,6 @@ public class TextContainerToString
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((TextContainer) m_Input).getContent();
+    return ((AbstractSimpleContainer<String>) m_Input).getContent();
   }
 }

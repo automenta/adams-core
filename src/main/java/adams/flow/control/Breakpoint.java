@@ -37,6 +37,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import adams.core.CleanUpHandler;
+import adams.core.Pausable;
 import adams.core.QuickInfoHelper;
 import adams.core.Utils;
 import adams.core.Variables;
@@ -1520,7 +1521,7 @@ public class Breakpoint
 
     if (!isHeadless() && !isDisabled()) {
       if (evalCondition(m_CurrentToken)) {
-	((Flow) getRoot()).pauseExecution();
+	((Pausable) getRoot()).pauseExecution();
 
 	if (m_Panel == null) {
 	  m_Panel = newPanel();
@@ -1538,7 +1539,7 @@ public class Breakpoint
 	  }
 	};
 	SwingUtilities.invokeLater(run);
-	while (((Flow) getRoot()).isPaused()) {
+	while (((Pausable) getRoot()).isPaused()) {
 	  synchronized(m_Self) {
 	    try {
 	      m_Self.wait(100);

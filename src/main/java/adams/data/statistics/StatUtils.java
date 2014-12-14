@@ -1027,8 +1027,8 @@ public class StatUtils {
 	av2 += y2[i].doubleValue();
       }
 
-      av1 /= (double) n;
-      av2 /= (double) n;
+      av1 /= n;
+      av2 /= n;
 
       for (i = 0; i < n; i++) {
 	y11 += (y1[i].doubleValue() - av1) * (y1[i].doubleValue() - av1);

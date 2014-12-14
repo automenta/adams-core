@@ -74,6 +74,6 @@ public class ByteToString
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Byte) m_Input).toString();
+    return m_Input.toString();
   }
 }

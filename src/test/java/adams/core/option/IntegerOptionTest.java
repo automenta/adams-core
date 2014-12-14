@@ -69,11 +69,11 @@ public class IntegerOptionTest
 
       m_OptionManager.add(
 	  "int-obj", "integerObj",
-	  new Integer((int) 2), new Integer(-10), new Integer(+10));
+	  new Integer(2), new Integer(-10), new Integer(+10));
 
       m_OptionManager.add(
 	  "int-obj-array", "integerObjArray",
-	  new Integer[]{new Integer((int) 4), new Integer((int) 5), new Integer((int) 6)});
+	  new Integer[]{new Integer(4), new Integer(5), new Integer(6)});
     }
 
     public void setIntPrim(int value) {

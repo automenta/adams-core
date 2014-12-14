@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adams.core.QuickInfoHelper;
+import adams.core.io.FileWriter;
 import adams.core.io.PlaceholderFile;
 import adams.db.AbstractDatabaseConnection;
 import adams.db.DatabaseConnection;
@@ -263,7 +264,7 @@ public class Tool
       }
       else {
 	if (m_Tool instanceof OutputFileGenerator)
-	  m_OutputToken = new Token(((OutputFileGenerator) m_Tool).getOutputFile());
+	  m_OutputToken = new Token(((FileWriter) m_Tool).getOutputFile());
 	else
 	  m_OutputToken = m_InputToken;
       }

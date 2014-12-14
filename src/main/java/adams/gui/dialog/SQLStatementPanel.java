@@ -38,6 +38,7 @@ import adams.gui.core.RecentSQLStatementsHandler;
 import adams.gui.core.SQLSyntaxEditorPanel;
 import adams.gui.event.RecentItemEvent;
 import adams.gui.event.RecentItemListener;
+import javax.swing.AbstractButton;
 
 /**
  * Panel with SQL statement editor.
@@ -142,7 +143,7 @@ public class SQLStatementPanel
 	menuitem.addActionListener(new ActionListener() {
 	  @Override
 	  public void actionPerformed(ActionEvent e) {
-	    m_PanelStatement.setWordWrap(((JMenuItem) e.getSource()).isSelected());
+	    m_PanelStatement.setWordWrap(((AbstractButton) e.getSource()).isSelected());
 	  }
 	});
 	menu.addSeparator();

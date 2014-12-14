@@ -512,7 +512,7 @@ public class ParameterPanel
     // set preferred dimensions for JSpinners
     for (i = 0; i < m_Parameters.size(); i++) {
       if (m_Parameters.get(i) instanceof JSpinner)
-	((JSpinner) m_Parameters.get(i)).setPreferredSize((Dimension) m_PreferredDimensionJSpinner.clone());
+	m_Parameters.get(i).setPreferredSize((Dimension) m_PreferredDimensionJSpinner.clone());
     }
 
     for (i = 0; i < m_Labels.size(); i++) {

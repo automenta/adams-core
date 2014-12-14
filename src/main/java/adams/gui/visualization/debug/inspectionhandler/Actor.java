@@ -55,10 +55,10 @@ public class Actor
     adams.core.Variables	vars;
     
     result = super.inspect(obj);
-    name   = ((AbstractActor) obj).getFullName();
+    name   = ((adams.flow.core.Actor) obj).getFullName();
     if (name != null)
       result.put("fullName", name);
-    vars   = ((AbstractActor) obj).getVariables();
+    vars   = ((adams.flow.core.Actor) obj).getVariables();
     if (vars != null)
       result.put("variables", vars);
     

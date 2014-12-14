@@ -1574,7 +1574,7 @@ public class FlowPanel
 	result = SendToActionUtils.nextTmpFile("floweditor", "flow");
 	actor  = getCurrentFlow();
 	writer = new DefaultFlowWriter();
-	writer.write(actor, (PlaceholderFile) result);
+	writer.write(actor, (File) result);
       }
       else if (getCurrentFile() != null) {
 	result = new PlaceholderFile(getCurrentFile());

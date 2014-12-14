@@ -163,6 +163,6 @@ public class NamedSetup<T extends DataContainer>
    */
   @Override
   protected T processData(T data) {
-    return (T) getActualScheme().smooth(data);
+    return getActualScheme().smooth(data);
   }
 }

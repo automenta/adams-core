@@ -61,7 +61,7 @@ public class DefaultLogEntryDialog
     ApprovalDialog	result;
     TextPanel		textPanel;
 
-    result = new ApprovalDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+    result = new ApprovalDialog(null, ModalityType.DOCUMENT_MODAL);
     result.setTitle(createTitle(entry));
     result.setDefaultCloseOperation(ApprovalDialog.DISPOSE_ON_CLOSE);
     result.setApproveVisible(true);

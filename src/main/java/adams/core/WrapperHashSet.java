@@ -97,7 +97,7 @@ public class WrapperHashSet<E>
     public boolean equals(Object o) {
       if (o == null)
 	return false;
-      return (((Wrapper) o).hashCode() == hashCode());
+      return (o.hashCode() == hashCode());
     }
 
     /**

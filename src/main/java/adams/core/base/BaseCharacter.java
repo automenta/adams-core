@@ -103,7 +103,7 @@ public class BaseCharacter
    */
   @Override
   public String getValue() {
-    return ((Character) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**

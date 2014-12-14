@@ -32,6 +32,7 @@ import adams.gui.core.BaseScrollPane;
 import adams.gui.core.BaseTree;
 import adams.gui.core.BaseTreeNode;
 import adams.gui.core.GUIHelper;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  * Displays the ContainerNesting dialog.
@@ -85,7 +86,7 @@ public class ContainerNesting
     panel = new BasePanel(new BorderLayout());
     panel.add(new BaseScrollPane(tree));
     tree.setShowsRootHandles(true);
-    tree.expand((BaseTreeNode) tree.getModel().getRoot());
+    tree.expand((DefaultMutableTreeNode) tree.getModel().getRoot());
     
     createChildFrame(panel, 800, 800);
   }

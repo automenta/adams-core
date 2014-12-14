@@ -137,7 +137,7 @@ public abstract class AbstractPropertyEditorSupport
     Dialog 	dlg;
 
     if (m_CustomEditor instanceof Container) {
-      dlg = GUIHelper.getParentDialog((Container) m_CustomEditor);
+      dlg = GUIHelper.getParentDialog(m_CustomEditor);
       if (dlg != null) {
 	if (m_WindowAdapter == null)
 	  m_WindowAdapter = createWindowAdapter();
@@ -169,7 +169,7 @@ public abstract class AbstractPropertyEditorSupport
     cleanUp();
 
     if (m_CustomEditor instanceof Container) {
-      dlg = GUIHelper.getParentDialog((Container) m_CustomEditor);
+      dlg = GUIHelper.getParentDialog(m_CustomEditor);
       if (dlg != null)
 	dlg.setVisible(false);
     }

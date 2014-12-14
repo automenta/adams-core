@@ -471,8 +471,8 @@ public class ImagePanel
       if ((value > 0) && (value <= 16)) {
 	m_Scale = value;
 	if (m_CurrentImage != null) {
-	  width  = (int) ((double) m_CurrentImage.getWidth() * m_Scale);
-	  height = (int) ((double) m_CurrentImage.getHeight() * m_Scale);
+	  width  = (int) (m_CurrentImage.getWidth() * m_Scale);
+	  height = (int) (m_CurrentImage.getHeight() * m_Scale);
 	}
 	else {
 	  width  = 320;
@@ -1113,8 +1113,8 @@ public class ImagePanel
     if ((result == -1) && (getCurrentImage() != null)) {
       width  = m_ScrollPane.getWidth()  - 20;
       height = m_ScrollPane.getHeight() - 20;
-      scaleW = (double) width / (double) getCurrentImage().getWidth();
-      scaleH = (double) height / (double) getCurrentImage().getHeight();
+      scaleW = width / getCurrentImage().getWidth();
+      scaleH = height / getCurrentImage().getHeight();
       result = Math.min(scaleW, scaleH);
     }
     

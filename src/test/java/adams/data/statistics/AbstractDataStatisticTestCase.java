@@ -71,7 +71,7 @@ public abstract class AbstractDataStatisticTestCase<A extends AbstractDataStatis
    * @return		the generated statistics
    */
   protected A process(D data, A scheme) {
-    scheme.setData((D) data);
+    scheme.setData(data);
     return scheme;
   }
 
@@ -206,7 +206,7 @@ public abstract class AbstractDataStatisticTestCase<A extends AbstractDataStatis
       if (setups[i] instanceof Destroyable)
 	((Destroyable) setups[i]).destroy();
       else if (setups[i] instanceof CleanUpHandler)
-	((CleanUpHandler) setups[i]).cleanUp();
+	setups[i].cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);
     }
     cleanUpAfterRegression();

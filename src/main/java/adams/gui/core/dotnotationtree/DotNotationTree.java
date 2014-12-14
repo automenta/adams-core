@@ -48,6 +48,7 @@ import adams.gui.core.BaseTreeNode;
 import adams.gui.core.DragAndDropTree;
 import adams.gui.core.MouseUtils;
 import adams.gui.core.TransferableString;
+import javax.swing.tree.MutableTreeNode;
 
 /**
  * Displays dot-notation names in a tree structure.
@@ -602,7 +603,7 @@ public class DotNotationTree<N extends DotNotationNode>
 	  if (parent != null) {
 	    newRoot = newNode(root.getLabel() + getSeparator() + child.getLabel());
 	    while (child.getChildCount() > 0)
-	      newRoot.add((BaseTreeNode) child.getChildAt(0));
+	      newRoot.add((MutableTreeNode) child.getChildAt(0));
 	    parent.insert(newRoot, parent.getIndex(root));
 	    parent.remove(root);
 	    child = newRoot;

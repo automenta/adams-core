@@ -270,7 +270,7 @@ public class ChildWindow
       result.getContentPane().add(panel, BorderLayout.CENTER);
       if ((getParentFrame() instanceof DatabaseConnectionHandler) && (panel instanceof DatabaseConnectionHandler))
         ((DatabaseConnectionHandler) panel).setDatabaseConnection(
-            ((DatabaseConnectionHandler) getParentFrame()).getDatabaseConnection());
+            getParentFrame().getDatabaseConnection());
       if (m_DisposeWindowListenerAdded)
         result.addDisposeWindowListener();
     }

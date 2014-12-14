@@ -283,7 +283,7 @@ public class HashSetInit
       }
     }
     else {
-      array   = (Object) m_InputToken.getPayload();
+      array   = m_InputToken.getPayload();
       hashset = new HashSet();
       for (i = 0; i < Array.getLength(array); i++) {
 	val = Array.get(array, i);

@@ -97,7 +97,7 @@ public class QuickInfoHelper {
     String	result;
     
     if (current instanceof String) {
-      if (((String) current).length() == 0)
+      if (((CharSequence) current).length() == 0)
 	result = null;
       else
 	result = (String) current;

@@ -91,7 +91,7 @@ public enum DataType
    * @return		the enum or null if not found
    */
   public DataType parse(String s) {
-    return (DataType) valueOf((AbstractOption) null, s);
+    return valueOf((AbstractOption) null, s);
   }
 
   /**
@@ -102,7 +102,7 @@ public enum DataType
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((DataType) object).toRaw();
+    return ((EnumWithCustomDisplay<DataType>) object).toRaw();
   }
 
   /**

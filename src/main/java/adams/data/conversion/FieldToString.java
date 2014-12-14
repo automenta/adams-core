@@ -123,6 +123,6 @@ public class FieldToString
     if (m_AppendDataType)
       return ((AbstractField) m_Input).toParseableString();
     else
-      return ((AbstractField) m_Input).toString();
+      return m_Input.toString();
   }
 }

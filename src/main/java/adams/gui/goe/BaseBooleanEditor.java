@@ -43,6 +43,7 @@ import javax.swing.JPanel;
 
 import adams.core.Utils;
 import adams.core.base.BaseBoolean;
+import adams.core.base.BaseObject;
 import adams.core.option.AbstractOption;
 import adams.gui.dialog.ApprovalDialog;
 
@@ -67,7 +68,7 @@ public class BaseBooleanEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseBoolean) object).getValue();
+    return ((BaseObject) object).getValue();
   }
   
   /**
@@ -238,7 +239,7 @@ public class BaseBooleanEditor
    * @return		true if the string is valid
    */
   protected boolean isValid(String s) {
-    return ((BaseBoolean) getValue()).isValid(s);
+    return ((BaseObject) getValue()).isValid(s);
   }
 
   /**
@@ -248,7 +249,7 @@ public class BaseBooleanEditor
    * @return		true if the strings are the same
    */
   protected boolean isUnchanged(String s) {
-    return s.equals(((BaseBoolean) getValue()).getValue());
+    return s.equals(((BaseObject) getValue()).getValue());
   }
 
   /**
@@ -278,7 +279,7 @@ public class BaseBooleanEditor
     super.initForDisplay();
     if (!m_TextValue.getSelectedItem().toString().equals("" + getValue()))
       m_TextValue.setSelectedItem("" + getValue());
-    m_TextValue.setToolTipText(((BaseBoolean) getValue()).getTipText());
+    m_TextValue.setToolTipText(((BaseObject) getValue()).getTipText());
     m_TextValue.grabFocus();
   }
 

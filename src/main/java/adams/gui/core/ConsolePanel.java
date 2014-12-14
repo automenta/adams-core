@@ -752,7 +752,7 @@ public class ConsolePanel
 
     if ((SendToActionUtils.isAvailable(String.class, cls))) {
       result = getCurrentPanel().getContent();
-      if (((String) result).length() == 0)
+      if (((CharSequence) result).length() == 0)
 	result = null;
     }
     else if (SendToActionUtils.isAvailable(JTextComponent.class, cls)) {

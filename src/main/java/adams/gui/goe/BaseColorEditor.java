@@ -44,6 +44,7 @@ import javax.swing.event.ChangeListener;
 
 import adams.core.Utils;
 import adams.core.base.BaseColor;
+import adams.core.base.BaseObject;
 import adams.core.option.AbstractOption;
 import adams.gui.core.BasePanel;
 import adams.gui.core.ColorHelper;
@@ -75,7 +76,7 @@ public class BaseColorEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseColor) object).getValue();
+    return ((BaseObject) object).getValue();
   }
 
   /**
@@ -170,7 +171,7 @@ public class BaseColorEditor
     m_SpinnerAlpha = new JSpinner();
     ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setMinimum(0);
     ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setMaximum(255);
-    ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setValue(currentColor.toColorValue().getAlpha());
+    m_SpinnerAlpha.getModel().setValue(currentColor.toColorValue().getAlpha());
     m_SpinnerAlpha.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {
@@ -310,7 +311,7 @@ public class BaseColorEditor
    * @return		the current value
    */
   public String getInlineValue() {
-    return ((BaseColor) getValue()).getValue();
+    return ((BaseObject) getValue()).getValue();
   }
 
   /**

@@ -52,7 +52,7 @@ public abstract class AbstractDataContainerPanelScriptlet
    */
   public DataContainerPanel getDataContainerPanel() {
     if (hasOwner())
-      return ((CommandProcessor) getOwner()).getDataContainerPanel();
+      return getOwner().getDataContainerPanel();
     else
       return null;
   }

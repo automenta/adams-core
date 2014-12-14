@@ -183,28 +183,28 @@ public class Max
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(doublesO)));
 	else
-	  m_OutputToken = new Token((Double) (StatUtils.max(doublesO)));
+	  m_OutputToken = new Token((StatUtils.max(doublesO)));
       }
       else if (m_InputToken.getPayload() instanceof double[]) {
 	doublesP = (double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(doublesP)));
 	else
-	  m_OutputToken = new Token((Double) (StatUtils.max(doublesP)));
+	  m_OutputToken = new Token((StatUtils.max(doublesP)));
       }
       else if (m_InputToken.getPayload() instanceof Integer[]) {
 	integersO = (Integer[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(integersO)));
 	else
-	  m_OutputToken = new Token((Integer) (StatUtils.max(integersO)));
+	  m_OutputToken = new Token((StatUtils.max(integersO)));
       }
       else if (m_InputToken.getPayload() instanceof int[]) {
 	integersP = (int[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
 	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(integersP)));
 	else
-	  m_OutputToken = new Token((Integer) (StatUtils.max(integersP)));
+	  m_OutputToken = new Token((StatUtils.max(integersP)));
       }
       else {
 	result = "Unhandled class: " + Utils.classToString(m_InputToken.getPayload().getClass());

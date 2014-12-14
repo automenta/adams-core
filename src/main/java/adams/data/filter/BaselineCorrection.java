@@ -145,7 +145,7 @@ public class BaselineCorrection<T extends DataContainer>
     AbstractBaselineCorrection	baseline;
 
     baseline = m_BaselineCorrection.shallowCopy(true);
-    result   = (T) baseline.correct((T) data);
+    result   = (T) baseline.correct(data);
     baseline.destroy();
 
     return result;

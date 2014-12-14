@@ -36,6 +36,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import adams.core.Utils;
+import adams.core.base.AbstractBaseString;
 import adams.core.base.BaseAnnotation;
 import adams.core.base.BaseObject;
 import adams.core.option.AbstractOption;
@@ -67,7 +68,7 @@ public class BaseAnnotationEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseAnnotation) object).stringValue();
+    return ((AbstractBaseString) object).stringValue();
   }
 
   /**
@@ -260,7 +261,7 @@ public class BaseAnnotationEditor
    * @return		the current value
    */
   public String getInlineValue() {
-    return Utils.backQuoteChars(((BaseAnnotation) getValue()).getValue());
+    return Utils.backQuoteChars(((BaseObject) getValue()).getValue());
   }
 
   /**

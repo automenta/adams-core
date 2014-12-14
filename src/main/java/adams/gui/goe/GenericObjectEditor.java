@@ -77,6 +77,7 @@ import adams.gui.goe.Favorites.FavoriteSelectionEvent;
 import adams.gui.goe.Favorites.FavoriteSelectionListener;
 import adams.gui.goe.classtree.ClassTree;
 import adams.gui.goe.classtree.StrictClassTreeFilter;
+import javax.swing.JComponent;
 
 /**
  * A PropertyEditor for objects.
@@ -1304,7 +1305,7 @@ public class GenericObjectEditor
 	  super.setToolTipText(text);
 	  for (int i = 0; i < getComponentCount(); i++) {
 	    if (getComponent(i) instanceof JPanel) {
-	      ((JPanel) getComponent(i)).setToolTipText(text);
+	      ((JComponent) getComponent(i)).setToolTipText(text);
 	    }
 	  }
 	};

@@ -58,7 +58,7 @@ public class ContainerTable<M extends AbstractContainerManager, C extends Abstra
    * Initializes the table with an empty model.
    */
   public ContainerTable() {
-    this(new ContainerModel((M) null));
+    this(new ContainerModel((ContainerListManager)null));
   }
 
   /**

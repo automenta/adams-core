@@ -60,6 +60,7 @@ import adams.gui.event.SearchEvent;
 import adams.gui.event.SearchListener;
 import adams.gui.sendto.SendToActionSupporter;
 import adams.gui.sendto.SendToActionUtils;
+import java.io.File;
 
 /**
  * A panel displaying information about the system.
@@ -476,7 +477,7 @@ public class SystemInfoPanel
     if (SendToActionUtils.isAvailable(PlaceholderFile.class, cls)) {
       result = SendToActionUtils.nextTmpFile("systeminfo", "csv");
       writer = new CsvSpreadSheetWriter();
-      if (!writer.write(getContent(), (PlaceholderFile) result))
+      if (!writer.write(getContent(), (File) result))
 	result = null;
     }
     else if (SendToActionUtils.isAvailable(JTable.class, cls)) {

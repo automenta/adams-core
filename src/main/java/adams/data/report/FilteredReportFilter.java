@@ -199,7 +199,7 @@ public class FilteredReportFilter<T extends DataContainer>
     filtered = (T) m_ReportFilter.filter(filtered);
     result   = (T) data.getClone();
 
-    if (!((MutableReportHandler) result).hasReport())
+    if (!((ReportHandler) result).hasReport())
       return result;
     
     ((MutableReportHandler) result).setReport(((ReportHandler) filtered).getReport().getClone());

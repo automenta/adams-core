@@ -20,6 +20,7 @@
 
 package adams.data.baseline;
 
+import adams.core.CloneHandler;
 import java.util.List;
 
 import adams.data.container.DataContainer;
@@ -281,7 +282,7 @@ public class SlidingWindow<T extends DataContainer>
 	    + size + " != " + windowCorr.size());
 
       // obtain central point
-      result.add(((DataPoint) windowCorr.toList().get(left)).getClone());
+      result.add(((CloneHandler) windowCorr.toList().get(left)).getClone());
     }
     correction.cleanUp();
 

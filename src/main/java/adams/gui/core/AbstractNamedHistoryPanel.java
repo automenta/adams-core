@@ -615,7 +615,7 @@ public abstract class AbstractNamedHistoryPanel<T>
 
     if (hasEntry(name)) {
       for (i = 0; i < getListModel().size(); i++) {
-	if (name.equals((String) getListModel().get(i))) {
+	if (name.equals(getListModel().get(i))) {
 	  result = i;
 	  break;
 	}
@@ -652,7 +652,7 @@ public abstract class AbstractNamedHistoryPanel<T>
    * @return		the object or null if not found
    */
   public T getEntry(int index) {
-    return m_Entries.get((String) getListModel().get(index));
+    return m_Entries.get(getListModel().get(index));
   }
 
   /**
@@ -662,7 +662,7 @@ public abstract class AbstractNamedHistoryPanel<T>
    * @return		the object or null if not found
    */
   public Object getPayload(int index) {
-    return m_Payloads.get((String) getListModel().get(index));
+    return m_Payloads.get(getListModel().get(index));
   }
 
   /**

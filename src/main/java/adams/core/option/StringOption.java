@@ -70,7 +70,7 @@ public class StringOption
    * @return		true if both are equal
    */
   protected boolean compareValues(Object value, Object defValue) {
-    return ((String) value).equals((String) defValue);
+    return value.equals(defValue);
   }
 
   /**

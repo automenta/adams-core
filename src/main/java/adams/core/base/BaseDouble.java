@@ -115,7 +115,7 @@ public class BaseDouble
    */
   @Override
   public String getValue() {
-    return ((Double) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -124,7 +124,7 @@ public class BaseDouble
    * @return		the double value
    */
   public double doubleValue() {
-    return ((Double) m_Internal).doubleValue();
+    return ((Number) m_Internal).doubleValue();
   }
 
   /**

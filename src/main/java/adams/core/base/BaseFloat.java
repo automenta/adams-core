@@ -113,7 +113,7 @@ public class BaseFloat
    */
   @Override
   public String getValue() {
-    return ((Float) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -122,7 +122,7 @@ public class BaseFloat
    * @return		the float value
    */
   public float floatValue() {
-    return ((Float) m_Internal).floatValue();
+    return ((Number) m_Internal).floatValue();
   }
 
   /**

@@ -175,7 +175,7 @@ public class ColorEditor
     m_SpinnerAlpha = new JSpinner();
     ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setMinimum(0);
     ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setMaximum(255);
-    ((SpinnerNumberModel) m_SpinnerAlpha.getModel()).setValue(currentColor.getAlpha());
+    m_SpinnerAlpha.getModel().setValue(currentColor.getAlpha());
     m_SpinnerAlpha.addChangeListener(new ChangeListener() {
       @Override
       public void stateChanged(ChangeEvent e) {

@@ -107,7 +107,7 @@ public class FieldChooserPanel
    * @return		the generated object
    */
   protected AbstractField fromString(String value) {
-    return (Field) FieldUtils.fixClass(getFieldType(), new Field(value, DataType.UNKNOWN));
+    return FieldUtils.fixClass(getFieldType(), new Field(value, DataType.UNKNOWN));
   }
 
   /**

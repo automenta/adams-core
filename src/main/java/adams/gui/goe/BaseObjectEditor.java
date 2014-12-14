@@ -52,6 +52,7 @@ import adams.gui.core.BaseTextArea;
 import adams.gui.core.BrowserHelper;
 import adams.gui.core.GUIHelper;
 import adams.gui.dialog.ApprovalDialog;
+import javax.swing.JTextArea;
 
 /**
  * A PropertyEditor for BaseObject-derived objects.
@@ -250,7 +251,7 @@ public class BaseObjectEditor
     JButton 		buttonClose;
 
     m_TextValue = new BaseTextArea(1, 20);
-    ((BaseTextArea) m_TextValue).setLineWrap(true);
+    ((JTextArea) m_TextValue).setLineWrap(true);
     m_TextValue.addKeyListener(new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent e) {

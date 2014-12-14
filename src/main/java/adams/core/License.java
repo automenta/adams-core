@@ -187,7 +187,7 @@ public enum License {
    * @return		the enum or null if not found
    */
   public License parse(String s) {
-    return (License) valueOf((AbstractOption) null, s);
+    return valueOf((AbstractOption) null, s);
   }
 
   /**

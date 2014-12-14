@@ -189,7 +189,7 @@ public class GridSearch
       OptVar ov=datadef.getVar(var);
       if (ov.m_isInteger) {
 	//double ss=(double)its/(double)numps;
-	double ss=Math.pow((double)its,1.0/(double)numps);
+	double ss=Math.pow((double)its,1.0/numps);
 	double newss=ov.getStepSize((int)ss);
 	stepsize.put(var, newss);
 	its=its/(ov.getSteps((int)ss));
@@ -200,7 +200,7 @@ public class GridSearch
       OptVar ov=datadef.getVar(var);
       if (!ov.m_isInteger) {
 	//double ss=(double)its/(double)numps;
-	double ss=Math.pow((double)its,1.0/(double)numps);
+	double ss=Math.pow((double)its,1.0/numps);
 	stepsize.put(var,ov.getStepSize((int)ss));
       }
       getLogger().info(var+".Stepsize="+stepsize.get(var));

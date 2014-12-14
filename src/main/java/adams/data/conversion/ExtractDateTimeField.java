@@ -28,6 +28,7 @@ import adams.core.Constants;
 import adams.core.DateFormat;
 import adams.core.DateTime;
 import adams.core.DateTimeType;
+import adams.core.DateValueSupporter;
 import adams.core.Time;
 import adams.core.base.BaseDate;
 import adams.core.base.BaseDateTime;
@@ -365,28 +366,28 @@ public class ExtractDateTimeField
     // update the calendar
     switch (m_DateTimeType) {
       case MSECS:
-	m_Calendar.setTime(new Date(((Double) m_Input).longValue()));
+	m_Calendar.setTime(new Date(((Number) m_Input).longValue()));
 	break;
       case SECONDS:
-	m_Calendar.setTime(new Date(((Double) m_Input).longValue() * 1000));
+	m_Calendar.setTime(new Date(((Number) m_Input).longValue() * 1000));
 	break;
       case DATE:
 	m_Calendar.setTime((Date) m_Input);
 	break;
       case DATETIME:
-	m_Calendar.setTime((DateTime) m_Input);
+	m_Calendar.setTime((Date) m_Input);
 	break;
       case TIME:
-	m_Calendar.setTime((Time) m_Input);
+	m_Calendar.setTime((Date) m_Input);
 	break;
       case BASEDATE:
-	m_Calendar.setTime(((BaseDate) m_Input).dateValue());
+	m_Calendar.setTime(((DateValueSupporter) m_Input).dateValue());
 	break;
       case BASEDATETIME:
-	m_Calendar.setTime(((BaseDateTime) m_Input).dateValue());
+	m_Calendar.setTime(((DateValueSupporter) m_Input).dateValue());
 	break;
       case BASETIME:
-	m_Calendar.setTime(((BaseTime) m_Input).dateValue());
+	m_Calendar.setTime(((DateValueSupporter) m_Input).dateValue());
 	break;
       case JULIANDATE:
 	m_Calendar.setTime(new JDateTime((Double) m_Input).convertToDate());

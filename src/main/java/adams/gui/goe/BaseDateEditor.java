@@ -21,6 +21,7 @@
 
 package adams.gui.goe;
 
+import adams.core.DateValueSupporter;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -87,7 +88,7 @@ public class BaseDateEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseDate) object).getValue();
+    return ((BaseObject) object).getValue();
   }
 
   /**
@@ -290,9 +291,9 @@ public class BaseDateEditor
    */
   protected void initForDisplay() {
     super.initForDisplay();
-    m_TextCustom.setText(((BaseDate) getValue()).getValue());
+    m_TextCustom.setText(((BaseObject) getValue()).getValue());
     m_TextCustom.setToolTipText(((BaseObject) getValue()).getTipText());
-    m_Calendar.setDate(((BaseDate) getValue()).dateValue());
+    m_Calendar.setDate(((DateValueSupporter) getValue()).dateValue());
     m_ComboBoxPlaceholders.setSelectedIndex(m_ComboBoxPlaceholders.getSelectedIndex());
     updateButtons();
   }

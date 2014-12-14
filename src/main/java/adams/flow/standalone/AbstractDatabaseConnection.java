@@ -355,7 +355,7 @@ public abstract class AbstractDatabaseConnection
     boolean		result;
     PasswordDialog	dlg;
     
-    dlg = new PasswordDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+    dlg = new PasswordDialog(null, ModalityType.DOCUMENT_MODAL);
     dlg.setLocationRelativeTo(getParentComponent());
     dlg.setVisible(true);
     result = (dlg.getOption() == PasswordDialog.APPROVE_OPTION);

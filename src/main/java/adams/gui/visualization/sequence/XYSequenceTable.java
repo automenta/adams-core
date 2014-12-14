@@ -127,9 +127,9 @@ public class XYSequenceTable
      */
     protected Object getValueAt(XYSequencePoint point, int column) {
       if (column == 0)
-	return ((XYSequencePoint) point).getX();
+	return point.getX();
       else if (column == 1)
-	return ((XYSequencePoint) point).getY();
+	return point.getY();
       else
 	throw new IllegalArgumentException("Wrong column index: " + column);
     }

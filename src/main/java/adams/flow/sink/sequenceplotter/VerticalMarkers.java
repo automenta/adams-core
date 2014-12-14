@@ -92,7 +92,7 @@ public class VerticalMarkers
     g.setColor(color);
 
     for (i = 0; i <= data.size() - 1; i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
 
       // determine coordinates
       currX = axisX.valueToPos(XYSequencePoint.toDouble(curr.getX()));

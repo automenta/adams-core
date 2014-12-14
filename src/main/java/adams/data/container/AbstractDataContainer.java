@@ -88,7 +88,7 @@ public abstract class AbstractDataContainer<T extends DataPoint>
     Iterator<T>			iter;
 
     try {
-      result = (AbstractDataContainer<T>) getClass().newInstance();
+      result = getClass().newInstance();
     }
     catch (Exception e) {
       throw new IllegalStateException(e);
@@ -250,7 +250,7 @@ public abstract class AbstractDataContainer<T extends DataPoint>
         point = (T) iter.next();
         point.setParent(null);
         if (point instanceof DataContainer)
-          ((DataContainer) point).clear();
+          ((Collection) point).clear();
       }
 
       m_Points.clear();
@@ -560,7 +560,7 @@ public abstract class AbstractDataContainer<T extends DataPoint>
     DataContainer	result;
 
     try {
-      result = (DataContainer) cont.getClass().newInstance();
+      result = cont.getClass().newInstance();
     }
     catch (Exception e) {
       result = null;

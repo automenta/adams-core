@@ -40,12 +40,14 @@ import javax.swing.JPopupMenu;
 
 import adams.core.AdditionalInformationHandler;
 import adams.core.Utils;
+import adams.core.base.AbstractBaseString;
 import adams.core.base.BaseObject;
 import adams.core.option.AbstractOption;
 import adams.gui.core.AbstractScript;
 import adams.gui.core.GUIHelper;
 import adams.gui.core.StyledTextEditorPanel;
 import adams.gui.dialog.TextDialog;
+import javax.swing.AbstractButton;
 
 /**
  * A PropertyEditor for AbstractScript-derived objects.
@@ -69,7 +71,7 @@ public class AbstractScriptEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((AbstractScript) object).stringValue();
+    return ((AbstractBaseString) object).stringValue();
   }
 
   /**
@@ -241,7 +243,7 @@ public class AbstractScriptEditor
     buttonOK.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
 	String s = m_TextStatement.getContent();
-	if (((AbstractScript) getValue()).isValid(s) && !s.equals(((AbstractScript) getValue()).getValue())) {
+	if (((AbstractScript) getValue()).isValid(s) && !s.equals(((BaseObject) getValue()).getValue())) {
 	  try {
 	    AbstractScript newValue = (AbstractScript) getValue().getClass().newInstance();
 	    newValue.setValue(s);
@@ -348,7 +350,7 @@ public class AbstractScriptEditor
     menuitem.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-	m_TextStatement.setWordWrap(((JMenuItem) e.getSource()).isSelected());
+	m_TextStatement.setWordWrap(((AbstractButton) e.getSource()).isSelected());
       }
     });
     result.addSeparator();

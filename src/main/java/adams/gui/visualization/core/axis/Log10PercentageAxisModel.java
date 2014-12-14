@@ -114,7 +114,7 @@ public class Log10PercentageAxisModel
     validate();
 
     size   = getParent().getLength() - 1;
-    tmp    = (double) pos / (double) size;
+    tmp    = pos / size;
     tmp    = tmp * (Math.log10(m_ActualMaximum) - Math.log10(m_ActualMinimum));
     tmp    = tmp + Math.log10(m_ActualMinimum);
     tmp    = Math.pow(10, tmp);

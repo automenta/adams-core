@@ -759,7 +759,7 @@ public class DragAndDropTree
     exp      = getExpandedNodes();
 
     if (m_SourceNode != null)
-      newNodes = (BaseTreeNode[]) m_SourceNode;
+      newNodes = m_SourceNode;
     else
       newNodes = newTreeNodes(source);
 
@@ -933,12 +933,12 @@ public class DragAndDropTree
     if (    (m_SourceNode == null)
 	 || (m_SourceNode[0] == null)
 	 || (m_SourceNode[0] == getModel().getRoot())
-	 || !canStartDrag((BaseTreeNode[]) m_SourceNode) )
+	 || !canStartDrag(m_SourceNode) )
       return;
 
     // start drag
     cursor = selectCursor(e.getDragAction());
-    m_DragSource.startDrag(e, cursor, newNodeCollection((BaseTreeNode[]) m_SourceNode), this);
+    m_DragSource.startDrag(e, cursor, newNodeCollection(m_SourceNode), this);
   }
 
   /**

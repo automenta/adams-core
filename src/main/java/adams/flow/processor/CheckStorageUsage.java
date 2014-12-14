@@ -30,6 +30,7 @@ import java.util.Set;
 
 import adams.core.NamedCounter;
 import adams.core.Utils;
+import adams.core.base.BaseObject;
 import adams.core.option.AbstractArgumentOption;
 import adams.core.option.AbstractOption;
 import adams.core.option.BooleanOption;
@@ -173,7 +174,7 @@ public class CheckStorageUsage
 	}
 	else {
 	  if (obj instanceof StorageName)
-	    m_SetCount.next(((StorageName) obj).getValue());
+	    m_SetCount.next(((BaseObject) obj).getValue());
 	}
       }
       protected void incrementUsageCount(Object obj) {
@@ -183,7 +184,7 @@ public class CheckStorageUsage
 	}
 	else {
 	  if (obj instanceof StorageName)
-	    m_UsageCount.next(((StorageName) obj).getValue());
+	    m_UsageCount.next(((BaseObject) obj).getValue());
 	}
       }
       public void handleClassOption(ClassOption option, OptionTraversalPath path) {

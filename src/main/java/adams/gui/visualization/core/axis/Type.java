@@ -146,7 +146,7 @@ public enum Type
    * @return		the corresponding type or null if not found
    */
   public Type parse(String s) {
-    return (Type) valueOf((AbstractOption) null, s);
+    return valueOf((AbstractOption) null, s);
   }
 
   /**
@@ -157,7 +157,7 @@ public enum Type
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((Type) object).toRaw();
+    return ((EnumWithCustomDisplay<Type>) object).toRaw();
   }
 
   /**

@@ -171,7 +171,7 @@ public class RemoveByDataType
     if (!(data instanceof MutableReportHandler))
       return data;
     
-    oldReport = ((MutableReportHandler) data).getReport();
+    oldReport = ((ReportHandler) data).getReport();
     newReport = Report.newInstance(oldReport);
     types     = new HashSet<>(Arrays.asList(DataType.values()));
     

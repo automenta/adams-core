@@ -54,7 +54,7 @@ public class SimpleTickGenerator
     double	incValue;
     double	value;
 
-    incValue = (m_Parent.getActualMaximum() - m_Parent.getActualMinimum()) / ((double) m_NumTicks);
+    incValue = (m_Parent.getActualMaximum() - m_Parent.getActualMinimum()) / m_NumTicks;
     if (Double.isNaN(incValue))
       return;
 

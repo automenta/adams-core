@@ -19,6 +19,7 @@
  */
 package adams.gui.chooser;
 
+import adams.core.io.FileFormatHandler;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -284,7 +285,7 @@ public class ImageFileChooser
       m_WriterFileFilters  = new ArrayList<>();
 
     for (i = 0; i < classnames.length; i++) {
-      classname = (String) classnames[i];
+      classname = classnames[i];
 
       // get data from converter
       try {
@@ -293,14 +294,14 @@ public class ImageFileChooser
 	if (reader) {
 	  if (!((AbstractImageReader) converter).isAvailable())
 	    continue;
-	  desc = ((AbstractImageReader) converter).getFormatDescription();
-	  ext  = ((AbstractImageReader) converter).getFormatExtensions();
+	  desc = ((FileFormatHandler) converter).getFormatDescription();
+	  ext  = ((FileFormatHandler) converter).getFormatExtensions();
 	}
 	else {
 	  if (!((AbstractImageWriter) converter).isAvailable())
 	    continue;
-	  desc = ((AbstractImageWriter) converter).getFormatDescription();
-	  ext  = ((AbstractImageWriter) converter).getFormatExtensions();
+	  desc = ((FileFormatHandler) converter).getFormatDescription();
+	  ext  = ((FileFormatHandler) converter).getFormatExtensions();
 	}
       }
       catch (Exception e) {

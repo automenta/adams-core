@@ -65,6 +65,7 @@ import adams.gui.dialog.ApprovalDialog;
 import adams.gui.event.PopupMenuListener;
 import adams.gui.event.SearchEvent;
 import adams.gui.event.SearchListener;
+import javax.swing.text.JTextComponent;
 
 /**
  * A panel for managing objects.
@@ -355,13 +356,13 @@ public abstract class AbstractManagementPanel<T extends Comparable>
   protected void addListener(Component comp) {
     // document listeners
     if (comp instanceof JTextField)
-      addDocumentListener(((JTextField) comp).getDocument());
+      addDocumentListener(((JTextComponent) comp).getDocument());
     else if (comp instanceof JTextArea)
-      addDocumentListener(((JTextArea) comp).getDocument());
+      addDocumentListener(((JTextComponent) comp).getDocument());
     else if (comp instanceof BaseTextAreaWithButtons)
       addDocumentListener(((BaseTextAreaWithButtons) comp).getDocument());
     else if (comp instanceof JTextPane)
-      addDocumentListener(((JTextPane) comp).getDocument());
+      addDocumentListener(((JTextComponent) comp).getDocument());
     else if (comp instanceof BaseTextPaneWithWordWrap)
       addDocumentListener(((BaseTextPaneWithWordWrap) comp).getDocument());
     // action listeners
@@ -562,7 +563,7 @@ public abstract class AbstractManagementPanel<T extends Comparable>
     if (row == -1)
       return;
 
-    value = (T) m_ModelValues.getItemAt(m_TableValues.getActualRow(row));
+    value = m_ModelValues.getItemAt(m_TableValues.getActualRow(row));
 
     objectToFields(value);
 

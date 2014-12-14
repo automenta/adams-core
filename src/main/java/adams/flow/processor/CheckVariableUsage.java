@@ -176,7 +176,7 @@ public class CheckVariableUsage
 	}
 	else {
 	  if (obj instanceof VariableName)
-	    m_SetCount.next(((VariableName) obj).getValue());
+	    m_SetCount.next(((BaseObject) obj).getValue());
 	}
       }
       protected void incrementUsageCount(Object obj) {
@@ -186,7 +186,7 @@ public class CheckVariableUsage
 	}
 	else {
 	  if (obj instanceof VariableName)
-	    m_UsageCount.next(((VariableName) obj).getValue());
+	    m_UsageCount.next(((BaseObject) obj).getValue());
 	}
       }
       protected void extractVariables(Object obj) {

@@ -212,7 +212,7 @@ public abstract class AbstractFeatureConverterTestCase
     for (n = 0; n < setups.length; n++) {
       append    = false;
       output[n] = createOutputFilename(n);
-      current   = (AbstractFeatureConverter) OptionUtils.shallowCopy((OptionHandler) setups[n], false);
+      current   = (AbstractFeatureConverter) OptionUtils.shallowCopy(setups[n], false);
       assertNotNull("Failed to create copy of feature converter algorithm: " + OptionUtils.getCommandLine(setups[n]), current);
 
       for (i = 0; i < headers.length; i++) {
@@ -230,7 +230,7 @@ public abstract class AbstractFeatureConverterTestCase
       }
 
       if (current instanceof Destroyable)
-	((Destroyable) current).destroy();
+	current.destroy();
     }
 
     // test regression
@@ -243,7 +243,7 @@ public abstract class AbstractFeatureConverterTestCase
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
 	((CleanUpHandler) setups[i]).cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);

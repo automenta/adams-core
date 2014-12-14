@@ -49,6 +49,7 @@ import adams.gui.print.JComponentWriterFileChooser;
 import adams.gui.print.PNGWriter;
 import adams.gui.sendto.SendToActionSupporter;
 import adams.gui.sendto.SendToActionUtils;
+import java.awt.Component;
 
 /**
  <!-- globalinfo-start -->
@@ -444,7 +445,7 @@ public class DisplayPanelGrid
   @Override
   public Class[] accepts() {
     if ((m_PanelProvider != null) && (m_PanelProvider instanceof InputConsumer))
-      return ((InputConsumer) m_PanelProvider).accepts();
+      return m_PanelProvider.accepts();
     else
       return new Class[]{Object.class};
   }
@@ -511,7 +512,7 @@ public class DisplayPanelGrid
     //if (m_PanelProvider.displayPanelRequiresScrollPane())
     //  panel.add(new BaseScrollPane((JComponent) dpanel), BorderLayout.CENTER);
     //else
-      panel.add((JComponent) dpanel, BorderLayout.CENTER);
+      panel.add((Component) dpanel, BorderLayout.CENTER);
     m_PanelAll.add(panel);
     m_PanelAll.getParent().validate();
     m_PanelAll.getParent().repaint();

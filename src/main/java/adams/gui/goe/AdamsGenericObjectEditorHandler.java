@@ -89,7 +89,7 @@ public class AdamsGenericObjectEditorHandler
    * @return		true if successfully set
    */
   public boolean setValue(PropertyEditor editor, Object value) {
-    ((GenericObjectEditor) editor).setValue(value);
+    editor.setValue(value);
     return true;
   }
 
@@ -100,7 +100,7 @@ public class AdamsGenericObjectEditorHandler
    * @return		the current editor value
    */
   public Object getValue(PropertyEditor editor) {
-    return ((GenericObjectEditor) editor).getValue();
+    return editor.getValue();
   }
 
   /**

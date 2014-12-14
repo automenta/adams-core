@@ -40,6 +40,7 @@ import javax.swing.JPasswordField;
 
 import adams.core.Constants;
 import adams.core.Utils;
+import adams.core.base.AbstractBaseString;
 import adams.core.base.BasePassword;
 import adams.core.option.AbstractOption;
 import adams.gui.dialog.ApprovalDialog;
@@ -65,7 +66,7 @@ public class BasePasswordEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BasePassword) object).stringValue();
+    return ((AbstractBaseString) object).stringValue();
   }
 
   /**
@@ -167,7 +168,7 @@ public class BasePasswordEditor
    * @see		#paintValue(Graphics, Rectangle)
    */
   protected String getStringToPaint() {
-    return ((BasePassword) getValue()).stringValue();
+    return ((AbstractBaseString) getValue()).stringValue();
   }
 
   /**

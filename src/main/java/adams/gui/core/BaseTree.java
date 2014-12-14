@@ -167,7 +167,7 @@ public class BaseTree
 
     node = (TreeNode) parent.getLastPathComponent();
     for (i = 0; i < node.getChildCount(); i++) {
-      child = (TreeNode) node.getChildAt(i);
+      child = node.getChildAt(i);
       toggleAll(parent.pathByAddingChild(child), expand);
     }
 

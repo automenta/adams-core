@@ -80,6 +80,6 @@ public class DoubleToInt
    * @throws Exception	if something goes wrong with the conversion
    */
   protected Object doConvert() throws Exception {
-    return ((Double) m_Input).intValue();
+    return ((Number) m_Input).intValue();
   }
 }

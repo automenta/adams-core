@@ -205,7 +205,7 @@ public class SimpleErrorPaintlet
     double	to;
     int		length;
     
-    length = (int) (((float) m_MarkerLength - m_StrokeThickness) / 2.0);
+    length = (int) ((m_MarkerLength - m_StrokeThickness) / 2.0);
     
     // horizontal
     if (point.hasErrorX()) {

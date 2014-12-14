@@ -45,6 +45,7 @@ import adams.gui.event.SearchEvent;
 import adams.gui.event.SearchListener;
 import adams.gui.visualization.debug.objecttree.Node;
 import adams.gui.visualization.debug.objecttree.Tree;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  * Panel for inspecting an object and its values (accessible through bean
@@ -159,7 +160,7 @@ public class InspectionPanel
 	if (m_Tree.getSelectionPath() == null)
 	  updateSize(null);
 	else
-	  updateSize(((Node) m_Tree.getSelectionPath().getLastPathComponent()).getUserObject());
+	  updateSize(((DefaultMutableTreeNode) m_Tree.getSelectionPath().getLastPathComponent()).getUserObject());
       }
     });
     m_PanelSize.add(m_CheckBoxSize);

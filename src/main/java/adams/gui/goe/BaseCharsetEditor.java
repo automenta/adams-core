@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.Vector;
 
 import adams.core.Utils;
+import adams.core.base.AbstractBaseString;
 import adams.core.base.BaseCharset;
 import adams.core.management.CharsetHelper;
 import adams.core.option.AbstractOption;
@@ -52,7 +53,7 @@ public class BaseCharsetEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseCharset) object).stringValue();
+    return ((AbstractBaseString) object).stringValue();
   }
 
   /**
@@ -75,7 +76,7 @@ public class BaseCharsetEditor
   public String getJavaInitializationString() {
     String	result;
 
-    result = BaseCharset.class.getName() + "(" + ((BaseCharset) getValue()).stringValue() + ")";
+    result = BaseCharset.class.getName() + "(" + ((AbstractBaseString) getValue()).stringValue() + ")";
 
     return result;
   }
@@ -87,7 +88,7 @@ public class BaseCharsetEditor
    */
   @Override
   public String getAsText() {
-    return ((BaseCharset) getValue()).stringValue();
+    return ((AbstractBaseString) getValue()).stringValue();
   }
 
   /**

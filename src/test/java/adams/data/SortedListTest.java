@@ -86,7 +86,7 @@ public class SortedListTest
 
     // add elements
     for (Comparable c: insert)
-      m_List.add((Serializable) c);
+      m_List.add(c);
     assertEquals("number of elements in list are different from expected", expected.length, m_List.size());
 
     // check elements

@@ -180,7 +180,7 @@ public class JobRunner<T extends Job>
 	  job = new Callable<String>() {
 	    public String call() throws Exception {
 	      JobResult jr = j.execute();
-	      complete((T) j, jr);
+	      complete(j, jr);
 	      String result = null;
 	      if (!jr.getSuccess())
 		result = jr.toString();

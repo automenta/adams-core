@@ -349,7 +349,7 @@ public class XYSequenceUtils
 
     min    = points.get(0).getY();
     max    = points.get(points.size() - 1).getY();
-    scale  = 1.0 / ((double) (max - min + 1) / ((double) numBins));
+    scale  = 1.0 / ((max - min + 1) / numBins);
     for (i = 0; i < points.size(); i++)
       result[(int) ((points.get(i).getY() - min)*scale)]++;
 

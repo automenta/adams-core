@@ -80,6 +80,6 @@ public class IntToDouble
    * @throws Exception	if something goes wrong with the conversion
    */
   protected Object doConvert() throws Exception {
-    return ((Integer) m_Input).doubleValue();
+    return ((Number) m_Input).doubleValue();
   }
 }

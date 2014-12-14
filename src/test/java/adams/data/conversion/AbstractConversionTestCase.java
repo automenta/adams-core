@@ -206,7 +206,7 @@ public abstract class AbstractConversionTestCase
       if (setups[i] instanceof Destroyable)
 	((Destroyable) setups[i]).destroy();
       else if (setups[i] instanceof CleanUpHandler)
-	((CleanUpHandler) setups[i]).cleanUp();
+	setups[i].cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);
     }
     cleanUpAfterRegression();

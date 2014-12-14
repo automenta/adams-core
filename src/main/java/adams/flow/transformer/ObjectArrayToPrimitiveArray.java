@@ -137,12 +137,12 @@ public class ObjectArrayToPrimitiveArray
       if (arrayIn instanceof Byte[]) {
 	arrayOut = new int[len];
 	for (i = 0; i < len; i++)
-	  Array.setInt(arrayOut, i, (Byte) Array.get(arrayIn, i));
+	  Array.setInt(arrayOut, i, (int) Array.get(arrayIn, i));
       }
       else if (arrayIn instanceof Short[]) {
 	arrayOut = new int[len];
 	for (i = 0; i < len; i++)
-	  Array.setInt(arrayOut, i, (Short) Array.get(arrayIn, i));
+	  Array.setInt(arrayOut, i, (int) Array.get(arrayIn, i));
       }
       else if (arrayIn instanceof Integer[]) {
 	arrayOut = new int[len];
@@ -153,12 +153,12 @@ public class ObjectArrayToPrimitiveArray
       else if (arrayIn instanceof Long[]) {
 	arrayOut = new int[len];
 	for (i = 0; i < len; i++)
-	  Array.setInt(arrayOut, i, ((Long) Array.get(arrayIn, i)).intValue());
+	  Array.setInt(arrayOut, i, ((Number) Array.get(arrayIn, i)).intValue());
       }
       else if (arrayIn instanceof Float[]) {
 	arrayOut = new double[len];
 	for (i = 0; i < len; i++)
-	  Array.setDouble(arrayOut, i, (Float) Array.get(arrayIn, i));
+	  Array.setDouble(arrayOut, i, (double) Array.get(arrayIn, i));
       }
       else if (arrayIn instanceof Double[]) {
 	arrayOut = new double[len];

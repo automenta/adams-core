@@ -20,6 +20,7 @@
 
 package adams.data.conversion;
 
+import adams.data.report.AbstractField;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import adams.data.report.DataType;
@@ -54,7 +55,7 @@ public class StringToFieldTest
    */
   @Override
   protected String toString(Object data) {
-    return ((Field) data).toParseableString();
+    return ((AbstractField) data).toParseableString();
   }
 
   /**

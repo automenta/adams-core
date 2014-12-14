@@ -22,6 +22,7 @@ package adams.tools;
 
 import adams.core.CleanUpHandler;
 import adams.core.Destroyable;
+import adams.core.io.FileWriter;
 import adams.core.option.OptionHandler;
 import adams.core.option.OptionUtils;
 import adams.db.DatabaseConnectionHandler;
@@ -147,7 +148,7 @@ public abstract class AbstractToolTestCase<A extends AbstractTool>
       // connect to correct database
       reconnect(props[i]);
 
-      current = (A) OptionUtils.shallowCopy((OptionHandler) setups[i], false);
+      current = (A) OptionUtils.shallowCopy(setups[i], false);
       assertNotNull("Failed to create copy of algorithm: " + OptionUtils.getCommandLine(setups[i]), current);
 
       if (current instanceof DatabaseConnectionHandler)
@@ -155,12 +156,12 @@ public abstract class AbstractToolTestCase<A extends AbstractTool>
       if (current instanceof InputFileHandler)
 	((InputFileHandler) current).setInputFile(new TmpFile(input[i]));
       if (current instanceof OutputFileGenerator)
-	((OutputFileGenerator) current).setOutputFile(new TmpFile(output[i]));
+	((FileWriter) current).setOutputFile(new TmpFile(output[i]));
 
       current.run();
 
       if (current instanceof Destroyable)
-	((Destroyable) current).destroy();
+	current.destroy();
     }
 
     // test regression
@@ -173,9 +174,9 @@ public abstract class AbstractToolTestCase<A extends AbstractTool>
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
-	((CleanUpHandler) setups[i]).cleanUp();
+	setups[i].cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);
     }
     cleanUpAfterRegression();

@@ -185,7 +185,7 @@ public abstract class AbstractMultiView
       if (m_Panel == null) {
 	result = m_Wrapped.execute();
 	if (result == null) {
-	  m_Panel = ((AbstractDisplay) m_Wrapped).getPanel();
+	  m_Panel = m_Wrapped.getPanel();
 	  ((AbstractMultiView) getParent()).addPanel(m_Wrapped, m_Panel);
 	}
       }
@@ -203,7 +203,7 @@ public abstract class AbstractMultiView
      */
     public void flushExecution() {
       if (m_Wrapped instanceof ActorHandler)
-	((ActorHandler) m_Wrapped).flushExecution();
+	((Flushable) m_Wrapped).flushExecution();
     }
 
     /**

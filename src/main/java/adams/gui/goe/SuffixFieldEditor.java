@@ -49,7 +49,7 @@ public class SuffixFieldEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((SuffixField) object).toString();
+    return object.toString();
   }
 
   /**

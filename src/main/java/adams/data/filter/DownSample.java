@@ -129,7 +129,7 @@ public class DownSample<T extends DataContainer>
     points = data.toList();
     for (i = 0; i < points.size(); i++) {
       if ((i+1) % m_NthPoint == 0)
-	result.add((DataPoint) points.get(i).getClone());
+	result.add(points.get(i).getClone());
     }
 
     return result;

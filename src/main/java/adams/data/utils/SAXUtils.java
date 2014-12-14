@@ -38,7 +38,7 @@ public class SAXUtils {
    * @return		PAA
    */
   public static double[] PAA(double[] inarray, int numwindows){  
-    double width=(double)inarray.length/(double)numwindows;
+    double width=inarray.length/numwindows;
     int whole=(int)Math.floor(width);
     
     double[] ret = new double[numwindows];
@@ -124,7 +124,7 @@ public class SAXUtils {
     for (int i=0;i<c.length;i++){
       ret+=distMatrix[(int)q[i]][(int)c[i]] * distMatrix[(int)q[i]][(int)c[i]];
     }
-    return(Math.sqrt(ret) * Math.sqrt((double)orig_n/(double)c.length));
+    return(Math.sqrt(ret) * Math.sqrt(orig_n/c.length));
   }
   
   /**

@@ -46,6 +46,7 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.TreePath;
 
 import adams.core.Utils;
+import adams.core.base.BaseObject;
 import adams.core.option.AbstractOption;
 import adams.flow.core.CallableActorReference;
 import adams.gui.core.BaseScrollPane;
@@ -79,7 +80,7 @@ public class CallableActorReferenceEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((CallableActorReference) object).getValue();
+    return ((BaseObject) object).getValue();
   }
 
   /**
@@ -307,7 +308,7 @@ public class CallableActorReferenceEditor
    * @return		true if the string is valid
    */
   protected boolean isValid(String s) {
-    return ((CallableActorReference) getValue()).isValid(s);
+    return ((BaseObject) getValue()).isValid(s);
   }
 
   /**
@@ -317,7 +318,7 @@ public class CallableActorReferenceEditor
    * @return		true if the strings are the same
    */
   protected boolean isUnchanged(String s) {
-    return s.equals(((CallableActorReference) getValue()).getValue());
+    return s.equals(((BaseObject) getValue()).getValue());
   }
 
   /**
@@ -374,7 +375,7 @@ public class CallableActorReferenceEditor
 
     if (!m_TextValue.getText().equals("" + getValue()))
       m_TextValue.setText("" + getValue());
-    m_TextValue.setToolTipText(((CallableActorReference) getValue()).getTipText());
+    m_TextValue.setToolTipText(((BaseObject) getValue()).getTipText());
 
     m_Tree.setFlowTree(FlowHelper.getTree(m_CustomEditor));
     m_Tree.setItems(findCallableActors());

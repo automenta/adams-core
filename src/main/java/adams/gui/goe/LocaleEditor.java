@@ -75,7 +75,7 @@ public class LocaleEditor
   public String getJavaInitializationString() {
     String	result;
 
-    result = LocaleHelper.class.getName() + ".valueOf(" + ((Locale) getValue()).toString() + ")";
+    result = LocaleHelper.class.getName() + ".valueOf(" + getValue().toString() + ")";
 
     return result;
   }

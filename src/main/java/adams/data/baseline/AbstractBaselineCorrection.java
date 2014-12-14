@@ -501,7 +501,7 @@ public abstract class AbstractBaselineCorrection<T extends DataContainer>
 	if (job.getCorrectedData() != null)
 	  subresult.add(job.getCorrectedData());
 	else
-	  subresult.add((DataContainer) job.getData().getHeader());
+	  subresult.add(job.getData().getHeader());
 	job.cleanUp();
       }
     }

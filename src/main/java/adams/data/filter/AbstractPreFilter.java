@@ -121,7 +121,7 @@ public abstract class AbstractPreFilter<T extends DataContainer & Mergeable>
     T			filtered;
     AbstractFilter<T>	filter;
 
-    filter   = (AbstractFilter<T>) m_Filter.shallowCopy(true);
+    filter   = m_Filter.shallowCopy(true);
     filtered = filter.filter(data);
     filter.destroy();
 

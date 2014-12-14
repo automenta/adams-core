@@ -50,6 +50,8 @@ import adams.core.option.OptionTraverser;
 import adams.data.io.input.DefaultFlowReader;
 import adams.data.io.output.DefaultFlowWriter;
 import adams.env.Environment;
+import adams.flow.control.MutableConnectedControlActor;
+import adams.flow.control.MutableControlActor;
 import adams.flow.control.Sequence;
 import adams.flow.control.SubProcess;
 import adams.flow.processor.AbstractActorProcessor;
@@ -154,7 +156,7 @@ public class ActorUtils {
    * @return		all the children (if any)
    */
   public static List<AbstractActor> enumerate(AbstractActor actor) {
-    return enumerate(actor, (Class[]) null);
+    return enumerate(actor, null);
   }
 
   /**
@@ -490,7 +492,7 @@ public class ActorUtils {
     if (LOGGER.getLevel() != Level.OFF) {
       list = new ArrayList<>();
       for (ActorHandler h: result)
-	list.add(h.getClass().getName() + "/" + ((AbstractActor) h).getFullName());
+	list.add(h.getClass().getName() + "/" + h.getFullName());
       LOGGER.fine("Actor handlers: " + list + "\n" + Utils.getStackTrace(20));
     }
 
@@ -638,7 +640,7 @@ public class ActorUtils {
 	continue;
       if (!(current instanceof CallableTransformer))
 	continue;
-      name = ((CallableTransformer) current).getCallableName().toString();
+      name = ((AbstractCallableActor) current).getCallableName().toString();
       if (!count.containsKey(name))
 	count.put(name, 1);
       else
@@ -969,28 +971,28 @@ public class ActorUtils {
     // appears as standalone
     if (isStandalone(actors[first]) && isStandalone(actors[last])) {
       handler = new Standalones();
-      ((Standalones) handler).setActors(actors);
+      ((MutableControlActor) handler).setActors(actors);
       return handler;
     }
 
     // appears as transformer
     if (isTransformer(actors[first]) && isTransformer(actors[last])) {
       handler = new SubProcess();
-      ((SubProcess) handler).setActors(actors);
+      ((MutableConnectedControlActor) handler).setActors(actors);
       return handler;
     }
 
     // appears as source
     if (isSource(actors[first]) && (actors[last] instanceof OutputProducer)) {
       handler = new SequenceSource();
-      ((SequenceSource) handler).setActors(actors);
+      ((MutableConnectedControlActor) handler).setActors(actors);
       return handler;
     }
 
     // appears as sink
     if ((actors[first] instanceof InputConsumer) && (isSink(actors[last]))) {
       handler = new Sequence();
-      ((Sequence) handler).setActors(actors);
+      ((MutableConnectedControlActor) handler).setActors(actors);
       return handler;
     }
 

@@ -37,6 +37,7 @@ import adams.core.Properties;
 import adams.core.Utils;
 import adams.db.DatabaseConnectionEstablisher;
 import adams.db.DatabaseConnectionHandler;
+import adams.db.DatabaseConnectionProvider;
 import adams.env.Environment;
 import adams.env.OptionsDefinition;
 import adams.gui.goe.CustomStringRepresentationHandler;
@@ -715,7 +716,7 @@ public class OptionUtils {
       // transfer DB connection
       if (o instanceof DatabaseConnectionHandler) {
 	((DatabaseConnectionHandler) result).setDatabaseConnection(
-	    ((DatabaseConnectionHandler) o).getDatabaseConnection());
+	    ((DatabaseConnectionProvider) o).getDatabaseConnection());
       }
     }
     catch (Exception e) {

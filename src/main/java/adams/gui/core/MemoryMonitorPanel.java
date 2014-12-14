@@ -39,6 +39,7 @@ import adams.env.MemoryMonitorDefinition;
 import adams.flow.sink.sequenceplotter.AbstractSequencePostProcessor;
 import adams.flow.sink.sequenceplotter.AligningSequences;
 import adams.flow.sink.sequenceplotter.SequencePlotterPanel;
+import adams.flow.sink.sequenceplotter.SimplePruning;
 import adams.gui.visualization.core.AbstractColorProvider;
 import adams.gui.visualization.core.AxisPanelOptions;
 import adams.gui.visualization.core.DefaultColorProvider;
@@ -105,7 +106,7 @@ public class MemoryMonitorPanel
     m_Memory        = ManagementFactory.getMemoryMXBean();
     m_Counter       = new NamedCounter();
     m_PostProcessor = new AligningSequences();
-    ((AligningSequences) m_PostProcessor).setLimit(props.getInteger("Max", 200));
+    ((SimplePruning) m_PostProcessor).setLimit(props.getInteger("Max", 200));
     m_Interval      = props.getInteger("Interval", 1000);
     m_Divisor       = props.getDouble("Divisor", 1024.0*1024.0);
   }

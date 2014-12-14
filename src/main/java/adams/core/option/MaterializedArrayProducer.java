@@ -136,7 +136,7 @@ public class MaterializedArrayProducer
       if (m_Nesting.empty())
         m_OutputList.addAll(result);
       else
-        ((ArrayList) m_Nesting.peek()).addAll(result);
+        m_Nesting.peek().addAll(result);
     }
 
     return result;

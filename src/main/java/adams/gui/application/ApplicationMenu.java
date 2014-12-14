@@ -36,6 +36,7 @@ import javax.swing.JMenuItem;
 import adams.core.Properties;
 import adams.core.logging.LoggingObject;
 import adams.gui.core.GUIHelper;
+import javax.swing.AbstractButton;
 
 /**
  * Generates the menu for the application frame.
@@ -192,7 +193,7 @@ public class ApplicationMenu
 
     for (i = 0; i < menu.getMenuComponentCount(); i++) {
       if (menu.getMenuComponent(i) instanceof JMenuItem) {
-	text = ((JMenuItem) menu.getMenuComponent(i)).getText().toLowerCase();
+	text = ((AbstractButton) menu.getMenuComponent(i)).getText().toLowerCase();
 	for (String item: items) {
 	  if (text.matches(item)) {
 	    result = i;
@@ -345,7 +346,7 @@ public class ApplicationMenu
       mnemonics = GUIHelper.getMnemonics(items);
       for (n = 0; n < menus[i].getItemCount(); n++) {
 	if (menus[i].getItem(n) instanceof JMenuItem)
-	  ((JMenuItem) menus[i].getItem(n)).setMnemonic(mnemonics[n]);
+	  menus[i].getItem(n).setMnemonic(mnemonics[n]);
       }
     }
 

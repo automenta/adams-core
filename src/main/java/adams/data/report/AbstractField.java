@@ -62,7 +62,7 @@ public abstract class AbstractField
    * Constructor. Sets the name to null and the type to UNKNOWN.
    */
   public AbstractField() {
-    this((String) null, DataType.UNKNOWN);
+    this(null, DataType.UNKNOWN);
   }
 
   /**

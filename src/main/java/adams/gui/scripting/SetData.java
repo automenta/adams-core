@@ -21,6 +21,8 @@ package adams.gui.scripting;
 
 import adams.core.option.OptionUtils;
 import adams.data.container.DataContainer;
+import adams.data.id.IDHandler;
+import adams.data.id.MutableIDHandler;
 import adams.gui.visualization.container.AbstractContainer;
 import adams.gui.visualization.container.AbstractContainerManager;
 import adams.gui.visualization.container.NamedContainer;
@@ -115,11 +117,11 @@ public class SetData
       contNew = manager.newContainer(data);
       idNew   = null;
       if (contNew instanceof NamedContainer)
-	idNew = ((NamedContainer) contNew).getID();
+	idNew = ((IDHandler) contNew).getID();
       contNew.assign(cont);
       contNew.setPayload(data);
       if (contNew instanceof NamedContainer)
-	((NamedContainer) contNew).setID(idNew);
+	((MutableIDHandler) contNew).setID(idNew);
       manager.set(index, contNew);
     }
     showStatus("");

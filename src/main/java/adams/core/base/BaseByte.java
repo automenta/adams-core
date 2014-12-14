@@ -113,7 +113,7 @@ public class BaseByte
    */
   @Override
   public String getValue() {
-    return ((Byte) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -122,7 +122,7 @@ public class BaseByte
    * @return		the byte value
    */
   public byte byteValue() {
-    return ((Byte) m_Internal).byteValue();
+    return ((Number) m_Internal).byteValue();
   }
 
   /**

@@ -27,6 +27,7 @@ import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.Document;
+import javax.swing.text.JTextComponent;
 
 /**
  * A superclass for custom editor for basic Java types.
@@ -158,7 +159,7 @@ public abstract class AbstractBasicTypePropertyEditor
   @Override
   protected void initForDisplay() {
     super.initForDisplay();
-    if (!((JTextField) m_CustomEditor).getText().equals(toString(getValue())))
-      ((JTextField) m_CustomEditor).setText(toString(getValue()));
+    if (!((JTextComponent) m_CustomEditor).getText().equals(toString(getValue())))
+      ((JTextComponent) m_CustomEditor).setText(toString(getValue()));
   }
 }

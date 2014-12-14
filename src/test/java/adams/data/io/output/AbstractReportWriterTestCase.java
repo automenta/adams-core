@@ -74,7 +74,7 @@ public abstract class AbstractReportWriterTestCase<A extends AbstractReportWrite
     m_TestHelper.copyResourceToTmp(filename);
     reader = new DefaultSimpleReportReader();
     reader.setInput(new TmpFile(filename));
-    report = (Report) reader.read().get(0);
+    report = reader.read().get(0);
     result = (D) new Report();
     result.assign(report);
     m_TestHelper.deleteFileFromTmp(filename);
@@ -202,7 +202,7 @@ public abstract class AbstractReportWriterTestCase<A extends AbstractReportWrite
       // connect to correct database
       reconnect(props[i]);
 
-      current = (A) OptionUtils.shallowCopy((OptionHandler) setups[i], false);
+      current = (A) OptionUtils.shallowCopy(setups[i], false);
       assertNotNull("Failed to create copy of algorithm: " + OptionUtils.getCommandLine(setups[i]), current);
 
       data = load(input[i]);
@@ -213,7 +213,7 @@ public abstract class AbstractReportWriterTestCase<A extends AbstractReportWrite
       assertTrue("Failed to save regression data?", ok);
 
       if (current instanceof Destroyable)
-	((Destroyable) current).destroy();
+	current.destroy();
     }
 
     // test regression
@@ -226,9 +226,9 @@ public abstract class AbstractReportWriterTestCase<A extends AbstractReportWrite
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
-	((CleanUpHandler) setups[i]).cleanUp();
+	setups[i].cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);
     }
     cleanUpAfterRegression();

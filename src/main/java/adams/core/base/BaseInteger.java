@@ -113,7 +113,7 @@ public class BaseInteger
    */
   @Override
   public String getValue() {
-    return ((Integer) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -122,7 +122,7 @@ public class BaseInteger
    * @return		the int value
    */
   public int intValue() {
-    return ((Integer) m_Internal).intValue();
+    return ((Number) m_Internal).intValue();
   }
 
   /**

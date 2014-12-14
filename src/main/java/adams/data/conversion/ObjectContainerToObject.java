@@ -19,6 +19,7 @@
  */
 package adams.data.conversion;
 
+import adams.data.container.AbstractSimpleContainer;
 import adams.data.container.ObjectContainer;
 
 /**
@@ -82,6 +83,6 @@ public class ObjectContainerToObject
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((ObjectContainer) m_Input).getContent();
+    return ((AbstractSimpleContainer<Object>) m_Input).getContent();
   }
 }

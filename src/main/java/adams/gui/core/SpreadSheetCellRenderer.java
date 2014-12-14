@@ -28,6 +28,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import adams.data.spreadsheet.Cell;
+import javax.swing.JComponent;
 
 /**
  * Custom cell renderer for displaying spreadsheets.
@@ -73,11 +74,11 @@ public class SpreadSheetCellRenderer
     // row index
     if (column == 0) {
       ((JLabel) result).setHorizontalAlignment(SwingConstants.CENTER);
-      ((JLabel) result).setToolTipText(null);
+      ((JComponent) result).setToolTipText(null);
       if (isSelected)
-	((JLabel) result).setBackground(spTable.getSelectionBackground());
+	result.setBackground(spTable.getSelectionBackground());
       else
-        ((JLabel) result).setBackground(spTable.getBackground());
+        result.setBackground(spTable.getBackground());
       return result;
     }
     
@@ -90,29 +91,29 @@ public class SpreadSheetCellRenderer
       
       // background and hint
       if (cell.isMissing()) {
-        ((JLabel) result).setToolTipText("missing");
+        ((JComponent) result).setToolTipText("missing");
         if (isSelected)
-          ((JLabel) result).setBackground(Color.GRAY);
+          result.setBackground(Color.GRAY);
         else
-          ((JLabel) result).setBackground(Color.LIGHT_GRAY);
+          result.setBackground(Color.LIGHT_GRAY);
       }
       else {
-        ((JLabel) result).setToolTipText(null);
+        ((JComponent) result).setToolTipText(null);
         if (isSelected) {
           if ((numericVal != null) && (numericVal >= 0) && (spTable.hasPositiveBackground()))
-            ((JLabel) result).setBackground(spTable.getPositiveBackground().darker());
+            result.setBackground(spTable.getPositiveBackground().darker());
           else if ((numericVal != null) && (numericVal < 0) && (spTable.hasNegativeBackground()))
-            ((JLabel) result).setBackground(spTable.getNegativeBackground().darker());
+            result.setBackground(spTable.getNegativeBackground().darker());
           else
-            ((JLabel) result).setBackground(spTable.getSelectionBackground());
+            result.setBackground(spTable.getSelectionBackground());
         }
         else {
           if ((numericVal != null) && (numericVal >= 0) && (spTable.hasPositiveBackground()))
-            ((JLabel) result).setBackground(spTable.getPositiveBackground());
+            result.setBackground(spTable.getPositiveBackground());
           else if ((numericVal != null) && (numericVal < 0) && (spTable.hasNegativeBackground()))
-            ((JLabel) result).setBackground(spTable.getNegativeBackground());
+            result.setBackground(spTable.getNegativeBackground());
           else
-            ((JLabel) result).setBackground(spTable.getBackground());
+            result.setBackground(spTable.getBackground());
         }
       }
 
@@ -124,11 +125,11 @@ public class SpreadSheetCellRenderer
     }
     else {
       // alignment
-      ((JLabel) result).setToolTipText("missing");
+      ((JComponent) result).setToolTipText("missing");
       if (isSelected)
-	((JLabel) result).setBackground(Color.GRAY);
+	result.setBackground(Color.GRAY);
       else
-	((JLabel) result).setBackground(Color.LIGHT_GRAY);
+	result.setBackground(Color.LIGHT_GRAY);
     }
 
     return result;

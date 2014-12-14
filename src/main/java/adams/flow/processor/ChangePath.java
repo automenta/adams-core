@@ -204,7 +204,7 @@ public class ChangePath
       protected Object update(Object obj) {
 	Object result = null;
 	Class cls = obj.getClass();
-	String str = ((File) obj).toString();
+	String str = obj.toString();
 	String newStr = null;
 	if (m_OldPathIsRegExp) {
 	  if (str.matches(m_OldPath))

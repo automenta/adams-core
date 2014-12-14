@@ -133,7 +133,7 @@ public class HistogramFactory {
       seq.setID((manager.count()+1) + ": " + numBins + " bins");
       seq.setComparison(Comparison.X);
       for (i = 0; i < numBins; i++)
-	seq.add(new XYSequencePoint((double) i, (Double) cont.getCell(0, i)));
+	seq.add(new XYSequencePoint(i, (Double) cont.getCell(0, i)));
       seqcont = manager.newContainer(seq);
       manager.add(seqcont);
       manager.finishUpdate();

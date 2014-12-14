@@ -117,7 +117,7 @@ public abstract class AbstractSimpleCSVReportReader<T extends Report>
     for (i = 0; i < sheet.getRowCount(); i++) {
       row      = sheet.getRow(i);
       fieldStr = row.getCell(colField).getContent();
-      type     = (DataType) DataType.valueOf((AbstractOption) null, row.getCell(colType).getContent());
+      type     = DataType.valueOf((AbstractOption) null, row.getCell(colType).getContent());
       value    = row.getCell(colValue).getContent();
       if (fieldStr.equals(Report.PROPERTY_PARENTID)) {
 	result.get(0).setDatabaseID(Integer.parseInt(value));

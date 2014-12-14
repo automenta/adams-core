@@ -19,6 +19,7 @@
  */
 package adams.data.conversion;
 
+import java.util.Collection;
 import net.minidev.json.JSONArray;
 
 /**
@@ -86,6 +87,6 @@ public class JsonArrayToArray
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((JSONArray) m_Input).toArray();
+    return ((Collection<Object>) m_Input).toArray();
   }
 }

@@ -69,6 +69,7 @@ import adams.gui.core.MenuBarProvider;
 import adams.gui.scripting.ScriptingEngine;
 import adams.gui.scripting.ScriptingEngineHandler;
 import adams.gui.scripting.ScriptingLogPanel;
+import java.awt.Frame;
 
 /**
  * Abstract frame class for applications.
@@ -822,7 +823,7 @@ public abstract class AbstractApplicationFrame
     if (c != null) {
       createTitle(c.getTitle());
       if (c instanceof ChildFrame)
-	((ChildFrame) c).setExtendedState(JFrame.NORMAL);
+	((Frame) c).setExtendedState(JFrame.NORMAL);
       c.toFront();
       c.requestFocus();
       result = true;
@@ -940,7 +941,7 @@ public abstract class AbstractApplicationFrame
       child = iter.next();
       try {
 	if (child instanceof ChildFrame)
-	  ((ChildFrame) child).setExtendedState(JFrame.ICONIFIED);
+	  ((Frame) child).setExtendedState(JFrame.ICONIFIED);
       }
       catch (Exception e) {
 	e.printStackTrace();
@@ -960,7 +961,7 @@ public abstract class AbstractApplicationFrame
       child = iter.next();
       try {
 	if (child instanceof ChildFrame)
-	  ((ChildFrame) child).setExtendedState(JFrame.NORMAL);
+	  ((Frame) child).setExtendedState(JFrame.NORMAL);
     }
       catch (Exception e) {
 	e.printStackTrace();

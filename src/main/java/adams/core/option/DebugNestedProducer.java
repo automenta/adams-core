@@ -104,7 +104,7 @@ public class DebugNestedProducer
       if (m_Nesting.empty())
 	m_Output.addAll(result);
       else
-	((List) m_Nesting.peek()).addAll(result);
+	m_Nesting.peek().addAll(result);
     }
     else {
       result = super.processOption(option);

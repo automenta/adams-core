@@ -50,6 +50,7 @@ import adams.flow.sink.sequenceplotter.SequencePlotSequence;
 import adams.flow.sink.sequenceplotter.SequencePlotterPanel;
 import adams.flow.sink.sequenceplotter.SimplePlotUpdater;
 import adams.gui.core.BasePanel;
+import adams.gui.visualization.container.ContainerListManager;
 import adams.gui.visualization.core.AbstractColorProvider;
 import adams.gui.visualization.core.AxisPanelOptions;
 import adams.gui.visualization.core.DefaultColorProvider;
@@ -867,7 +868,7 @@ public class SequencePlotter
   @Override
   public void clearPanel() {
     if (m_Panel != null) {
-      ((SequencePlotterPanel) m_Panel).getContainerManager().clear();
+      ((ContainerListManager<XYSequenceContainerManager>) m_Panel).getContainerManager().clear();
       ((SequencePlotterPanel) m_Panel).getMarkerContainerManager().clear();
     }
   }
@@ -1152,10 +1153,10 @@ public class SequencePlotter
 	    manager = ((SequencePlotterPanel) m_Panel).getContainerManager();
 	    break;
 	  case MARKER:
-	    manager = ((SequencePlotterPanel) m_Panel).getMarkerContainerManager();
+	    manager = m_Panel.getMarkerContainerManager();
 	    break;
 	  case OVERLAY:
-	    manager = ((SequencePlotterPanel) m_Panel).getOverlayContainerManager();
+	    manager = m_Panel.getOverlayContainerManager();
 	    break;
 	  default:
 	    throw new IllegalStateException("Unhandled plot container content type: " + type);

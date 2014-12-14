@@ -190,7 +190,7 @@ public class SpreadSheet
     SpreadSheet	result;
     
     try {
-      result = (SpreadSheet) getClass().newInstance();
+      result = getClass().newInstance();
       result.setDataRowClass(getDataRowClass());
     }
     catch (Exception e) {

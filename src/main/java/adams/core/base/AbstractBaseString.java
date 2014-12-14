@@ -122,7 +122,7 @@ public abstract class AbstractBaseString
    * @return		true if the string is empty, i.e., length 0
    */
   public boolean isEmpty() {
-    return (((String) m_Internal).length() == 0);
+    return (((CharSequence) m_Internal).length() == 0);
   }
 
   /**

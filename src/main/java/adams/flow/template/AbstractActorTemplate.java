@@ -181,7 +181,7 @@ public abstract class AbstractActorTemplate
     if (o == null)
       return 1;
 
-    return OptionUtils.getCommandLine(this).compareTo(OptionUtils.getCommandLine((AbstractActorTemplate) o));
+    return OptionUtils.getCommandLine(this).compareTo(OptionUtils.getCommandLine(o));
   }
 
   /**

@@ -113,7 +113,7 @@ public class OptVar
 	return(1);
       }
     }
-    return((Math.abs((m_max-m_min))/(double)(numSplits-1)));
+    return((Math.abs((m_max-m_min))/(numSplits-1)));
   }
   public String toString() {
     return("min="+m_min+",max="+m_max);

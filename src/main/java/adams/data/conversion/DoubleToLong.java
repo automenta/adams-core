@@ -84,6 +84,6 @@ public class DoubleToLong
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Double) m_Input).longValue();
+    return ((Number) m_Input).longValue();
   }
 }

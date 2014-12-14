@@ -135,7 +135,7 @@ public abstract class AbstractFastWavelet<T extends DataContainer>
      * @return		the generated string
      */
     public static String toString(AbstractOption option, Object object) {
-      return ((WaveletType) object).toRaw();
+      return ((EnumWithCustomDisplay<WaveletType>) object).toRaw();
     }
 
     /**

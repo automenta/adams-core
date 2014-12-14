@@ -130,7 +130,7 @@ public class OptionManager
 
     for (i = 0; i < m_Options.size(); i++) {
       if (m_Options.get(i) instanceof ClassOption) {
-	current = ((ClassOption) m_Options.get(i)).getCurrentValue();
+	current = m_Options.get(i).getCurrentValue();
 	if (current instanceof OptionHandler)
 	  ((OptionHandler) current).getOptionManager().setThrowExceptions(value);
       }

@@ -86,7 +86,7 @@ public class FloatEditor
    */
   @Override
   protected String toString(Object obj) {
-    return Utils.doubleToString((Float) obj, 8);
+    return Utils.doubleToString((double) obj, 8);
   }
 
   /**

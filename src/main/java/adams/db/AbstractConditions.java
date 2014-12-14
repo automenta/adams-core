@@ -84,7 +84,7 @@ public abstract class AbstractConditions
     if (o == null)
       return 1;
 
-    return OptionUtils.getCommandLine(this).compareTo(OptionUtils.getCommandLine((AbstractConditions) o));
+    return OptionUtils.getCommandLine(this).compareTo(OptionUtils.getCommandLine(o));
   }
 
   /**

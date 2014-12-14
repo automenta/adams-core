@@ -81,7 +81,7 @@ public class IncrementalSumPaintlet
     newList = (XYSequence) data.getHeader();
     sum     = 0;
     for (i = 0; i < points.size(); i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
       sum += curr.getY() - axisY.getMinimum();
       newPoint = (XYSequencePoint) curr.getClone();
       newPoint.setY(sum);
@@ -92,7 +92,7 @@ public class IncrementalSumPaintlet
       sum = 10e6;
     factor = 1 / sum * (axisY.getMaximum() - axisY.getMinimum());
     for (i = 0; i < points.size(); i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
       curr.setY((curr.getY() - axisY.getMinimum()) * factor + axisY.getMinimum());
     }
     

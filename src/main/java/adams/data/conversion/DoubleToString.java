@@ -235,7 +235,7 @@ public class DoubleToString
   @Override
   protected Object doConvert() throws Exception {
     if (m_NumDecimals == -1) {
-      return LocaleHelper.getSingleton().getNumberFormat(m_Locale).format((Double) m_Input);
+      return LocaleHelper.getSingleton().getNumberFormat(m_Locale).format(m_Input);
     }
     else {
       if (m_FixedDecimals)

@@ -71,6 +71,6 @@ public class IntToString
    * @throws Exception	if something goes wrong with the conversion
    */
   protected Object doConvert() throws Exception {
-    return ((Integer) m_Input).toString();
+    return m_Input.toString();
   }
 }

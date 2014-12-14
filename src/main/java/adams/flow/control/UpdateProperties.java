@@ -31,6 +31,7 @@ import adams.flow.core.ActorExecution;
 import adams.flow.core.ActorHandler;
 import adams.flow.core.ActorHandlerInfo;
 import adams.flow.core.ActorUtils;
+import adams.flow.core.Flushable;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.OutputProducer;
 import adams.flow.core.PropertyHelper;
@@ -546,7 +547,7 @@ public class UpdateProperties
    */
   public void flushExecution() {
     if (m_SubActor instanceof ActorHandler)
-      ((ActorHandler) m_SubActor).flushExecution();
+      ((Flushable) m_SubActor).flushExecution();
   }
 
   /**

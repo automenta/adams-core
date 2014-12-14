@@ -25,6 +25,8 @@ import junit.framework.TestSuite;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import adams.env.Environment;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * Tests the JsonToString conversion.
@@ -56,13 +58,13 @@ public class JsonToStringTest
     result = new Object[4];
     result[0] = new JSONObject();
     result[1] = new JSONObject();
-    ((JSONObject) result[1]).put("hey", new JSONArray());
-    ((JSONObject) result[1]).put("blah", new JSONObject());
+    ((Map<String, Object>) result[1]).put("hey", new JSONArray());
+    ((Map<String, Object>) result[1]).put("blah", new JSONObject());
     result[2] = new JSONArray();
     result[3] = new JSONArray();
-    ((JSONArray) result[3]).add(new Integer(1));
-    ((JSONArray) result[3]).add(new Integer(2));
-    ((JSONArray) result[3]).add(new Integer(3));
+    ((Collection<Object>) result[3]).add(new Integer(1));
+    ((Collection<Object>) result[3]).add(new Integer(2));
+    ((Collection<Object>) result[3]).add(new Integer(3));
     
     return result;
   }

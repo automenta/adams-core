@@ -31,9 +31,11 @@ import adams.core.QuickInfoHelper;
 import adams.flow.core.Token;
 import adams.gui.core.BasePanel;
 import adams.gui.core.BaseScrollPane;
+import adams.gui.core.BaseTree;
 import adams.gui.core.ExtensionFileFilter;
 import adams.gui.core.json.JsonTree;
 import adams.gui.core.json.JsonTreeWithPreview;
+import java.awt.Component;
 
 /**
  <!-- globalinfo-start -->
@@ -311,7 +313,7 @@ public class JsonDisplay
       if (m_Tree instanceof adams.gui.core.json.JsonTreeWithPreview)
 	((adams.gui.core.json.JsonTreeWithPreview) m_Tree).getTree().expandAll();
       else if (m_Tree instanceof adams.gui.core.json.JsonTree)
-	((adams.gui.core.json.JsonTree) m_Tree).expandAll();
+	((BaseTree) m_Tree).expandAll();
     }
   }
 
@@ -342,7 +344,7 @@ public class JsonDisplay
       m_Tree = new adams.gui.core.json.JsonTree();
       ((JsonTree) m_Tree).setSortKeys(m_SortKeys);
       result = new BasePanel(new BorderLayout());
-      result.add(new BaseScrollPane((JComponent) m_Tree), BorderLayout.CENTER);
+      result.add(new BaseScrollPane((Component) m_Tree), BorderLayout.CENTER);
     }
     
     return result;
@@ -390,12 +392,12 @@ public class JsonDisplay
         if (m_Preview) {
           m_Tree = new adams.gui.core.json.JsonTreeWithPreview();
           ((JsonTreeWithPreview) m_Tree).setSortKeys(m_SortKeys);
-          add((JComponent) m_Tree, BorderLayout.CENTER);
+          add((Component) m_Tree, BorderLayout.CENTER);
         }
         else {
           m_Tree = new adams.gui.core.json.JsonTree();
           ((JsonTree) m_Tree).setSortKeys(m_SortKeys);
-          add(new BaseScrollPane((JComponent) m_Tree), BorderLayout.CENTER);
+          add(new BaseScrollPane((Component) m_Tree), BorderLayout.CENTER);
         }
       }
       @Override
@@ -405,7 +407,7 @@ public class JsonDisplay
 	  if (m_Tree instanceof adams.gui.core.json.JsonTreeWithPreview)
 	    ((adams.gui.core.json.JsonTreeWithPreview) m_Tree).getTree().expandAll();
 	  else if (m_Tree instanceof adams.gui.core.json.JsonTree)
-	    ((adams.gui.core.json.JsonTree) m_Tree).expandAll();
+	    ((BaseTree) m_Tree).expandAll();
 	}
       }
       @Override

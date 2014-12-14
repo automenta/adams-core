@@ -205,7 +205,7 @@ public class AxisPanel
     m_ShowGridLines          = other.getShowGridLines();
     m_Visibility             = other.getVisibility();
     try {
-      m_Model = (AbstractAxisModel) other.getAxisModel().getClass().newInstance();
+      m_Model = other.getAxisModel().getClass().newInstance();
     }
     catch (Exception e) {
       System.err.println("Failed to create instance of axis model:");
@@ -1313,7 +1313,7 @@ public class AxisPanel
 	    else if (isLast(ticks, i, flipped, height))
 	      y += bounds.getHeight() / 2 + 2;
 	    y = (int) (y + bounds.getHeight() / 2);
-	    x = (int) (m_LengthTicks + 4);
+	    x = (m_LengthTicks + 4);
 	    tick.setBounds(x, y, (int) bounds.getWidth(), (int) bounds.getHeight());
 	    if (!hasOverlap(tick, lastTick)) {
 	      g.drawString(tick.getLabel(), x, y);
@@ -1389,7 +1389,7 @@ public class AxisPanel
 	    else if (isLast(ticks, i, flipped, width))
 	      x -= bounds.getWidth() / 2;
 	    x = (int) (x - bounds.getWidth() / 2);
-	    y = (int) (height - (m_LengthTicks + 4));
+	    y = (height - (m_LengthTicks + 4));
 	    tick.setBounds(x, y, (int) bounds.getWidth(), (int) bounds.getHeight());
 	    if (!hasOverlap(tick, lastTick)) {
 	      g.drawString(tick.getLabel(), x, y);
@@ -1481,7 +1481,7 @@ public class AxisPanel
 	g2d.rotate(Math.PI * 0.5);
 	x = (int) ((height - textBoundsName.getWidth()) / 2);
 	if (m_AxisNameCentered)
-	  y = (int) (-(width / 2) + m_LengthTicks);
+	  y = (-(width / 2) + m_LengthTicks);
 	else
 	  y = (int) -(width - textBoundsName.getHeight() - 4);
 	g.setColor(getBackground());
@@ -1510,7 +1510,7 @@ public class AxisPanel
 
 	x = (int) ((width - textBoundsName.getWidth()) / 2);
 	if (m_AxisNameCentered)
-	  y = (int) ((height / 2) + m_LengthTicks);
+	  y = ((height / 2) + m_LengthTicks);
 	else
 	  y = (int) (height - textBoundsName.getHeight());
 	g.setColor(getBackground());
@@ -1536,7 +1536,7 @@ public class AxisPanel
 
 	x = (int) ((width - textBoundsName.getWidth()) / 2);
 	if (m_AxisNameCentered)
-	  y = (int) ((height / 2) + m_LengthTicks);
+	  y = ((height / 2) + m_LengthTicks);
 	else
 	  y = (int) (textBoundsName.getHeight() + 4);
 	g.setColor(getBackground());

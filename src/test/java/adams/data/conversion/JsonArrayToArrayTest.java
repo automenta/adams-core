@@ -24,6 +24,7 @@ import junit.framework.Test;
 import junit.framework.TestSuite;
 import net.minidev.json.JSONArray;
 import adams.env.Environment;
+import java.util.Collection;
 
 /**
  * Tests the JsonArrayToArray conversion.
@@ -55,9 +56,9 @@ public class JsonArrayToArrayTest
     result = new Object[2];
     result[0] = new JSONArray();
     result[1] = new JSONArray();
-    ((JSONArray) result[1]).add(new Integer(1));
-    ((JSONArray) result[1]).add(new Integer(2));
-    ((JSONArray) result[1]).add(new Integer(3));
+    ((Collection<Object>) result[1]).add(new Integer(1));
+    ((Collection<Object>) result[1]).add(new Integer(2));
+    ((Collection<Object>) result[1]).add(new Integer(3));
     
     return result;
   }

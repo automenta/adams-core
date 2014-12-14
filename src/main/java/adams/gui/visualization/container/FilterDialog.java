@@ -36,6 +36,7 @@ import javax.swing.event.ChangeListener;
 import adams.data.container.DataContainer;
 import adams.data.filter.AbstractFilter;
 import adams.data.filter.PassThrough;
+import adams.gui.chooser.AbstractChooserPanel;
 import adams.gui.core.BaseDialog;
 import adams.gui.event.FilterEvent;
 import adams.gui.event.FilterListener;
@@ -119,7 +120,7 @@ public class FilterDialog<T extends DataContainer>
     m_PanelFilter.setPrefix("Filter");
     m_PanelFilter.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-	m_CurrentFilter = (AbstractFilter) ((GenericObjectEditorPanel) e.getSource()).getCurrent();
+	m_CurrentFilter = (AbstractFilter) ((AbstractChooserPanel) e.getSource()).getCurrent();
       }
     });
 

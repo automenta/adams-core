@@ -167,7 +167,7 @@ public class RemoveByName
     if (!(data instanceof MutableReportHandler))
       return data;
     
-    oldReport = ((MutableReportHandler) data).getReport();
+    oldReport = ((ReportHandler) data).getReport();
     newReport = Report.newInstance(oldReport);
     
     for (AbstractField field: oldReport.getFields()) {

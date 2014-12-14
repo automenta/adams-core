@@ -220,7 +220,7 @@ public class StickPaintlet
     prevX  = axisX.valueToPos(points.get(start).getX());
 
     for (i = start; i <= end; i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
 
       // determine coordinates
       currX  = axisX.valueToPos(XYSequencePoint.toDouble(curr.getX()));

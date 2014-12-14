@@ -95,8 +95,8 @@ public class ActorTreePanel
 	  result = ((AbstractInfoNode) node).getItem();
 	}
 	else if (node instanceof ClassNode) {
-	  if (((ClassNode) node).isItemLeaf())
-	    result = ((ClassNode) node).getItem();
+	  if (((DotNotationNode) node).isItemLeaf())
+	    result = ((DotNotationNode) node).getItem();
 	}
 	return result;
       }
@@ -216,7 +216,7 @@ public class ActorTreePanel
     else
       dialog = new HelpDialog(getParentFrame());
     producer = new HtmlHelpProducer();
-    producer.produce((OptionHandler) actor);
+    producer.produce(actor);
     dialog.setHelp(producer.getOutput(), true);
     dialog.setTitle("Help on " + actor.getClass().getName());
     dialog.setLocation(

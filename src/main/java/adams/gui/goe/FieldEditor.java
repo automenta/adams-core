@@ -76,7 +76,7 @@ public class FieldEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((Field) object).toParseableString();
+    return ((AbstractField) object).toParseableString();
   }
 
   /**
@@ -185,7 +185,7 @@ public class FieldEditor
   @Override
   protected void initForDisplay() {
     super.initForDisplay();
-    m_SelectFieldPanel.setItem((Field) getValue());
+    m_SelectFieldPanel.setItem((AbstractField) getValue());
     m_SelectFieldPanel.grabFocus();
   }
 

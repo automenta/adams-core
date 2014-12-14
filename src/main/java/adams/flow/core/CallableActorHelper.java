@@ -269,7 +269,7 @@ public class CallableActorHelper
       }
       result = new CallableActors();
       if (root instanceof MutableActorHandler) 
-	((MutableActorHandler) root).add(0, (AbstractActor) result);
+	((MutableActorHandler) root).add(0, result);
       else
 	System.err.println(
 	    "Cannot add " + CallableActors.class.getSimpleName() + " container to root actor!");

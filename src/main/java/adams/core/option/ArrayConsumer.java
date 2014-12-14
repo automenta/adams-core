@@ -28,6 +28,7 @@ import java.util.logging.Level;
 import adams.core.Utils;
 import adams.core.Variables;
 import adams.core.logging.LoggingObject;
+import adams.core.logging.LoggingSupporter;
 
 /**
  * Parses a string array of options. The element in the string array must
@@ -388,7 +389,7 @@ public class ArrayConsumer
       msg = OptionUtils.checkRemainingOptions(options);
       if (msg != null) {
 	if (handler instanceof LoggingObject)
-	  ((LoggingObject) handler).getLogger().severe(msg);
+	  ((LoggingSupporter) handler).getLogger().severe(msg);
 	else
 	  System.err.println(msg);
       }

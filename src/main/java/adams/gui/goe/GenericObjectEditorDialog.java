@@ -208,7 +208,7 @@ public class GenericObjectEditorDialog
     if (m_Editor.getCustomEditor() instanceof GOEPanel)
       ((GOEPanel) m_Editor.getCustomEditor()).addOkListener(this);
     if (m_Editor.supportsCustomEditor()) {
-      view = (Component) m_Editor.getCustomEditor();
+      view = m_Editor.getCustomEditor();
     }
     else {
       view        = EditorHelper.findView(m_Editor);

@@ -393,7 +393,7 @@ public class EnterValue
     }
     
     if (m_SelectionValues.length > 0)
-      value = (String) GUIHelper.showInputDialog(GUIHelper.getParentComponent(getParentComponent()), msg, initial, BaseObject.toStringArray(m_SelectionValues), !m_UseButtons, getName());
+      value = GUIHelper.showInputDialog(GUIHelper.getParentComponent(getParentComponent()), msg, initial, BaseObject.toStringArray(m_SelectionValues), !m_UseButtons, getName());
     else
       value = GUIHelper.showInputDialog(GUIHelper.getParentComponent(getParentComponent()), msg, initial, getName());
 

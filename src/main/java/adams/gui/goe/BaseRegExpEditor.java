@@ -38,6 +38,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import adams.core.Utils;
+import adams.core.base.AbstractBaseString;
 import adams.core.base.BaseObject;
 import adams.core.base.BaseRegExp;
 import adams.core.option.AbstractOption;
@@ -46,6 +47,7 @@ import adams.gui.core.BaseTextArea;
 import adams.gui.core.BrowserHelper;
 import adams.gui.core.GUIHelper;
 import adams.gui.dialog.ApprovalDialog;
+import javax.swing.JTextArea;
 
 /**
  * Editor specifically designed for entering regular expression. In order to
@@ -72,7 +74,7 @@ public class BaseRegExpEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((BaseRegExp) object).stringValue();
+    return ((AbstractBaseString) object).stringValue();
   }
 
   /**
@@ -106,7 +108,7 @@ public class BaseRegExpEditor
     panelInput = new JPanel(new BorderLayout());
     panelAll.add(panelInput, BorderLayout.CENTER);
     m_TextValue = new BaseTextArea(1, 20);
-    ((BaseTextArea) m_TextValue).setLineWrap(true);
+    ((JTextArea) m_TextValue).setLineWrap(true);
     m_TextValue.addKeyListener(new KeyAdapter() {
       @Override
       public void keyPressed(KeyEvent e) {
@@ -241,9 +243,9 @@ public class BaseRegExpEditor
     resetChosenOption();
     
     if (m_CheckBoxEscapedInput.isSelected())
-      value = Utils.backQuoteChars(((BaseRegExp) getValue()).getValue());
+      value = Utils.backQuoteChars(((BaseObject) getValue()).getValue());
     else
-      value = ((BaseRegExp) getValue()).getValue();
+      value = ((BaseObject) getValue()).getValue();
 
     if (!m_TextValue.getText().equals(value))
       m_TextValue.setText(value);
@@ -259,7 +261,7 @@ public class BaseRegExpEditor
    */
   @Override
   protected String getStringToPaint() {
-    return ((BaseRegExp) getValue()).stringValue();
+    return ((AbstractBaseString) getValue()).stringValue();
   }
 
   /**

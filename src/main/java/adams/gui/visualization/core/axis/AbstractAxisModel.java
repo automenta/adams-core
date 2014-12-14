@@ -593,7 +593,7 @@ public abstract class AbstractAxisModel
     else
       size = getParent().getLength();
     range           = Math.abs(max - min);
-    offset          = range / size * (double) m_PixelOffset;
+    offset          = range / size * m_PixelOffset;
     m_ActualMinimum = min - range * m_MarginBottom - offset;
     m_ActualMaximum = max + range * m_MarginTop    - offset;
 
@@ -611,7 +611,7 @@ public abstract class AbstractAxisModel
     m_Maximum           = model.m_Maximum;
     m_MarginTop         = model.m_MarginTop;
     m_MarginBottom      = model.m_MarginBottom;
-    m_ZoomHandler       = (ZoomHandler) model.m_ZoomHandler.getClone();
+    m_ZoomHandler       = model.m_ZoomHandler.getClone();
     m_PixelOffsets      = (Stack<Integer>) model.m_PixelOffsets.clone();
     m_PixelOffset       = model.getPixelOffset();
     m_CustomerFormatter = model.m_CustomerFormatter;

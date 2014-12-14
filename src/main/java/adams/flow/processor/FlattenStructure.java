@@ -30,6 +30,7 @@ import adams.core.option.OptionTraverser;
 import adams.flow.control.AbstractTee;
 import adams.flow.control.Branch;
 import adams.flow.control.LoadBalancer;
+import adams.flow.control.MutableConnectedControlActor;
 import adams.flow.control.Sequence;
 import adams.flow.control.WhileLoop;
 import adams.flow.core.AbstractActor;
@@ -83,12 +84,12 @@ public class FlattenStructure
   protected void processActor(AbstractActor actor) {
     actor.getOptionManager().traverse(new OptionTraverser() {
       protected void flattenTee(AbstractTee tee) {
-	AbstractActor[] actors = ((Sequence) tee.get(0)).getActors();
+	AbstractActor[] actors = ((MutableConnectedControlActor) tee.get(0)).getActors();
 	tee.setActors(actors);
 	m_Modified = true;
       }
       protected void flattenLoadBalancer(LoadBalancer load) {
-	AbstractActor[] actors = ((Sequence) load.get(0)).getActors();
+	AbstractActor[] actors = ((MutableConnectedControlActor) load.get(0)).getActors();
 	load.setLoadActors(actors);
 	m_Modified = true;
       }
@@ -100,7 +101,7 @@ public class FlattenStructure
 	m_Modified = true;
       }
       protected void flattenWhileLoop(WhileLoop load) {
-	AbstractActor[] actors = ((Sequence) load.get(0)).getActors();
+	AbstractActor[] actors = ((MutableConnectedControlActor) load.get(0)).getActors();
 	load.setActors(actors);
 	m_Modified = true;
       }

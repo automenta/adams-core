@@ -838,7 +838,7 @@ public class TextPanel
 
     if ((SendToActionUtils.isAvailable(String.class, cls))) {
       result = m_TextPanel.getContent();
-      if (((String) result).length() == 0)
+      if (((CharSequence) result).length() == 0)
 	result = null;
     }
     else if (SendToActionUtils.isAvailable(JTextComponent.class, cls)) {

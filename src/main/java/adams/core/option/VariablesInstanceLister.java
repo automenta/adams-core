@@ -21,6 +21,7 @@ package adams.core.option;
 
 import adams.core.Variables;
 import adams.flow.core.AbstractActor;
+import adams.flow.core.Actor;
 
 /**
  <!-- globalinfo-start -->
@@ -127,7 +128,7 @@ public class VariablesInstanceLister
     m_Result.append("\t");
     m_Result.append(option.getOwner().getVariables().hashCode());
     if (option.getOptionHandler() instanceof AbstractActor) {
-      vars = ((AbstractActor) option.getOptionHandler()).getVariables();
+      vars = ((Actor) option.getOptionHandler()).getVariables();
       if (vars != null)
 	m_Result.append("/" + vars.hashCode());
       else

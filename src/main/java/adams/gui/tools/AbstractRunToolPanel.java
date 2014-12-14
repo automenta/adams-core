@@ -92,7 +92,7 @@ public abstract class AbstractRunToolPanel
     panelTool.setPrefix("Tool");
     panelTool.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-	m_CurrentTool = (AbstractTool) ((GenericObjectEditorPanel) e.getSource()).getCurrent();
+	m_CurrentTool = (AbstractTool) ((AbstractChooserPanel) e.getSource()).getCurrent();
       }
     });
     panelTool.setPopupMenuCustomizer(new PopupMenuCustomizer() {

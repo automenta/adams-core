@@ -42,6 +42,7 @@ import adams.flow.core.ActorHandler;
 import adams.flow.core.ActorHandlerInfo;
 import adams.flow.core.ActorUtils;
 import adams.flow.core.Compatibility;
+import adams.flow.core.Flushable;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.MutableActorHandler;
 import adams.flow.core.OutputProducer;
@@ -558,7 +559,7 @@ public class Branch
     // gather all common classes
     all = new HashSet<>();
     for (i = 0; i < size(); i++) {
-      actor = (AbstractActor) get(i);
+      actor = get(i);
       if (actor instanceof InputConsumer) {
 	cls  = ((InputConsumer) actor).accepts();
 	curr = new HashSet<>();
@@ -891,7 +892,7 @@ public class Branch
       if (get(i).getSkip())
 	continue;
       if (get(i) instanceof ActorHandler)
-	((ActorHandler) get(i)).flushExecution();
+	((Flushable) get(i)).flushExecution();
     }
   }
 

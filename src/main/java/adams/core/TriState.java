@@ -88,7 +88,7 @@ public enum TriState
    * @return		the enum or null if not found
    */
   public TriState parse(String s) {
-    return (TriState) valueOf((AbstractOption) null, s);
+    return valueOf((AbstractOption) null, s);
   }
 
   /**
@@ -99,7 +99,7 @@ public enum TriState
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((TriState) object).toRaw();
+    return ((EnumWithCustomDisplay<TriState>) object).toRaw();
   }
 
   /**

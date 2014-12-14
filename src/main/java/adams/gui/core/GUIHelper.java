@@ -504,10 +504,10 @@ public class GUIHelper {
     if ((percWidth <= 0) || (percWidth > 1))
       percWidth = 0.95;
 
-    if (height > (double) screen.height * percHeight)
-      height = (int) ((double) screen.height * percHeight);
-    if (width > (double) screen.width * percWidth)
-      width = (int) ((double) screen.width * percWidth);
+    if (height > screen.height * percHeight)
+      height = (int) (screen.height * percHeight);
+    if (width > screen.width * percWidth)
+      width = (int) (screen.width * percWidth);
 
     window.setSize(width, height);
     window.validate();
@@ -1323,7 +1323,7 @@ public class GUIHelper {
     else if (parent instanceof Dialog)
       dlg = ApprovalDialog.getDialog((Dialog) parent, ModalityType.APPLICATION_MODAL);
     else
-      dlg = ApprovalDialog.getDialog((Dialog) null, ModalityType.APPLICATION_MODAL);
+      dlg = ApprovalDialog.getDialog(null, ModalityType.APPLICATION_MODAL);
     dlg.setTitle(title);
     dlg.setApproveCaption("Close");
     dlg.setApproveMnemonic('l');
@@ -1380,7 +1380,7 @@ public class GUIHelper {
     else if (parent instanceof Dialog)
       dlg = ApprovalDialog.getDialog((Dialog) parent, ModalityType.DOCUMENT_MODAL);
     else
-      dlg = ApprovalDialog.getDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+      dlg = ApprovalDialog.getDialog(null, ModalityType.DOCUMENT_MODAL);
     dlg.setTitle(title);
     dlg.setDefaultCloseOperation(TextDialog.DISPOSE_ON_CLOSE);
     dlg.setIconImage(GUIHelper.getIcon("information.png").getImage());
@@ -1453,7 +1453,7 @@ public class GUIHelper {
     else if (parent instanceof Dialog)
       dlg = ApprovalDialog.getConfirmationDialog((Dialog) parent, ModalityType.APPLICATION_MODAL);
     else
-      dlg = ApprovalDialog.getConfirmationDialog((Dialog) null, ModalityType.APPLICATION_MODAL);
+      dlg = ApprovalDialog.getConfirmationDialog(null, ModalityType.APPLICATION_MODAL);
     dlg.setTitle(title);
     dlg.setDefaultCloseOperation(TextDialog.DISPOSE_ON_CLOSE);
     dlg.setIconImage(GUIHelper.getIcon("question.png").getImage());
@@ -1494,7 +1494,7 @@ public class GUIHelper {
    * @return		the value entered, null if cancelled
    */
   public static String showInputDialog(Component parent, String msg, String initial) {
-    return showInputDialog(parent, msg, initial, (String) null);
+    return showInputDialog(parent, msg, initial, (String[])null);
   }
 
   /**

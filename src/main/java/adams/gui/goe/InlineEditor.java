@@ -410,7 +410,7 @@ public class InlineEditor
     
     // does the editor itself customize the menu?
     if (m_Editor instanceof PopupMenuCustomizer)
-      ((PopupMenuCustomizer) m_Editor).customizePopupMenu(owner, menu);
+      ((adams.gui.core.PopupMenuCustomizer<BasePanel>) m_Editor).customizePopupMenu(owner, menu);
   }
 
   /**

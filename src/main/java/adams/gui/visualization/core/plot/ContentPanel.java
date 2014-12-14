@@ -232,8 +232,8 @@ public class ContentPanel
           }
           else if (m_Panning) {
             m_Panning  = false;
-            int deltaX = (int) e.getX() - (int) m_PanningStart.getX();
-            int deltaY = (int) m_PanningStart.getY() - (int) e.getY();
+            int deltaX = e.getX() - (int) m_PanningStart.getX();
+            int deltaY = (int) m_PanningStart.getY() - e.getY();
 
             // update pixel offset
             getOwner().getAxis(Axis.LEFT).setPixelOffset(m_LeftPixelOffset + deltaY);
@@ -280,8 +280,8 @@ public class ContentPanel
           repaint();
         }
         else if (m_Panning && e.isShiftDown()) {
-          int deltaX = (int) e.getX() - (int) m_PanningStart.getX();
-          int deltaY = (int) m_PanningStart.getY() - (int) e.getY();
+          int deltaX = e.getX() - (int) m_PanningStart.getX();
+          int deltaY = (int) m_PanningStart.getY() - e.getY();
 
           // update pixel offset
           getOwner().getAxis(Axis.LEFT).setPixelOffset(m_LeftPixelOffset + deltaY);

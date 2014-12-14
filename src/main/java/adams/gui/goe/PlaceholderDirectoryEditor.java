@@ -66,7 +66,7 @@ public class PlaceholderDirectoryEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((PlaceholderDirectory) object).getPath();
+    return ((File) object).getPath();
   }
 
   /**
@@ -201,7 +201,7 @@ public class PlaceholderDirectoryEditor
    * @return		the current value
    */
   public String getInlineValue() {
-    return ((PlaceholderDirectory) getValue()).toString();
+    return getValue().toString();
   }
 
   /**

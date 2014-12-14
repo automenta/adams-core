@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A container for a single plot item. Can be used to name plots.
@@ -212,7 +213,7 @@ public class SequencePlotterContainer
    * @return		true if any meta-data stored
    */
   public boolean hasMetaData() {
-    return hasValue(VALUE_METADATA) && (((HashMap<String,Object>) getValue(VALUE_METADATA)).size() > 0);
+    return hasValue(VALUE_METADATA) && (((Map<String,Object>) getValue(VALUE_METADATA)).size() > 0);
   }
   
   /**

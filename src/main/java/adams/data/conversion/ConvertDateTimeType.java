@@ -24,6 +24,7 @@ import java.util.Date;
 import jodd.datetime.JDateTime;
 import adams.core.DateTime;
 import adams.core.DateTimeType;
+import adams.core.DateValueSupporter;
 import adams.core.QuickInfoHelper;
 import adams.core.Time;
 import adams.core.base.BaseDate;
@@ -247,28 +248,28 @@ public class ConvertDateTimeType
     
     switch (m_InputDateTimeType) {
       case MSECS:
-	msecs = ((Double) m_Input).longValue();
+	msecs = ((Number) m_Input).longValue();
 	break;
       case SECONDS:
-	msecs = ((Double) m_Input).longValue() * 1000;
+	msecs = ((Number) m_Input).longValue() * 1000;
 	break;
       case DATE:
 	msecs = ((Date) m_Input).getTime();
 	break;
       case DATETIME:
-	msecs = ((DateTime) m_Input).getTime();
+	msecs = ((Date) m_Input).getTime();
 	break;
       case TIME:
-	msecs = ((Time) m_Input).getTime();
+	msecs = ((Date) m_Input).getTime();
 	break;
       case BASEDATE:
-	msecs = ((BaseDate) m_Input).dateValue().getTime();
+	msecs = ((DateValueSupporter) m_Input).dateValue().getTime();
 	break;
       case BASEDATETIME:
-	msecs = ((BaseDateTime) m_Input).dateValue().getTime();
+	msecs = ((DateValueSupporter) m_Input).dateValue().getTime();
 	break;
       case BASETIME:
-	msecs = ((BaseTime) m_Input).dateValue().getTime();
+	msecs = ((DateValueSupporter) m_Input).dateValue().getTime();
 	break;
       case JULIANDATE:
 	msecs = new JDateTime((Double) m_Input).convertToDate().getTime();

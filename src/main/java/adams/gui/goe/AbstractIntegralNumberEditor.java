@@ -92,7 +92,7 @@ public abstract class AbstractIntegralNumberEditor
     });
     // workaround for mouselistener problem:
     // http://bugs.sun.com/view_bug.do?bug_id=4760088
-    ((JSpinner.NumberEditor) result.getEditor()).getTextField().addMouseListener(new MouseAdapter() {
+    ((JSpinner.DefaultEditor) result.getEditor()).getTextField().addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
 	JPopupMenu popup = createPopup();
 	if (MouseUtils.isRightClick(e) && (popup != null))

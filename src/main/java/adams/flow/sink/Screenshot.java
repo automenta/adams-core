@@ -389,7 +389,7 @@ public class Screenshot
    */
   public Class[] accepts() {
     if ((m_PanelProvider != null) && (m_PanelProvider instanceof InputConsumer))
-      return ((InputConsumer) m_PanelProvider).accepts();
+      return m_PanelProvider.accepts();
     else
       return new Class[]{Object.class};
   }

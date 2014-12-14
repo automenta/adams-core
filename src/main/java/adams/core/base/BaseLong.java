@@ -113,7 +113,7 @@ public class BaseLong
    */
   @Override
   public String getValue() {
-    return ((Long) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**
@@ -122,7 +122,7 @@ public class BaseLong
    * @return		the long value
    */
   public long longValue() {
-    return ((Long) m_Internal).longValue();
+    return ((Number) m_Internal).longValue();
   }
 
   /**

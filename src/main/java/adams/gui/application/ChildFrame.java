@@ -267,7 +267,7 @@ public class ChildFrame
         result.setJMenuBar(((MenuBarProvider) panel).getMenuBar());
       if ((getParentFrame() instanceof DatabaseConnectionHandler) && (panel instanceof DatabaseConnectionHandler))
         ((DatabaseConnectionHandler) panel).setDatabaseConnection(
-            ((DatabaseConnectionHandler) getParentFrame()).getDatabaseConnection());
+            getParentFrame().getDatabaseConnection());
       if (m_DisposeWindowListenerAdded)
         result.addDisposeWindowListener();
     }

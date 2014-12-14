@@ -219,7 +219,7 @@ public class XYSequencePanel
       ((AntiAliasingSupporter) m_XYSequencePaintlet).setAntiAliasingEnabled(props.getBoolean("Plot.AntiAliasing", true));
     m_XYSequencePaintlet.setPanel(this);
     setPaintlet(
-	(AbstractXYSequencePaintlet) AbstractPaintlet.forCommandLine(
+	(XYSequencePaintlet) AbstractPaintlet.forCommandLine(
 	    props.getPath("Plot.Paintlet", new StickPaintlet().toCommandLine())));
 
     m_CoordinatesPaintlet = new CoordinatesPaintlet();
@@ -897,13 +897,13 @@ public class XYSequencePanel
     spinnerWidth = new JSpinner();
     ((SpinnerNumberModel) spinnerWidth.getModel()).setMinimum(1);
     ((SpinnerNumberModel) spinnerWidth.getModel()).setStepSize(10);
-    ((SpinnerNumberModel) spinnerWidth.getModel()).setValue(getPlot().getContent().getWidth());
+    spinnerWidth.getModel().setValue(getPlot().getContent().getWidth());
     paramPanel.addParameter("_Width", spinnerWidth);
 
     spinnerHeight = new JSpinner();
     ((SpinnerNumberModel) spinnerHeight.getModel()).setMinimum(1);
     ((SpinnerNumberModel) spinnerHeight.getModel()).setStepSize(10);
-    ((SpinnerNumberModel) spinnerHeight.getModel()).setValue(getPlot().getContent().getHeight());
+    spinnerHeight.getModel().setValue(getPlot().getContent().getHeight());
     paramPanel.addParameter("_Height", spinnerHeight);
 
     dialog.pack();

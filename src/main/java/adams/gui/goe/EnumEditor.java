@@ -118,7 +118,7 @@ public class EnumEditor
     cls  = EnumHelper.determineClass(getValue());
     list = new BaseList(EnumHelper.getValues(cls));
     list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
-    dialog = new ApprovalDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+    dialog = new ApprovalDialog(null, ModalityType.DOCUMENT_MODAL);
     dialog.getContentPane().add(new BaseScrollPane(list), BorderLayout.CENTER);
     dialog.pack();
     dialog.setTitle(cls.getSimpleName());

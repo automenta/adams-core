@@ -219,7 +219,7 @@ public class PropertyPath {
       this();
 
       for (int i = 0; i < elements.size(); i++)
-	m_Elements.add(((PathElement) elements.get(i)).getClone());
+	m_Elements.add(((CloneHandler<PathElement>) elements.get(i)).getClone());
     }
 
     /**

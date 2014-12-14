@@ -27,6 +27,8 @@ import java.util.logging.Level;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 import adams.core.io.FileFormatHandler;
+import java.util.Collection;
+import java.util.Map;
 
 /**
  * Generates the JSON format.
@@ -155,9 +157,9 @@ public class JsonProducer
 
     try {
       if (current instanceof JSONObject)
-	((JSONObject) current).put(key, value);
+	((Map<String, Object>) current).put(key, value);
       else if (current instanceof JSONArray)
-	((JSONArray) current).add(value);
+	((Collection<Object>) current).add(value);
       else
 	throw new IllegalStateException();
     }

@@ -64,6 +64,7 @@ import adams.flow.core.FixedNameActorHandler;
 import adams.flow.core.InputConsumer;
 import adams.flow.core.MutableActorHandler;
 import adams.flow.core.OutputProducer;
+import adams.flow.execution.FlowExecutionListeningSupporter;
 import adams.flow.processor.AbstractActorProcessor;
 import adams.flow.processor.GraphicalOutputProducingProcessor;
 import adams.flow.processor.ModifyingProcessor;
@@ -93,6 +94,7 @@ import adams.gui.flow.tree.menu.EditActor;
 import adams.gui.flow.tree.menu.TreePopupAction;
 import adams.gui.goe.GenericObjectEditorDialog;
 import adams.gui.goe.classtree.ActorClassTreeFilter;
+import javax.swing.tree.DefaultTreeCellRenderer;
 
 /**
  * A custom tree for displaying the structure of a flow.
@@ -284,7 +286,7 @@ public class Tree
     setLargeModel(true);
     setSelectionModel(new SelectionModel());
     setCellRenderer(new Renderer());
-    setCellEditor(new CellEditor(this, (Renderer) getCellRenderer()));
+    setCellEditor(new CellEditor(this, (DefaultTreeCellRenderer) getCellRenderer()));
     setShowsRootHandles(true);
     setToggleClickCount(0);  // to avoid double clicks from toggling expanded/collapsed state
 
@@ -941,7 +943,7 @@ public class Tree
     // currently running flow
     result.runningFlow = null;
     if (getOwner().getRunningFlow() instanceof Flow)
-      result.runningFlow = (Flow) getOwner().getRunningFlow();
+      result.runningFlow = (FlowExecutionListeningSupporter) getOwner().getRunningFlow();
 
     return result;
   }
@@ -1213,7 +1215,7 @@ public class Tree
       if (parentNode != null) {
 	parent = parentNode.getActor();
 	if (parent instanceof MutableActorHandler) {
-	  handlerInfo = ((MutableActorHandler) parent).getActorHandlerInfo();
+	  handlerInfo = ((ActorHandler) parent).getActorHandlerInfo();
 	  if (handlerInfo.getActorExecution() == ActorExecution.SEQUENTIAL) {
 	    index  = parentNode.getIndex(node);
 	    before = getNearestActor(parentNode, index, false);
@@ -2048,7 +2050,7 @@ public class Tree
     if (m_StateUsesNested) {
       if (value.get(0) != null) {
 	consumer = new NestedConsumer();
-	consumer.setInput((ArrayList) value.get(0));
+	consumer.setInput((List) value.get(0));
 	actor = (AbstractActor) consumer.consume();
 	consumer.cleanUp();
       }

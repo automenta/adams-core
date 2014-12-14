@@ -26,6 +26,7 @@ import adams.core.Constants;
 import adams.core.DateFormat;
 import adams.core.DateTime;
 import adams.core.DateTimeType;
+import adams.core.DateValueSupporter;
 import adams.core.Time;
 import adams.core.base.BaseDate;
 import adams.core.base.BaseDateTime;
@@ -213,21 +214,21 @@ public class DateTimeTypeToString
     
     switch (m_DateTimeType) {
       case MSECS:
-	return m_Formatter.format(new Date(((Double) m_Input).longValue()));
+	return m_Formatter.format(new Date(((Number) m_Input).longValue()));
       case SECONDS:
-	return m_Formatter.format(new Date(((Double) m_Input).longValue() * 1000));
+	return m_Formatter.format(new Date(((Number) m_Input).longValue() * 1000));
       case DATE:
 	return m_Formatter.format((Date) m_Input);
       case DATETIME:
-	return m_Formatter.format((DateTime) m_Input);
+	return m_Formatter.format((Date) m_Input);
       case TIME:
-	return m_Formatter.format((Time) m_Input);
+	return m_Formatter.format((Date) m_Input);
       case BASEDATE:
-	return m_Formatter.format(((BaseDate) m_Input).dateValue());
+	return m_Formatter.format(((DateValueSupporter) m_Input).dateValue());
       case BASEDATETIME:
-	return m_Formatter.format(((BaseDateTime) m_Input).dateValue());
+	return m_Formatter.format(((DateValueSupporter) m_Input).dateValue());
       case BASETIME:
-	return m_Formatter.format(((BaseTime) m_Input).dateValue());
+	return m_Formatter.format(((DateValueSupporter) m_Input).dateValue());
       case JULIANDATE:
 	return m_Formatter.format(new JDateTime((Double) m_Input).convertToDate());
       default:

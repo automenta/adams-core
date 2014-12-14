@@ -38,6 +38,7 @@ import adams.gui.application.ChildWindow;
 import adams.gui.flow.FlowEditorPanel;
 import adams.gui.flow.tree.Node;
 import adams.gui.flow.tree.Tree;
+import javax.swing.RootPaneContainer;
 
 /**
  * A helper class for flow-related queries.
@@ -66,9 +67,9 @@ public class FlowHelper {
       comp = null;
       if (parent instanceof Child) {
 	if (parent instanceof ChildFrame)
-	  comp = ((ChildFrame) parent).getContentPane().getComponent(0);
+	  comp = ((RootPaneContainer) parent).getContentPane().getComponent(0);
 	else
-	  comp = ((ChildWindow) parent).getContentPane().getComponent(0);
+	  comp = ((RootPaneContainer) parent).getContentPane().getComponent(0);
       }
       else if (parent instanceof FlowEditorPanel) {
 	comp = parent;
@@ -84,7 +85,7 @@ public class FlowHelper {
       }
 
       if (parent instanceof Container)
-	parent = (Container) parent.getParent();
+	parent = parent.getParent();
       else
 	break;
     }

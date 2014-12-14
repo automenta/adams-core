@@ -120,7 +120,7 @@ public class ErrorHandlerInstanceLister
       m_Result.append("\t");
       m_Result.append(((ErrorHandler) option.getOptionHandler()).getClass().getName());
       m_Result.append("\t");
-      m_Result.append(((ErrorHandler) option.getOptionHandler()).hashCode());
+      m_Result.append(option.getOptionHandler().hashCode());
       m_Result.append("\n");
     }
   }

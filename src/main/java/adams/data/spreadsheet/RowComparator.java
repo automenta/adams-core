@@ -153,7 +153,7 @@ public class RowComparator
       else if (cell1.isDateTime() && cell2.isDateTime())
 	result = cell1.toDateTime().compareTo(cell2.toDateTime());
       else if (cell1.isObject() && cell2.isObject() && (cell1.getObject() instanceof Comparable) && (cell2.getObject() instanceof Comparable))
-	result = ((Comparable) cell1.getObject()).compareTo((Comparable) cell2.getObject());
+	result = ((Comparable) cell1.getObject()).compareTo(cell2.getObject());
       else
 	result = cell1.getContent().compareTo(cell2.getContent());
 

@@ -275,7 +275,7 @@ public class DateUtils {
     if (msecs == null)
       return null;
     else
-      return (double) msecs / 1000.0 / 60.0 / 60.0 / 24.0;
+      return msecs / 1000.0 / 60.0 / 60.0 / 24.0;
   }
   
   /**
@@ -292,7 +292,7 @@ public class DateUtils {
     if (msecs == null)
       return null;
     else
-      return (double) msecs / 1000.0 / 60.0 / 60.0;
+      return msecs / 1000.0 / 60.0 / 60.0;
   }
   
   /**
@@ -309,7 +309,7 @@ public class DateUtils {
     if (msecs == null)
       return null;
     else
-      return (double) msecs / 1000.0 / 60.0;
+      return msecs / 1000.0 / 60.0;
   }
   
   /**
@@ -326,7 +326,7 @@ public class DateUtils {
     if (msecs == null)
       return null;
     else
-      return (double) msecs / 1000.0;
+      return msecs / 1000.0;
   }
 
   /**

@@ -142,7 +142,7 @@ public class XhtmlProducer
       boolean	different;
       Table	table;
 
-      different = ((Boolean) option.getCurrentValue()).equals((Boolean) option.getDefaultValue());
+      different = option.getCurrentValue().equals(option.getDefaultValue());
 
       if (m_OutputDefaultValues || different) {
 	table = addStaticInfo(option);

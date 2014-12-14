@@ -76,6 +76,6 @@ public class NotesToString
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Notes) m_Input).toString();
+    return m_Input.toString();
   }
 }

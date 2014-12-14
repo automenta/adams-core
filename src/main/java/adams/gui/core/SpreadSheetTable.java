@@ -48,6 +48,7 @@ import adams.gui.event.PopupMenuListener;
 import adams.gui.goe.GenericObjectEditorDialog;
 import adams.gui.visualization.core.PopupMenuCustomizer;
 import adams.gui.visualization.statistics.HistogramFactory;
+import javax.swing.table.AbstractTableModel;
 
 /**
  * A specialized table for displaying a SpreadSheet table model.
@@ -256,7 +257,7 @@ public class SpreadSheetTable
     int[] 	indices;
     int		i;
     
-    full = ((SpreadSheetTableModel) getUnsortedModel()).toSpreadSheet();
+    full = ((SpreadSheetSupporter) getUnsortedModel()).toSpreadSheet();
     switch (range) {
       case ALL:
 	result = full;
@@ -315,7 +316,7 @@ public class SpreadSheetTable
 	int actCol = col;
 	if (getShowRowColumn())
 	  actCol--;
-	GUIHelper.copyToClipboard(((SpreadSheetTableModel) getUnsortedModel()).toSpreadSheet().getColumnName(actCol));
+	GUIHelper.copyToClipboard(((SpreadSheetSupporter) getUnsortedModel()).toSpreadSheet().getColumnName(actCol));
       }
     });
     menu.add(menuitem);
@@ -328,7 +329,7 @@ public class SpreadSheetTable
 	int actCol = col;
 	if (getShowRowColumn())
 	  actCol--;
-	SpreadSheet sheet = ((SpreadSheetTableModel) getUnsortedModel()).toSpreadSheet();
+	SpreadSheet sheet = ((SpreadSheetSupporter) getUnsortedModel()).toSpreadSheet();
 	StringBuilder content = new StringBuilder();
 	String sep = System.getProperty("line.separator");
 	content.append(sheet.getColumnName(actCol) + sep);
@@ -351,7 +352,7 @@ public class SpreadSheetTable
 	int actCol = col;
 	if (getShowRowColumn())
 	  actCol--;
-	SpreadSheet sheet = ((SpreadSheetTableModel) getUnsortedModel()).toSpreadSheet();
+	SpreadSheet sheet = ((SpreadSheetSupporter) getUnsortedModel()).toSpreadSheet();
 	String newName = sheet.getColumnName(actCol);
 	newName = GUIHelper.showInputDialog(getParent(), "Please enter new column name", newName);
 	if (newName == null)
@@ -652,7 +653,7 @@ public class SpreadSheetTable
    */
   public void sort(RowComparator comparator) {
     toSpreadSheet().sort(comparator);
-    ((SpreadSheetTableModel) getUnsortedModel()).fireTableDataChanged();
+    ((AbstractTableModel) getUnsortedModel()).fireTableDataChanged();
   }
 
   /**

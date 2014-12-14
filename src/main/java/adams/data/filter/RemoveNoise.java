@@ -258,7 +258,7 @@ public class RemoveNoise<T extends DataContainer & Mergeable>
     List<T>		regions;
     int			i;
 
-    denoiser = (AbstractDenoiser<T>) m_Denoiser.shallowCopy(true);
+    denoiser = m_Denoiser.shallowCopy(true);
     denoiser.setRecordRegions(true);
     result = denoiser.denoise(data);
     if (m_Invert) {

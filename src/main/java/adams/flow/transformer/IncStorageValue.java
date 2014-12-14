@@ -349,10 +349,10 @@ public class IncStorageValue
       if (getStorageHandler().getStorage().has(m_StorageName)) {
 	switch (m_IncrementType) {
 	  case INTEGER:
-	    value = (Integer) getStorageHandler().getStorage().get(m_StorageName);
+	    value = (Number) getStorageHandler().getStorage().get(m_StorageName);
 	    break;
 	  case DOUBLE:
-	    value = (Double) getStorageHandler().getStorage().get(m_StorageName);
+	    value = (Number) getStorageHandler().getStorage().get(m_StorageName);
 	    break;
 	  default:
 	    throw new IllegalStateException("Unhandled increment type: " + m_IncrementType);

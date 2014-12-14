@@ -69,11 +69,11 @@ public class FloatOptionTest
 
       m_OptionManager.add(
 	  "float-obj", "floatObj",
-	  new Float((float) 2), new Float((float) -10), new Float((float) +10));
+	  new Float(2), new Float(-10), new Float(+10));
 
       m_OptionManager.add(
 	  "float-obj-array", "floatObjArray",
-	  new Float[]{new Float((float) 4), new Float((float) 5), new Float((float) 6)});
+	  new Float[]{new Float(4), new Float(5), new Float(6)});
     }
 
     public void setFloatPrim(float value) {
@@ -158,7 +158,7 @@ public class FloatOptionTest
    * @return		the value
    */
   protected Float getLowerBoundTestValue() {
-    return new Float((float) -100);
+    return new Float(-100);
   }
 
   /**
@@ -176,7 +176,7 @@ public class FloatOptionTest
    * @return		the value
    */
   protected Float getUpperBoundTestValue() {
-    return new Float((float) 100);
+    return new Float(100);
   }
 
   /**

@@ -19,6 +19,7 @@
  */
 package adams.gui.goe;
 
+import adams.core.EnumWithCustomDisplay;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -185,7 +186,7 @@ public class TriStateEditor
    * @return		the generated string
    */
   public static String toString(AbstractOption option, Object object) {
-    return ((TriState) object).toRaw();
+    return ((EnumWithCustomDisplay<TriState>) object).toRaw();
   }
 
   /**

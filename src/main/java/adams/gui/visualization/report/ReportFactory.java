@@ -54,6 +54,7 @@ import javax.swing.table.TableModel;
 
 import adams.core.Utils;
 import adams.core.option.AbstractOption;
+import adams.data.id.IDHandler;
 import adams.data.report.AbstractField;
 import adams.data.report.DataType;
 import adams.data.report.Field;
@@ -311,7 +312,7 @@ public class ReportFactory {
      * Initializes the table.
      */
     public Table() {
-      this((Report) null);
+      this((TableModel)null);
     }
 
     /**
@@ -899,7 +900,7 @@ public class ReportFactory {
 	    report = ((ReportHandler) cont.getPayload()).getReport();
 	    if (report != null) {
 	      rcont  = getContainerManager().newContainer(report);
-	      rcont.setID(((NamedContainer) cont).getID());
+	      rcont.setID(((IDHandler) cont).getID());
 	      if (cont instanceof VisibilityContainer)
 		rcont.setVisible(((VisibilityContainer) cont).isVisible());
 	      getContainerManager().add(rcont);
@@ -917,7 +918,7 @@ public class ReportFactory {
 	    cont   = manager.get(indices[i]);
 	    report = ((ReportHandler) cont.getPayload()).getReport();
 	    rcont  = getContainerManager().newContainer(report);
-	    rcont.setID(((NamedContainer) cont).getID());
+	    rcont.setID(((IDHandler) cont).getID());
 	    if (cont instanceof VisibilityContainer)
 	      rcont.setVisible(((VisibilityContainer) cont).isVisible());
 	    getContainerManager().set(indices[i], rcont);
@@ -937,7 +938,7 @@ public class ReportFactory {
 	    report = ((ReportHandler) cont.getPayload()).getReport();
 	    rcont  = getContainerManager().get(indices[i]);
 	    rcont.setPayload(report);
-	    rcont.setID(((NamedContainer) cont).getID());
+	    rcont.setID(((IDHandler) cont).getID());
 	    if (cont instanceof VisibilityContainer)
 	      rcont.setVisible(((VisibilityContainer) cont).isVisible());
 	    getContainerManager().set(indices[i], rcont);
@@ -951,7 +952,7 @@ public class ReportFactory {
 	    cont   = manager.get(i);
 	    report = ((ReportHandler) cont.getPayload()).getReport();
 	    rcont  = getContainerManager().newContainer(report);
-	    rcont.setID(((NamedContainer) cont).getID());
+	    rcont.setID(((IDHandler) cont).getID());
 	    getContainerManager().add(rcont);
 	  }
 	  getContainerManager().finishUpdate();
@@ -964,7 +965,7 @@ public class ReportFactory {
 	    cont   = manager.get(i);
 	    report = ((ReportHandler) cont.getPayload()).getReport();
 	    rcont  = getContainerManager().newContainer(report);
-	    rcont.setID(((NamedContainer) cont).getID());
+	    rcont.setID(((IDHandler) cont).getID());
 	    getContainerManager().add(rcont);
 	  }
 	  getContainerManager().finishUpdate();

@@ -81,7 +81,7 @@ public class ZoomHandler
    * @param zoom	the zoom to add
    */
   public void push(Zoom zoom) {
-    m_Zooms.push((Zoom) zoom.getClone());
+    m_Zooms.push(zoom.getClone());
   }
 
   /**

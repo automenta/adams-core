@@ -73,7 +73,7 @@ public class EditListeners
     else if ((m_State.tree != null) && (m_State.tree.getParentFrame() != null))
       dialog = new GenericObjectEditorDialog(m_State.tree.getParentFrame(), true);
     else
-      dialog = new GenericObjectEditorDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+      dialog = new GenericObjectEditorDialog(null, ModalityType.DOCUMENT_MODAL);
     dialog.setTitle("Edit listeners");
     dialog.getGOEEditor().setClassType(FlowExecutionListener.class);
     dialog.getGOEEditor().setCanChangeClassInDialog(true);

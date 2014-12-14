@@ -232,7 +232,7 @@ public class Switch
 	result = "No matching case found for token: " + m_CaseToken;
       }
       else {
-	caseActor = ((Switch) m_ControlActor).get(index);
+	caseActor = m_ControlActor.get(index);
 	try {
 	  // input
 	  if (caseActor instanceof InputConsumer) {

@@ -31,6 +31,7 @@ import adams.core.option.OptionTraverser;
 import adams.data.conversion.AnyToCommandline;
 import adams.data.conversion.CommandlineToAny;
 import adams.flow.core.AbstractActor;
+import adams.flow.core.Actor;
 import adams.flow.transformer.Convert;
 
 /**
@@ -116,7 +117,7 @@ public class FixDeprecatedCommandlineTransformers
 	    element = Array.get(current, i);
 	    convert = setupConvert(element);
 	    if (convert != null) {
-	      convert.setName(((AbstractActor) element).getName());
+	      convert.setName(((Actor) element).getName());
 	      Array.set(current, i, convert);
 	      updated = true;
 	    }
@@ -127,7 +128,7 @@ public class FixDeprecatedCommandlineTransformers
 	else {
 	  convert = setupConvert(current);
 	  if (convert != null) {
-	    convert.setName(((AbstractActor) current).getName());
+	    convert.setName(((Actor) current).getName());
 	    update(option, convert);
 	  }
 	}

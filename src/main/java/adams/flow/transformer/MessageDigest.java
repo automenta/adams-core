@@ -168,7 +168,7 @@ public class MessageDigest
      * @return		the enum or null if not found
      */
     public MessageDigestType parse(String s) {
-      return (MessageDigestType) valueOf((AbstractOption) null, s);
+      return valueOf((AbstractOption) null, s);
     }
 
     /**
@@ -179,7 +179,7 @@ public class MessageDigest
      * @return		the generated string
      */
     public static String toString(AbstractOption option, Object object) {
-      return ((MessageDigestType) object).toRaw();
+      return ((EnumWithCustomDisplay<MessageDigestType>) object).toRaw();
     }
 
     /**

@@ -298,7 +298,7 @@ public class NestedFormatHelper {
     index = 0;
     while (index < nested.size()) {
       if (nested.get(index) instanceof ArrayList) {
-	line = renumber((ArrayList) nested.get(index), line);
+	line = renumber((List) nested.get(index), line);
       }
       else {
 	((Line) nested.get(index)).setNumber(line);

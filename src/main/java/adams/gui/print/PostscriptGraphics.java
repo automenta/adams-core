@@ -940,7 +940,7 @@ public class PostscriptGraphics
   }
   @Override
   public Paint getPaint() {
-    return((Paint) (new Color(getColor().getRed(),getColor().getGreen(),getColor().getBlue())));
+    return(new Color(getColor().getRed(),getColor().getGreen(),getColor().getBlue()));
   }
   @Override
   public AffineTransform getTransform() {

@@ -125,7 +125,7 @@ public abstract class AbstractCommandProcessor
 
     // sort scriptlets according to required class
     sorted = new Hashtable<>();
-    enm    = (Enumeration<AbstractScriptlet>) m_Actions.elements();
+    enm    = m_Actions.elements();
     while (enm.hasMoreElements()) {
       scriptlet = enm.nextElement();
 

@@ -111,7 +111,7 @@ public class JTableHelper {
 
     data     = table.getModel();
     rowCount = data.getRowCount();
-    dec      = (int) Math.ceil((double) rowCount / (double) MAX_ROWS);
+    dec      = (int) Math.ceil(rowCount / MAX_ROWS);
     try {
       for (row = rowCount - 1; row >= 0; row -= dec) {
         c = table.prepareRenderer(

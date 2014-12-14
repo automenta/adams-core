@@ -103,7 +103,7 @@ public class LogAbsoluteAxisModel
     validate();
 
     size   = getParent().getLength() - 1;
-    tmp    = (double) pos / (double) size;
+    tmp    = pos / size;
     tmp    = tmp * (Math.log(m_ActualMaximum) - Math.log(m_ActualMinimum));
     tmp    = tmp + Math.log(m_ActualMinimum);
     tmp    = Math.exp(tmp);

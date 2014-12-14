@@ -23,6 +23,7 @@ package adams.data.conversion;
 import junit.framework.Test;
 import junit.framework.TestSuite;
 import adams.core.logging.LoggingLevel;
+import adams.core.logging.LoggingLevelHandler;
 import adams.core.option.OptionUtils;
 import adams.env.Environment;
 
@@ -57,7 +58,7 @@ public class CommandlineToAnyTest
     result = new String[2];
 
     obj       = new adams.data.filter.PassThrough();
-    ((adams.data.filter.PassThrough) obj).setLoggingLevel(LoggingLevel.FINEST);
+    ((LoggingLevelHandler) obj).setLoggingLevel(LoggingLevel.FINEST);
     result[0] = OptionUtils.getCommandLine(obj);
 
     obj       = new adams.data.filter.BaselineCorrection();

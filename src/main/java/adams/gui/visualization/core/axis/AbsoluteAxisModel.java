@@ -151,7 +151,7 @@ public class AbsoluteAxisModel
       pos = getParent().getLength() - 1 - pos;
     
     size   = getParent().getLength() - 1;
-    result = ((double) pos / (double) size) * (m_ActualMaximum - m_ActualMinimum) + m_ActualMinimum;
+    result = (pos / size) * (m_ActualMaximum - m_ActualMinimum) + m_ActualMinimum;
 
     return result;
   }

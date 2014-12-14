@@ -546,7 +546,7 @@ public class PropertiesViewerPanel
     if ((SendToActionUtils.isAvailable(PlaceholderFile.class, cls))) {
       props  = m_TableModel.getProperties();
       result = SendToActionUtils.nextTmpFile("propsviewer", "props");
-      if (!props.save(((PlaceholderFile) result).getAbsolutePath()))
+      if (!props.save(((File) result).getAbsolutePath()))
 	result = null;
     }
     else if ((SendToActionUtils.isAvailable(JTable.class, cls))) {

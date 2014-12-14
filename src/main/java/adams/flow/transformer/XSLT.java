@@ -36,6 +36,7 @@ import adams.core.Utils;
 import adams.core.base.XSLTStyleSheet;
 import adams.core.io.PlaceholderFile;
 import adams.flow.core.Token;
+import org.w3c.dom.Node;
 
 /**
  <!-- globalinfo-start -->
@@ -246,7 +247,7 @@ public class XSLT
     result = null;
 
     try {
-      dsource     = new DOMSource((Document) m_InputToken.getPayload());
+      dsource     = new DOMSource((Node) m_InputToken.getPayload());
       if (m_StyleSheet.isDirectory())
 	stylesource = new StreamSource(new StringReader(m_Inline.getValue()));
       else

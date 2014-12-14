@@ -122,7 +122,7 @@ public class DefaultPropertyValueConverter
       result = new PlaceholderFile(value).getAbsoluteFile();
     // BaseObject (or derived class)
     else if (ClassLocator.isSubclass(BaseObject.class, cls)) {
-      result = (BaseObject) cls.newInstance();
+      result = cls.newInstance();
       ((BaseObject) result).setValue(value);
     }
 

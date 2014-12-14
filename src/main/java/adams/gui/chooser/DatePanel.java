@@ -208,7 +208,7 @@ public class DatePanel
     
     cal = DateUtils.getCalendar();
     cal.setTime(value);
-    ((UtilCalendarModel) internalModel.getModel()).setValue(cal);
+    ((DateModel<Calendar>) internalModel.getModel()).setValue(cal);
   }
   
   /**

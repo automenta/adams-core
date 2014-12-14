@@ -28,6 +28,7 @@ import java.util.List;
 import adams.core.Utils;
 import adams.env.Environment;
 import adams.flow.core.AbstractActor;
+import adams.flow.core.Actor;
 
 /**
  * Ancestor for producers that generate Java code.
@@ -363,7 +364,7 @@ public abstract class AbstractJavaCodeProducer
     Object		currValue;
 
     currValue = getCurrentValue(option);
-    if (m_OutputDefaultValues || !((Boolean) currValue).equals(option.getDefaultValue())) {
+    if (m_OutputDefaultValues || !currValue.equals(option.getDefaultValue())) {
       m_OutputBuffer.append(getIndentation());
       m_OutputBuffer.append(getCurrentVariable());
       m_OutputBuffer.append(".");
@@ -413,7 +414,7 @@ public abstract class AbstractJavaCodeProducer
     if (value instanceof AbstractActor) {
       m_OutputBuffer.append("\n");
       m_OutputBuffer.append(getIndentation());
-      m_OutputBuffer.append("// " + ((AbstractActor) value).getFullName() + "\n");
+      m_OutputBuffer.append("// " + ((Actor) value).getFullName() + "\n");
     }
 
     m_OutputBuffer.append(getIndentation());

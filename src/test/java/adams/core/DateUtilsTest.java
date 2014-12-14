@@ -148,7 +148,7 @@ public class DateUtilsTest
     Date date1 = dformat.parse("2012-02-07 13:51:00");
     Date date2 = dformat.parse("2012-02-07 13:52:00");
     
-    assertEquals("date should differ", (long) 60000, (long) DateUtils.difference(date1, date2));
+    assertEquals("date should differ", 60000, (long) DateUtils.difference(date1, date2));
   }
 
   /**

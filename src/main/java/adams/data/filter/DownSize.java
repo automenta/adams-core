@@ -147,8 +147,8 @@ public class DownSize<T extends DataContainer>
     result = (T) data.getHeader();
     
     for (i = 0; i < m_NumPoints; i++) {
-      index = (int) Math.round(i * ((double) data.size() / (double) m_NumPoints));
-      result.add((DataPoint) points.get(index).getClone());
+      index = (int) Math.round(i * (data.size() / m_NumPoints));
+      result.add(points.get(index).getClone());
     }
 
     return result;

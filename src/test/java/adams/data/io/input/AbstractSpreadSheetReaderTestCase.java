@@ -176,7 +176,7 @@ public abstract class AbstractSpreadSheetReaderTestCase
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
 	((CleanUpHandler) setups[i]).cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);

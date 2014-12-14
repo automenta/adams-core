@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import adams.core.ClassLocator;
+import java.util.List;
 
 /**
  * Option class for OptionHandler options.
@@ -182,7 +183,7 @@ public class ClassOption
 	  // set options
 	  if (ClassLocator.hasInterface(OptionHandler.class, element.getClass())) {
 	    consumer = new NestedConsumer();
-	    consumer.consume((OptionHandler) element, (ArrayList) pair.get(1));
+	    consumer.consume((OptionHandler) element, (List) pair.get(1));
 	    consumer.cleanUp();
 	  }
 	  else {

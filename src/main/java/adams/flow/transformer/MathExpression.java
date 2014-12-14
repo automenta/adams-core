@@ -393,9 +393,9 @@ public class MathExpression
       x      = null;
       report = null;
       if (m_InputToken.getPayload() instanceof Integer)
-	x = ((Integer) m_InputToken.getPayload()).doubleValue();
+	x = ((Number) m_InputToken.getPayload()).doubleValue();
       else if (m_InputToken.getPayload() instanceof Long)
-	x = ((Long) m_InputToken.getPayload()).doubleValue();
+	x = ((Number) m_InputToken.getPayload()).doubleValue();
       else if (m_InputToken.getPayload() instanceof Double)
 	x = (Double) m_InputToken.getPayload();
       else if (m_InputToken.getPayload() instanceof Report)

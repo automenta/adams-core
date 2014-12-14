@@ -234,7 +234,7 @@ public class PropertyPanel
 
           // customized popup?
           if (m_Editor instanceof PopupMenuCustomizer)
-            ((PopupMenuCustomizer) m_Editor).customizePopupMenu(PropertyPanel.this, menu);
+            ((adams.gui.core.PopupMenuCustomizer<BasePanel>) m_Editor).customizePopupMenu(PropertyPanel.this, menu);
 
           menu.show(m_Self, evt.getX(), evt.getY());
         }

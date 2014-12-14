@@ -26,6 +26,7 @@ import java.util.Hashtable;
 import adams.core.QuickInfoHelper;
 import adams.core.Utils;
 import adams.core.management.LoggingObjectOutputPrinter;
+import adams.core.management.LoggingObjectOwner;
 import adams.core.management.OutputProcessStream;
 import adams.core.option.OptionUtils;
 import adams.data.conversion.AnyToString;
@@ -462,8 +463,8 @@ public class Exec
 	m_Writer  = new BufferedWriter(new OutputStreamWriter(m_Process.getOutputStream()));
 	m_Stdout  = new OutputProcessStream(m_Process, LoggingObjectOutputPrinter.class, true);
 	m_Stderr  = new OutputProcessStream(m_Process, LoggingObjectOutputPrinter.class, false);
-	((LoggingObjectOutputPrinter) m_Stdout.getPrinter()).setOwner(this);
-	((LoggingObjectOutputPrinter) m_Stderr.getPrinter()).setOwner(this);
+	((LoggingObjectOwner) m_Stdout.getPrinter()).setOwner(this);
+	((LoggingObjectOwner) m_Stderr.getPrinter()).setOwner(this);
 	new Thread(m_Stdout).start();
 	new Thread(m_Stderr).start();
       }

@@ -345,7 +345,7 @@ public class ConsoleWindow
       fileChooser = new TextFileChooser();
       filter      = null;
       if (this instanceof TextSupplier)
-	filter = ((TextSupplier) this).getCustomTextFileFilter();
+	filter = this.getCustomTextFileFilter();
       if (filter != null) {
 	fileChooser.resetChoosableFileFilters();
 	fileChooser.addChoosableFileFilter(filter);

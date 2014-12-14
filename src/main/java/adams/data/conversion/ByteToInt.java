@@ -84,6 +84,6 @@ public class ByteToInt
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Byte) m_Input).intValue();
+    return ((Number) m_Input).intValue();
   }
 }

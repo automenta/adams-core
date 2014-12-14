@@ -20,6 +20,7 @@
 
 package adams.gui.chooser;
 
+import adams.core.io.FileFormatHandler;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -101,19 +102,19 @@ public abstract class AbstractDataContainerFileChooser<T extends DataContainer, 
       m_WriterFileFilters.put(chooser.getClass(), new ArrayList<>());
 
     for (i = 0; i < classnames.length; i++) {
-      classname = (String) classnames[i];
+      classname = classnames[i];
 
       // get data from converter
       try {
 	cls       = Class.forName(classname);
 	converter = cls.newInstance();
 	if (reader) {
-	  desc = ((AbstractDataContainerReader) converter).getFormatDescription();
-	  ext  = ((AbstractDataContainerReader) converter).getFormatExtensions();
+	  desc = ((FileFormatHandler) converter).getFormatDescription();
+	  ext  = ((FileFormatHandler) converter).getFormatExtensions();
 	}
 	else {
-	  desc = ((AbstractDataContainerWriter) converter).getFormatDescription();
-	  ext  = ((AbstractDataContainerWriter) converter).getFormatExtensions();
+	  desc = ((FileFormatHandler) converter).getFormatDescription();
+	  ext  = ((FileFormatHandler) converter).getFormatExtensions();
 	}
       }
       catch (Exception e) {

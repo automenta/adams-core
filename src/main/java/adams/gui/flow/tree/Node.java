@@ -203,7 +203,7 @@ public class Node
 
     // remove all children
     if (mutable) {
-      while (((MutableActorHandler) result).size() > 0)
+      while (((ActorHandler) result).size() > 0)
 	((MutableActorHandler) result).remove(0);
     }
 

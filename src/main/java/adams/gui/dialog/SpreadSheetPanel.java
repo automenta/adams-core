@@ -422,7 +422,7 @@ public class SpreadSheetPanel
       sheet  = m_Table.toSpreadSheet();
       result = SendToActionUtils.nextTmpFile("spreadsheetpanel", "csv");
       writer = new CsvSpreadSheetWriter();
-      if (!writer.write(sheet, (PlaceholderFile) result))
+      if (!writer.write(sheet, (File) result))
 	result = null;
     }
     else if (SendToActionUtils.isAvailable(JTable.class, cls)) {

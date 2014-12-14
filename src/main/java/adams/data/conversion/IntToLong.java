@@ -84,6 +84,6 @@ public class IntToLong
    */
   @Override
   protected Object doConvert() throws Exception {
-    return ((Integer) m_Input).longValue();
+    return ((Number) m_Input).longValue();
   }
 }

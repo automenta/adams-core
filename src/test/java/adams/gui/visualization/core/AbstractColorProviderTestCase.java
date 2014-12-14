@@ -145,7 +145,7 @@ public abstract class AbstractColorProviderTestCase
     // generate colors
     for (i = 0; i < setups.length; i++) {
       output[i] = createOutputFilename(i);
-      current   = (AbstractColorProvider) OptionUtils.shallowCopy((OptionHandler) setups[i], false);
+      current   = (AbstractColorProvider) OptionUtils.shallowCopy(setups[i], false);
       assertNotNull("Failed to create copy of color provider: " + OptionUtils.getCommandLine(setups[i]), current);
 
       processed = generate(current, numColors[i]);
@@ -156,7 +156,7 @@ public abstract class AbstractColorProviderTestCase
       assertTrue("Failed to save regression data?", ok);
 
       if (current instanceof Destroyable)
-	((Destroyable) current).destroy();
+	current.destroy();
     }
 
     // test regression
@@ -169,7 +169,7 @@ public abstract class AbstractColorProviderTestCase
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
 	((CleanUpHandler) setups[i]).cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);

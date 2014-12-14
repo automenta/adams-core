@@ -211,7 +211,7 @@ public abstract class AbstractReportReaderTestCase<A extends AbstractReportReade
       // connect to correct database
       reconnect(props[i]);
 
-      current = (A) OptionUtils.shallowCopy((OptionHandler) setups[i], false);
+      current = (A) OptionUtils.shallowCopy(setups[i], false);
       assertNotNull("Failed to create copy of algorithm: " + OptionUtils.getCommandLine(setups[i]), current);
 
       processed = load(input[i], current);
@@ -222,7 +222,7 @@ public abstract class AbstractReportReaderTestCase<A extends AbstractReportReade
       assertTrue("Failed to save regression data?", ok);
 
       if (current instanceof Destroyable)
-	((Destroyable) current).destroy();
+	current.destroy();
     }
 
     // test regression
@@ -235,9 +235,9 @@ public abstract class AbstractReportReaderTestCase<A extends AbstractReportReade
     // remove output, clean up scheme
     for (i = 0; i < output.length; i++) {
       if (setups[i] instanceof Destroyable)
-	((Destroyable) setups[i]).destroy();
+	setups[i].destroy();
       else if (setups[i] instanceof CleanUpHandler)
-	((CleanUpHandler) setups[i]).cleanUp();
+	setups[i].cleanUp();
       m_TestHelper.deleteFileFromTmp(output[i]);
     }
     cleanUpAfterRegression();

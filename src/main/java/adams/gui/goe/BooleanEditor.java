@@ -21,6 +21,7 @@ package adams.gui.goe;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.AbstractButton;
 
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
@@ -119,7 +120,7 @@ public class BooleanEditor
    */
   protected void initForDisplay() {
     resetChosenOption();
-    if (!m_Current.equals(((JCheckBox) m_CustomEditor).isSelected()))
-      ((JCheckBox) m_CustomEditor).setSelected(m_Current);
+    if (!m_Current.equals(((AbstractButton) m_CustomEditor).isSelected()))
+      ((AbstractButton) m_CustomEditor).setSelected(m_Current);
   }
 }

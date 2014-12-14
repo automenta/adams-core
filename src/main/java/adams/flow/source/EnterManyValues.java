@@ -400,7 +400,7 @@ public class EnterManyValues
     panel.setProperties(getDefaultProperties());
     panelMsg = new JPanel(new FlowLayout(FlowLayout.LEFT));
     panelMsg.add(new JLabel(m_Message));
-    dialog = new ApprovalDialog((Dialog) null, ModalityType.DOCUMENT_MODAL);
+    dialog = new ApprovalDialog(null, ModalityType.DOCUMENT_MODAL);
     dialog.setTitle(getName());
     dialog.getContentPane().add(panelMsg, BorderLayout.NORTH);
     dialog.getContentPane().add(panel, BorderLayout.CENTER);

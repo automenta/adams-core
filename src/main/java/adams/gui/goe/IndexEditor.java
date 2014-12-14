@@ -21,6 +21,7 @@
 
 package adams.gui.goe;
 
+import adams.core.ExampleProvider;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
@@ -326,7 +327,7 @@ public class IndexEditor
     current = ((Index) getValue()).getIndex();
     if (!m_TextValue.getText().equals(current))
       m_TextValue.setText(current);
-    m_TextValue.setToolTipText(((Index) getValue()).getExample());
+    m_TextValue.setToolTipText(((ExampleProvider) getValue()).getExample());
     m_TextValue.grabFocus();
     // update help button
     if (m_ButtonHelp != null) {

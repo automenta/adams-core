@@ -130,7 +130,7 @@ public class BaseBoolean
    */
   @Override
   public String getValue() {
-    return ((Boolean) m_Internal).toString();
+    return m_Internal.toString();
   }
 
   /**

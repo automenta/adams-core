@@ -215,7 +215,7 @@ public class FileEditor
    * @return		the current value
    */
   public String getInlineValue() {
-    return ((File) getValue()).toString();
+    return getValue().toString();
   }
 
   /**

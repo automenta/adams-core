@@ -307,7 +307,7 @@ public class LinePaintlet
     prevMarkerY = 0;
 
     for (i = start; i <= end; i++) {
-      curr = (XYSequencePoint) points.get(i);
+      curr = points.get(i);
 
       // determine coordinates
       currX = axisX.valueToPos(XYSequencePoint.toDouble(curr.getX()));

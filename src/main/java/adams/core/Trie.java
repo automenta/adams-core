@@ -567,7 +567,7 @@ public class Trie
    */
   @Override
   public boolean contains(Object o) {
-    return m_Root.contains(((String) o) + TrieNode.STOP);
+    return m_Root.contains(o.toString() + TrieNode.STOP);
   }
 
   /**
@@ -702,7 +702,7 @@ public class Trie
   public boolean remove(Object o) {
     boolean	result;
 
-    result = m_Root.remove(((String) o) + TrieNode.STOP);
+    result = m_Root.remove(o.toString() + TrieNode.STOP);
 
     m_RecalcHashCode = result;
 

@@ -37,6 +37,7 @@ import javax.swing.filechooser.FileFilter;
 import adams.core.io.PlaceholderFile;
 import adams.gui.chooser.BaseFileChooser;
 import adams.gui.chooser.ImagePreview;
+import adams.gui.core.ExtensionFileFilter;
 import adams.gui.core.GUIHelper;
 import adams.gui.goe.GenericObjectEditor;
 import adams.gui.goe.GenericObjectEditorDialog;
@@ -294,7 +295,7 @@ public class JComponentWriterFileChooser
     if (result == APPROVE_OPTION) {
       if (getFileFilter() instanceof JComponentWriterFileFilter) {
 	String filename = getSelectedFile().getAbsolutePath();
-	String[] extensions = ((JComponentWriterFileFilter) getFileFilter()).getExtensions();
+	String[] extensions = ((ExtensionFileFilter) getFileFilter()).getExtensions();
 	if (!filename.endsWith(extensions[0])) {
 	  filename += extensions[0];
 	  setSelectedFile(new File(filename));
