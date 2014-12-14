@@ -62,7 +62,7 @@ public class ArrayPercentileTest
 
     values = new Vector<>();
     for (i = 1; i <= 100; i++)
-      values.add(new Double(((double) i) / 10));
+      values.add(((double) i) / 10);
 
     vals = new Double[100];
     rand = new Random(1);

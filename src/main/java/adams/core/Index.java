@@ -344,12 +344,10 @@ public class Index
     int		result;
 
     if ((getMax() != -1) && (getMax() != -1)) {
-      result = new Integer(getIntIndex()).compareTo(
-	  new Integer(o.getIntIndex()));
+      result = new Integer(getIntIndex()).compareTo(o.getIntIndex());
     }
     else {
-      result = new Integer(parse(getIndex(), Integer.MAX_VALUE)).compareTo(
-	  new Integer(parse(o.getIndex(), Integer.MAX_VALUE)));
+      result = new Integer(parse(getIndex(), Integer.MAX_VALUE)).compareTo(parse(o.getIndex(), Integer.MAX_VALUE));
     }
 
     return result;

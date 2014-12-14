@@ -181,28 +181,28 @@ public class Min
       if (m_InputToken.getPayload() instanceof Double[]) {
 	doublesO = (Double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(doublesO)));
+	  m_OutputToken = new Token(StatUtils.minIndex(doublesO));
 	else
 	  m_OutputToken = new Token((StatUtils.min(doublesO)));
       }
       else if (m_InputToken.getPayload() instanceof double[]) {
 	doublesP = (double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(doublesP)));
+	  m_OutputToken = new Token(StatUtils.minIndex(doublesP));
 	else
 	  m_OutputToken = new Token((StatUtils.min(doublesP)));
       }
       else if (m_InputToken.getPayload() instanceof Integer[]) {
 	integersO = (Integer[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(integersO)));
+	  m_OutputToken = new Token(StatUtils.minIndex(integersO));
 	else
 	  m_OutputToken = new Token((StatUtils.min(integersO)));
       }
       else if (m_InputToken.getPayload() instanceof int[]) {
 	integersP = (int[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.minIndex(integersP)));
+	  m_OutputToken = new Token(StatUtils.minIndex(integersP));
 	else
 	  m_OutputToken = new Token((StatUtils.min(integersP)));
       }

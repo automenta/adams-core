@@ -89,22 +89,22 @@ public class NumberTextField
       if (defValue == null) {
 	switch (m_Type) {
 	  case BYTE:
-	    defValue = new Byte((byte) 0);
+	    defValue = (byte) 0;
 	    break;
 	  case SHORT:
-	    defValue = new Short((short) 0);
+	    defValue = (short) 0;
 	    break;
 	  case INTEGER:
-	    defValue = new Integer(0);
+	    defValue = 0;
 	    break;
 	  case LONG:
-	    defValue = new Long(0);
+	    defValue = (long) 0;
 	    break;
 	  case FLOAT:
-	    defValue = new Float(0.0);
+	    defValue = (float) 0.0;
 	    break;
 	  case DOUBLE:
-	    defValue = new Double(0.0);
+	    defValue = 0.0;
 	    break;
 	  default:
 	    throw new IllegalArgumentException("Unhandled number type: " + m_Type);

@@ -334,7 +334,7 @@ public class GetJsonValue
 	  if (isLoggingEnabled())
 	    getLogger().info("Found value for '" + m_Path.getValue() + "': " + val);
 	  if (val instanceof Number)
-	    val = new Double(((Number) val).doubleValue());
+	    val = ((Number) val).doubleValue();
 	  if ((val != null) || m_ForwardNull)
 	    m_Queue.add(val);
 	}

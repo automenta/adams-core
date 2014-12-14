@@ -162,6 +162,6 @@ public class TimestampToDouble
     if (m_Formatter == null)
       m_Formatter = new DateFormat(m_Format);
 
-    return new Double(m_Formatter.parse((String) m_Input).getTime());
+    return (double) m_Formatter.parse((String) m_Input).getTime();
   }
 }

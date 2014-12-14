@@ -67,13 +67,11 @@ public class ByteOptionTest
 	  "byte-prim-array", "bytePrimArray",
 	  new byte[]{1, 2, 3});
 
-      m_OptionManager.add(
-	  "byte-obj", "byteObj",
-	  new Byte((byte) 2), new Byte((byte) -10), new Byte((byte) +10));
+      m_OptionManager.add("byte-obj", "byteObj", (byte) 2, (byte) -10, (byte) +10);
 
       m_OptionManager.add(
 	  "byte-obj-array", "byteObjArray",
-	  new Byte[]{new Byte((byte) 4), new Byte((byte) 5), new Byte((byte) 6)});
+	  new Byte[]{(byte) 4, (byte) 5, (byte) 6});
     }
 
     public void setBytePrim(byte value) {
@@ -158,7 +156,7 @@ public class ByteOptionTest
    * @return		the value
    */
   protected Byte getLowerBoundTestValue() {
-    return new Byte((byte) -30);
+    return (byte) -30;
   }
 
   /**
@@ -176,7 +174,7 @@ public class ByteOptionTest
    * @return		the value
    */
   protected Byte getUpperBoundTestValue() {
-    return new Byte((byte) 30);
+    return (byte) 30;
   }
 
   /**

@@ -280,9 +280,9 @@ public class ConvertDateTimeType
     
     switch (m_OutputDateTimeType) {
       case MSECS:
-	return new Double(msecs);
+	return (double) msecs;
       case SECONDS:
-	return new Double(msecs / 1000);
+	return (double) msecs / 1000;
       case DATE:
 	return new Date(msecs);
       case DATETIME:

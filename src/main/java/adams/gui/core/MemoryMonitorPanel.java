@@ -220,7 +220,7 @@ public class MemoryMonitorPanel
     }
 
     // create and add new point
-    point = new XYSequencePoint("" + System.currentTimeMillis(), new Double(System.currentTimeMillis()), new Double(scale(value)));
+    point = new XYSequencePoint("" + System.currentTimeMillis(), (double) System.currentTimeMillis(), scale(value));
     seq.add(point);
 
     m_PostProcessor.postProcess(manager, name);

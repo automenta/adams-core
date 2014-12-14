@@ -102,7 +102,7 @@ public class BaseShort
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Short((short) 0);
+      m_Internal = (short) 0;
     }
   }
 

@@ -302,7 +302,7 @@ public class Count
    */
   @Override
   protected Token createTeeToken(Token token) {
-    return new Token(new Integer(m_Current));
+    return new Token(m_Current);
   }
 
   /**

@@ -888,7 +888,7 @@ public class DatePanel
       firstDayOfMonth.set(model.getYear(), model.getMonth(), 1);
       int DOW = firstDayOfMonth.get(Calendar.DAY_OF_WEEK);
       int value = arg1 - DOW + arg0*7 + 2;
-      return new Integer(value);
+      return value;
     }
 
     /**

@@ -56,7 +56,7 @@ public class AnyToCommandlineTest
 
     result = new Object[3];
 
-    result[0] = new Double(1.78);
+    result[0] = 1.78;
     result[1] = new adams.data.filter.PassThrough();
     ((LoggingLevelHandler) result[1]).setLoggingLevel(LoggingLevel.FINEST);
     result[2] = new adams.data.filter.BaselineCorrection();

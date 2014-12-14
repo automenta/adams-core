@@ -62,9 +62,9 @@ public class JsonToStringTest
     ((Map<String, Object>) result[1]).put("blah", new JSONObject());
     result[2] = new JSONArray();
     result[3] = new JSONArray();
-    ((Collection<Object>) result[3]).add(new Integer(1));
-    ((Collection<Object>) result[3]).add(new Integer(2));
-    ((Collection<Object>) result[3]).add(new Integer(3));
+    ((Collection<Object>) result[3]).add(1);
+    ((Collection<Object>) result[3]).add(2);
+    ((Collection<Object>) result[3]).add(3);
     
     return result;
   }

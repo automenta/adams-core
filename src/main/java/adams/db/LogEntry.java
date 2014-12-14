@@ -372,7 +372,7 @@ public class LogEntry
   public int compareTo(LogEntry o) {
     int		result;
 
-    result = new Integer(getDatabaseID()).compareTo(new Integer(o.getDatabaseID()));
+    result = new Integer(getDatabaseID()).compareTo(o.getDatabaseID());
     if (result == 0)
       result = getGeneration().compareTo(o.getGeneration());
 

@@ -1075,7 +1075,7 @@ public class SequencePlotter
 
     // create and add new point
     if (x == null)
-      x = new Double(m_Counter.next(plotName));
+      x = (double) m_Counter.next(plotName);
     if (x instanceof Number)
       dX = ((Number) x).doubleValue();
     else

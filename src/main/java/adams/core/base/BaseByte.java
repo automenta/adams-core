@@ -102,7 +102,7 @@ public class BaseByte
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Byte((byte) 0);
+      m_Internal = (byte) 0;
     }
   }
 

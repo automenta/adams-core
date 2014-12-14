@@ -196,7 +196,7 @@ public class ActorPathTest
     path2 = new ActorPath("a.b");
     assertEquals("equals failed (" + path1 + ", " + path2 + ")", true, path1.equals(path2));
 
-    assertEquals("equals failed (integer)", false, path1.equals(new Integer(3)));
+    assertEquals("equals failed (integer)", false, path1.equals(3));
   }
 
   /**

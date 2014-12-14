@@ -102,7 +102,7 @@ public class BaseLong
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Long(0);
+      m_Internal = (long) 0;
     }
   }
 

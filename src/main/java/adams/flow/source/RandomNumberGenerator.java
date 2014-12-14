@@ -242,7 +242,7 @@ public class RandomNumberGenerator
     Token	result;
 
     m_Count++;
-    result = new Token(new Double(m_Generator.next().doubleValue()));
+    result = new Token(m_Generator.next().doubleValue());
 
     return result;
   }

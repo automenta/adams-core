@@ -131,7 +131,7 @@ public abstract class AbstractDataPoint
    */
   public static Double toDouble(Object value) {
     if (value instanceof Number)
-      return new Double(((Number) value).doubleValue());
+      return ((Number) value).doubleValue();
     else
       return null;
   }
@@ -143,7 +143,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Number value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -153,7 +153,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Byte value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -163,7 +163,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Short value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -173,7 +173,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Integer value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -183,7 +183,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Long value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -193,7 +193,7 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Float value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 
   /**
@@ -203,6 +203,6 @@ public abstract class AbstractDataPoint
    * @return		the double
    */
   public static Double toDouble(Double value) {
-    return new Double(value.doubleValue());
+    return value.doubleValue();
   }
 }

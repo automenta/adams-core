@@ -245,7 +245,7 @@ public class ParserHelper
    */
   public Double compare(Object o1, Object o2) {
     if ((o1 instanceof Comparable) && (o2 instanceof Comparable))
-      return new Double(((Comparable) o1).compareTo(o2));
+      return (double) ((Comparable) o1).compareTo(o2);
     else
       return Double.NaN;
   }

@@ -18,19 +18,27 @@
  * Copyright (C) 2009-2011 University of Waikato, Hamilton, New Zealand
  *
  */
-
 package adams.gui;
 
 import adams.db.AbstractDatabaseConnection;
 import adams.db.DatabaseConnection;
 import adams.env.Environment;
 import adams.gui.application.AbstractApplicationFrame;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.plaf.metal.DefaultMetalTheme;
+import javax.swing.plaf.metal.MetalLookAndFeel;
 
 /**
  * GUI for ADAMS.
  *
- <!-- options-start -->
- * Valid options are: <p/>
+ * <!-- options-start -->
+ * Valid options are:
+ * <p/>
  *
  * <pre>-home &lt;java.lang.String&gt; (property: home)
  * &nbsp;&nbsp;&nbsp;The directory to use as the project's home directory, overriding the automatically
@@ -72,58 +80,200 @@ import adams.gui.application.AbstractApplicationFrame;
  * &nbsp;&nbsp;&nbsp;default: BASIC
  * </pre>
  *
- <!-- options-end -->
+ * <!-- options-end -->
  *
- * @author  fracpete (fracpete at waikato dot ac dot nz)
+ * @author fracpete (fracpete at waikato dot ac dot nz)
  * @version $Revision: 4584 $
  */
 public class Main
-  extends AbstractApplicationFrame {
+        extends AbstractApplicationFrame {
 
-  /** for serialization. */
-  private static final long serialVersionUID = -5800519559483605870L;
+    /**
+     * for serialization.
+     */
+    private static final long serialVersionUID = -5800519559483605870L;
 
-  /**
-   * Returns the default database connection.
-   *
-   * @return		the default database connection
-   */
-  protected AbstractDatabaseConnection getDefaultDatabaseConnection() {
-    return DatabaseConnection.getSingleton();
-  }
+    /**
+     * Returns the default database connection.
+     *
+     * @return	the default database connection
+     */
+    protected AbstractDatabaseConnection getDefaultDatabaseConnection() {
+        return DatabaseConnection.getSingleton();
+    }
 
-  /**
-   * Returns the filename that stores the menu layout.
-   *
-   * @return		the filename
-   */
-  protected String getMenuLayoutFile() {
-    return "adams/gui/Main.props";
-  }
+    /**
+     * Returns the filename that stores the menu layout.
+     *
+     * @return	the filename
+     */
+    protected String getMenuLayoutFile() {
+        return "adams/gui/Main.props";
+    }
 
-  /**
-   * Returns the default title of the application.
-   *
-   * @return		the default title
-   */
-  protected String getDefaultApplicationTitle() {
-    return "ADAMS";
-  }
+    /**
+     * Returns the default title of the application.
+     *
+     * @return	the default title
+     */
+    protected String getDefaultApplicationTitle() {
+        return "ADAMS";
+    }
 
-  /**
-   * Closes the application.
-   */
-  protected void closeApplication() {
-    m_DbConn.disconnect();
-    super.closeApplication();
-  }
+    /**
+     * Closes the application.
+     */
+    protected void closeApplication() {
+        m_DbConn.disconnect();
+        super.closeApplication();
+    }
 
-  /**
-   * starts the application.
-   *
-   * @param args	the commandline arguments
-   */
-  public static void main(String[] args) {
-    runApplication(Environment.class, Main.class, args);
-  }
+    /**
+     * starts the application.
+     *
+     * @param args	the commandline arguments
+     */
+    public static void main(String[] args) throws UnsupportedLookAndFeelException {
+        UIManager.setLookAndFeel(new MetalLookAndFeel());
+        //MetalLookAndFeel.setCurrentTheme(new InverseTheme());
+        themeInvert();
+        setUIFont(new javax.swing.plaf.FontUIResource(new Font("Monospaced", Font.PLAIN, 17)));
+
+        runApplication(Environment.class, Main.class, args);
+    }
+
+    public static void themeInvert() {
+        //http://alvinalexander.com/java/java-swing-uimanager-defaults
+        UIManager.put("Button.foreground", Color.WHITE);
+        UIManager.put("Button.background", Color.DARK_GRAY);
+        UIManager.put("Panel.background", Color.BLACK);
+        UIManager.put("Button.border", new EmptyBorder(4, 8, 4, 8));
+        UIManager.put("ToggleButton.border", new EmptyBorder(4, 8, 4, 8));
+        UIManager.put("ScrollPane.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("SplitPane.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("TextEdit.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("TextArea.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("TextField.border", new EmptyBorder(1, 1, 1, 1));
+
+        UIManager.put("Label.foreground", Color.WHITE);
+
+        UIManager.put("Tree.background", Color.BLACK);
+        UIManager.put("Tree.foreground", Color.WHITE);
+        UIManager.put("Tree.textForeground", Color.WHITE);
+        UIManager.put("Tree.textBackground", Color.BLACK);
+        UIManager.put("TextPane.background", Color.BLACK);
+        UIManager.put("TextPane.foreground", Color.WHITE);
+        UIManager.put("TextEdit.background", Color.BLACK);
+        UIManager.put("TextEdit.foreground", Color.WHITE);
+        UIManager.put("TextArea.background", Color.BLACK);
+        UIManager.put("TextArea.foreground", Color.WHITE);
+
+        UIManager.put("MenuBar.background", Color.BLACK);
+        UIManager.put("MenuBar.foreground", Color.WHITE);
+        UIManager.put("Menu.background", Color.BLACK);
+        UIManager.put("Menu.foreground", Color.WHITE);
+        UIManager.put("MenuItem.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("MenuItem.background", Color.BLACK);
+        UIManager.put("MenuItem.select", Color.DARK_GRAY);
+        UIManager.put("MenuItem.highlight", Color.DARK_GRAY);
+        UIManager.put("MenuItem.foreground", Color.WHITE);
+
+        UIManager.put("TextPane.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("TextPane.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("Panel.border", new EmptyBorder(1, 1, 1, 1));
+        UIManager.put("Button.select", Color.GREEN);
+        UIManager.put("Button.highlight", Color.YELLOW);
+        UIManager.put("ToggleButton.foreground", Color.WHITE);
+        UIManager.put("ToggleButton.background", Color.DARK_GRAY);
+        UIManager.put("ToggleButton.select", Color.GRAY);
+        //UIManager.put("ToggleButton.border", Color.BLUE);
+        //UIManager.put("ToggleButton.light", Color.DARK_GRAY);
+        UIManager.put("Button.select", Color.ORANGE);
+        UIManager.put("Button.opaque", false);
+        UIManager.put("Panel.opaque", false);
+        UIManager.put("ScrollBar.opaque", false);
+        UIManager.put("ScrollBar.background", Color.BLACK);
+        UIManager.put("ScrollBar.border", new EmptyBorder(1, 1, 1, 1));
+    }
+
+    static void setUIFont(javax.swing.plaf.FontUIResource f) {
+        java.util.Enumeration keys = UIManager.getDefaults().keys();
+        while (keys.hasMoreElements()) {
+            Object key = keys.nextElement();
+            Object value = UIManager.get(key);
+            if (value instanceof javax.swing.plaf.FontUIResource) {
+                UIManager.put(key, f);
+            }
+        }
+    }
+
+    /**
+     * http://book.javanb.com/swing-hacks/swinghacks-chp-11-sect-10.html
+     */
+    public static class InverseTheme extends DefaultMetalTheme {
+
+        protected ColorUIResource getPrimary1() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+        protected ColorUIResource getPrimary2() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        protected ColorUIResource getPrimary3() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+        // component borders
+        protected ColorUIResource getSecondary1() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        // selected components (button down state)
+
+        protected ColorUIResource getSecondary2() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        // component backgrounds
+
+        protected ColorUIResource getSecondary3() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+        //for label text
+        public ColorUIResource getSystemTextColor() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        // background of selected text
+
+        public ColorUIResource getTextHighlightColor() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        // foreground of selected text
+
+        public ColorUIResource getHighlightedTextColor() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+        public ColorUIResource getMenuBackground() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+        public ColorUIResource getMenuForeground() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        public ColorUIResource getMenuSelectedBackground() {
+            return new ColorUIResource(0, 0, 0);
+        }
+
+        public ColorUIResource getMenuSelectedForeground() {
+            return new ColorUIResource(255, 255, 255);
+        }
+
+    }
+
 }

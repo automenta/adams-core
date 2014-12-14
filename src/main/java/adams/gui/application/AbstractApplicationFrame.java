@@ -437,7 +437,7 @@ public abstract class AbstractApplicationFrame
 
     m_Self = this;
 
-    setLookAndFeel();
+    //setLookAndFeel();
 
     createTitle("");
     setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

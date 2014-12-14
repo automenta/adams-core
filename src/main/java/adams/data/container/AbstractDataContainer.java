@@ -181,7 +181,7 @@ public abstract class AbstractDataContainer<T extends DataPoint>
 
     other = (AbstractDataContainer) o;
 
-    result = new Integer(size()).compareTo(new Integer(other.size()));
+    result = new Integer(size()).compareTo(other.size());
 
     if (result == 0)
       result = compareToHeader(o);

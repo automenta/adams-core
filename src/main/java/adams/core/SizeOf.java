@@ -68,7 +68,7 @@ public class SizeOf {
       
       if (m_Class != null) {
 	try {
-	  size        = (Long) m_Method.invoke(null, new Object[]{new Integer(1)});
+	  size        = (Long) m_Method.invoke(null, new Object[]{1});
 	  m_Available = (size > 0);
 	}
 	catch (Exception e) {
@@ -111,8 +111,8 @@ public class SizeOf {
    */
   public static void main(String[] args) {
     System.out.println(sizeOf(args));
-    System.out.println(sizeOf(new Integer(1)));
-    System.out.println(sizeOf(new Double(1.0)));
+    System.out.println(sizeOf(1));
+    System.out.println(sizeOf(1.0));
     System.out.println(sizeOf(new DateFormat("yyyy-MM-dd")));
   }
 }

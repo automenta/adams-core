@@ -80,6 +80,7 @@ public class BaseTree
    */
   protected void initialize() {
     setRowHeight(0);
+      setRootVisible(false);
   }
 
   /**

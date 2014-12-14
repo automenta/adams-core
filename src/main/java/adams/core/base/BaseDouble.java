@@ -104,7 +104,7 @@ public class BaseDouble
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Double(0.0);
+      m_Internal = 0.0;
     }
   }
 

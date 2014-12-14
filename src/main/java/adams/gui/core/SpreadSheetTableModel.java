@@ -259,7 +259,7 @@ public class SpreadSheetTableModel
     double	factor;
 
     if (m_ShowRowColumn && (columnIndex == 0)) {
-      result = new Integer(rowIndex + 2);
+      result = rowIndex + 2;
     }
     else {
       if (m_ShowRowColumn)
@@ -480,7 +480,7 @@ public class SpreadSheetTableModel
    */
   public Object getComparisonValueAt(int row, int column) {
     if (m_ShowRowColumn && (column == 0)) {
-      return new Integer(row + 2);
+      return row + 2;
     }
     else {
       if (m_ShowRowColumn)

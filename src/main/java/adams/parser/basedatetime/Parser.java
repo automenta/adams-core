@@ -388,7 +388,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.ceil(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.ceil(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -403,7 +403,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.pow(parser.getHelper().toDouble(b), parser.getHelper().toDouble(e))); 
+		 RESULT = Math.pow(parser.getHelper().toDouble(b), parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-5)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -415,7 +415,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.floor(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.floor(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -427,7 +427,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.rint(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.rint(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -439,7 +439,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.exp(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.exp(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -451,7 +451,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.log(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.log(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -463,7 +463,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.sqrt(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.sqrt(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -475,7 +475,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-1)).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.elementAt(CUP$Parser$top-1)).value;
-		 RESULT = new Double(Math.abs(parser.getHelper().toDouble(e))); 
+		 RESULT = Math.abs(parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-3)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -490,7 +490,7 @@ class CUP$Parser$actions {
 		int eleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int eright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double e = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(Math.pow(parser.getHelper().toDouble(b), parser.getHelper().toDouble(e))); 
+		 RESULT = Math.pow(parser.getHelper().toDouble(b), parser.getHelper().toDouble(e)); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -505,7 +505,7 @@ class CUP$Parser$actions {
 		int rleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int rright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double r = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(parser.getHelper().toDouble(l) % parser.getHelper().toDouble(r)); 
+		 RESULT = parser.getHelper().toDouble(l) % parser.getHelper().toDouble(r); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -520,7 +520,7 @@ class CUP$Parser$actions {
 		int rleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int rright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double r = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(parser.getHelper().toDouble(l) / parser.getHelper().toDouble(r)); 
+		 RESULT = parser.getHelper().toDouble(l) / parser.getHelper().toDouble(r); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -535,7 +535,7 @@ class CUP$Parser$actions {
 		int rleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int rright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double r = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(parser.getHelper().toDouble(l) * parser.getHelper().toDouble(r)); 
+		 RESULT = parser.getHelper().toDouble(l) * parser.getHelper().toDouble(r); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -550,7 +550,7 @@ class CUP$Parser$actions {
 		int rleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int rright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double r = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(parser.getHelper().toDouble(l) - parser.getHelper().toDouble(r)); 
+		 RESULT = parser.getHelper().toDouble(l) - parser.getHelper().toDouble(r); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -565,7 +565,7 @@ class CUP$Parser$actions {
 		int rleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int rright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		Double r = (Double)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Double(parser.getHelper().toDouble(l) + parser.getHelper().toDouble(r)); 
+		 RESULT = parser.getHelper().toDouble(l) + parser.getHelper().toDouble(r); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("calc",4, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;

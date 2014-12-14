@@ -37,7 +37,7 @@ public class DoubleEditor
   public DoubleEditor() {
     super();
 
-    m_CurrentValue = new Double(0.0);
+    m_CurrentValue = 0.0;
   }
 
   /**
@@ -62,7 +62,7 @@ public class DoubleEditor
    */
   @Override
   public void setValue(Object value) {
-    m_CurrentValue = new Double(((Number) value).doubleValue());
+    m_CurrentValue = ((Number) value).doubleValue();
     firePropertyChange();
   }
 

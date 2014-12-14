@@ -67,13 +67,11 @@ public class DoubleOptionTest
 	  "double-prim-array", "doublePrimArray",
 	  new double[]{1, 2, 3});
 
-      m_OptionManager.add(
-	  "double-obj", "doubleObj",
-	  new Double(2), new Double(-10), new Double(+10));
+      m_OptionManager.add("double-obj", "doubleObj", (double) 2, (double) -10, (double) +10);
 
       m_OptionManager.add(
 	  "double-obj-array", "doubleObjArray",
-	  new Double[]{new Double(4), new Double(5), new Double(6)});
+	  new Double[]{(double) 4, (double) 5, (double) 6});
     }
 
     public void setDoublePrim(double value) {
@@ -158,7 +156,7 @@ public class DoubleOptionTest
    * @return		the value
    */
   protected Double getLowerBoundTestValue() {
-    return new Double(-100);
+    return (double) -100;
   }
 
   /**
@@ -176,7 +174,7 @@ public class DoubleOptionTest
    * @return		the value
    */
   protected Double getUpperBoundTestValue() {
-    return new Double(100);
+    return (double) 100;
   }
 
   /**

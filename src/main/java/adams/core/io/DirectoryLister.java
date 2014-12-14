@@ -90,7 +90,7 @@ public class DirectoryLister
       else if (sorting == Sorting.SORT_BY_NAME)
 	m_Sort = file.getAbsolutePath();
       else if (sorting == Sorting.SORT_BY_LAST_MODIFIED)
-	m_Sort = new Long(file.lastModified());
+	m_Sort = file.lastModified();
       else
 	throw new IllegalArgumentException("Unhandled sorting: " + sorting);
     }

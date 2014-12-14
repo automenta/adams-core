@@ -289,9 +289,9 @@ public class StringToDateTimeType
 
       switch (m_DateTimeType) {
 	case MSECS:
-	  return new Double(date.getTime());
+	  return (double) date.getTime();
 	case SECONDS:
-	  return new Double(date.getTime() / 1000);
+	  return (double) date.getTime() / 1000;
 	case DATE:
 	  return date;
 	case DATETIME:

@@ -124,7 +124,7 @@ public class ForLoop
     if (isLoggingEnabled())
       getLogger().info("i=" + m_Current);
 
-    result     = new Token(new Integer(m_Current));
+    result     = new Token(m_Current);
     m_Current += m_LoopStep;
 
     return result;

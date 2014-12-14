@@ -57,7 +57,7 @@ public class ExcludedFlag
     
     provider = getReportProvider();
     report   = getReport();
-    report.setValue(new Field(Report.FIELD_EXCLUDED, DataType.BOOLEAN), new Boolean(true));
+    report.setValue(new Field(Report.FIELD_EXCLUDED, DataType.BOOLEAN), true);
     provider.store(report.getDatabaseID(), report);
     setReport(report);
   }

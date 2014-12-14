@@ -121,7 +121,7 @@ public class GetDatabaseID
 
     try {
       handler       = (DatabaseIDHandler) m_InputToken.getPayload();
-      m_OutputToken = new Token(new Integer(handler.getDatabaseID()));
+      m_OutputToken = new Token(handler.getDatabaseID());
     }
     catch (Exception e) {
       m_OutputToken = null;

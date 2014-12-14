@@ -102,7 +102,7 @@ public class BaseFloat
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Float(0.0);
+      m_Internal = (float) 0.0;
     }
   }
 

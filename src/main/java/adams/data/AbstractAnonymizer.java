@@ -137,7 +137,7 @@ public abstract class AbstractAnonymizer<T extends Object>
     int		i;
     
     for (i = 0; i < m_BufferSize; i++)
-      m_Buffer.add(new Integer(m_Mapping.size() + i));
+      m_Buffer.add(m_Mapping.size() + i);
     Collections.shuffle(m_Buffer, m_Random);
   }
   

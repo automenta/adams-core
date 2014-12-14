@@ -36,7 +36,7 @@ public class LongEditor
   public LongEditor() {
     super();
 
-    m_CurrentValue = new Long(0);
+    m_CurrentValue = (long) 0;
   }
 
   /**
@@ -50,7 +50,7 @@ public class LongEditor
    *     modified value.
    */
   public void setValue(Object value) {
-    m_CurrentValue = new Long(((Number) value).longValue());
+    m_CurrentValue = ((Number) value).longValue();
     firePropertyChange();
   }
 
@@ -94,12 +94,12 @@ public class LongEditor
    */
   protected void updateBounds(SpinnerNumberModel model) {
     if (m_LowerBound == null)
-      model.setMinimum(new Integer(Integer.MIN_VALUE));
+      model.setMinimum(Integer.MIN_VALUE);
     else
       model.setMinimum(m_LowerBound.intValue());
 
     if (m_UpperBound == null)
-      model.setMaximum(new Integer(Integer.MAX_VALUE));
+      model.setMaximum(Integer.MAX_VALUE);
     else
       model.setMaximum(m_UpperBound.intValue());
   }

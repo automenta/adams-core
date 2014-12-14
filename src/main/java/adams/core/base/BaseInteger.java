@@ -102,7 +102,7 @@ public class BaseInteger
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Integer(0);
+      m_Internal = 0;
     }
   }
 

@@ -50,10 +50,7 @@ public class MultiConversionTest
   @Override
   protected Object[] getRegressionInput() {
     return new Object[]{
-	new Double(1.345),
-	new Double(7.45),
-	new Double(1.67E-45)
-    };
+        1.345, 7.45, 1.67E-45};
   }
 
   /**

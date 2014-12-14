@@ -50,7 +50,7 @@ public class ShortEditor
    *     modified value.
    */
   public void setValue(Object value) {
-    m_CurrentValue = new Short(((Number) value).shortValue());
+    m_CurrentValue = ((Number) value).shortValue();
     firePropertyChange();
   }
 
@@ -94,12 +94,12 @@ public class ShortEditor
    */
   protected void updateBounds(SpinnerNumberModel model) {
     if (m_LowerBound == null)
-      model.setMinimum(new Short(Short.MIN_VALUE));
+      model.setMinimum(Short.MIN_VALUE);
     else
       model.setMinimum(m_LowerBound.intValue());
 
     if (m_UpperBound == null)
-      model.setMaximum(new Short(Short.MAX_VALUE));
+      model.setMaximum(Short.MAX_VALUE);
     else
       model.setMaximum(m_UpperBound.intValue());
   }

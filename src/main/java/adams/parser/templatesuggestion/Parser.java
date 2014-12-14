@@ -501,7 +501,7 @@ class CUP$Parser$actions {
 		int cleft = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).left;
 		int cright = ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()).right;
 		String c = (String)((java_cup.runtime.Symbol) CUP$Parser$stack.peek()).value;
-		 RESULT = new Boolean(parser.getParent().getClass().getName().equals(c)); 
+		 RESULT = parser.getParent().getClass().getName().equals(c); 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("boolexpr",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.elementAt(CUP$Parser$top-2)), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -570,7 +570,7 @@ class CUP$Parser$actions {
           case 7: // boolexpr ::= FALSE 
             {
               Boolean RESULT =null;
-		 RESULT = new Boolean(false); 
+		 RESULT = false; 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("boolexpr",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;
@@ -579,7 +579,7 @@ class CUP$Parser$actions {
           case 6: // boolexpr ::= TRUE 
             {
               Boolean RESULT =null;
-		 RESULT = new Boolean(true); 
+		 RESULT = true; 
               CUP$Parser$result = parser.getSymbolFactory().newSymbol("boolexpr",3, ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), ((java_cup.runtime.Symbol)CUP$Parser$stack.peek()), RESULT);
             }
           return CUP$Parser$result;

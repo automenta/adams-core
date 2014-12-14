@@ -63,17 +63,13 @@ public class BooleanOptionTest
 	  "boolean-prim", "booleanPrim",
 	  false);
 
-      m_OptionManager.add(
-	  "boolean-obj", "booleanObj",
-	  new Boolean(false));
+      m_OptionManager.add("boolean-obj", "booleanObj", false);
 
       m_OptionManager.add(
 	  "boolean-prim-inv", "booleanPrimInv",
 	  true);
 
-      m_OptionManager.add(
-	  "boolean-obj-inv", "booleanObjInv",
-	  new Boolean(true));
+      m_OptionManager.add("boolean-obj-inv", "booleanObjInv", true);
     }
 
     public void setBooleanPrim(boolean value) {

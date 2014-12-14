@@ -406,15 +406,15 @@ public class Report
   public void setValue(AbstractField key, Object value) {
     // correct type if necessary (Boolean/Double/String)
     if (value instanceof Byte)
-      value = new Double(((Number) value).doubleValue());
+      value = ((Number) value).doubleValue();
     else if (value instanceof Short)
-      value = new Double(((Number) value).doubleValue());
+      value = ((Number) value).doubleValue();
     else if (value instanceof Integer)
-      value = new Double(((Number) value).doubleValue());
+      value = ((Number) value).doubleValue();
     else if (value instanceof Long)
-      value = new Double(((Number) value).doubleValue());
+      value = ((Number) value).doubleValue();
     else if (value instanceof Float)
-      value = new Double(((Number) value).doubleValue());
+      value = ((Number) value).doubleValue();
     else if (value instanceof Character)
       value = new String(value.toString());
 
@@ -673,7 +673,7 @@ public class Report
     qr = (Report) o;
 
     if (result == 0)
-      result = new Integer(m_Params.size()).compareTo(new Integer(qr.m_Params.size()));
+      result = new Integer(m_Params.size()).compareTo(qr.m_Params.size());
 
     keys = new ArrayList<>();
     enm = m_Params.keys();

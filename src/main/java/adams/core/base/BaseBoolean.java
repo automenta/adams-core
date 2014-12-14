@@ -119,7 +119,7 @@ public class BaseBoolean
     }
     catch (Exception e) {
       e.printStackTrace();
-      m_Internal = new Boolean(false);
+      m_Internal = false;
     }
   }
 

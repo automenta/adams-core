@@ -181,28 +181,28 @@ public class Max
       if (m_InputToken.getPayload() instanceof Double[]) {
 	doublesO = (Double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(doublesO)));
+	  m_OutputToken = new Token(StatUtils.maxIndex(doublesO));
 	else
 	  m_OutputToken = new Token((StatUtils.max(doublesO)));
       }
       else if (m_InputToken.getPayload() instanceof double[]) {
 	doublesP = (double[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(doublesP)));
+	  m_OutputToken = new Token(StatUtils.maxIndex(doublesP));
 	else
 	  m_OutputToken = new Token((StatUtils.max(doublesP)));
       }
       else if (m_InputToken.getPayload() instanceof Integer[]) {
 	integersO = (Integer[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(integersO)));
+	  m_OutputToken = new Token(StatUtils.maxIndex(integersO));
 	else
 	  m_OutputToken = new Token((StatUtils.max(integersO)));
       }
       else if (m_InputToken.getPayload() instanceof int[]) {
 	integersP = (int[]) m_InputToken.getPayload();
 	if (m_ReturnIndex)
-	  m_OutputToken = new Token(new Integer(StatUtils.maxIndex(integersP)));
+	  m_OutputToken = new Token(StatUtils.maxIndex(integersP));
 	else
 	  m_OutputToken = new Token((StatUtils.max(integersP)));
       }

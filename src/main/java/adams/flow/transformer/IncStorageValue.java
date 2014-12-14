@@ -361,10 +361,10 @@ public class IncStorageValue
       else {
 	switch (m_IncrementType) {
 	  case INTEGER:
-	    value = new Integer(0);
+	    value = 0;
 	    break;
 	  case DOUBLE:
-	    value = new Double(0.0);
+	    value = 0.0;
 	    break;
 	  default:
 	    throw new IllegalStateException("Unhandled increment type: " + m_IncrementType);
@@ -378,10 +378,10 @@ public class IncStorageValue
     if (value != null) {
       switch (m_IncrementType) {
 	case INTEGER:
-	  value = new Integer(value.intValue() + m_IntegerIncrement);
+	  value = value.intValue() + m_IntegerIncrement;
 	  break;
 	case DOUBLE:
-	  value = new Double(value.doubleValue() + m_DoubleIncrement);
+	  value = value.doubleValue() + m_DoubleIncrement;
 	  break;
 	default:
 	  throw new IllegalStateException("Unhandled increment type: " + m_IncrementType);

@@ -67,13 +67,11 @@ public class IntegerOptionTest
 	  "int-prim-array", "intPrimArray",
 	  new int[]{1, 2, 3});
 
-      m_OptionManager.add(
-	  "int-obj", "integerObj",
-	  new Integer(2), new Integer(-10), new Integer(+10));
+      m_OptionManager.add("int-obj", "integerObj", 2, -10, +10);
 
       m_OptionManager.add(
 	  "int-obj-array", "integerObjArray",
-	  new Integer[]{new Integer(4), new Integer(5), new Integer(6)});
+	  new Integer[]{4, 5, 6});
     }
 
     public void setIntPrim(int value) {
@@ -158,7 +156,7 @@ public class IntegerOptionTest
    * @return		the value
    */
   protected Integer getLowerBoundTestValue() {
-    return new Integer(-100);
+    return -100;
   }
 
   /**
@@ -176,7 +174,7 @@ public class IntegerOptionTest
    * @return		the value
    */
   protected Integer getUpperBoundTestValue() {
-    return new Integer(100);
+    return 100;
   }
 
   /**

@@ -890,7 +890,7 @@ public class Scanner implements java_cup.runtime.Scanner {
           }
         case 91: break;
         case 38: 
-          { return sf.newSymbol("Number", sym.NUMBER, new Double(Double.NaN));
+          { return sf.newSymbol("Number", sym.NUMBER, Double.NaN);
           }
         case 92: break;
         case 83: 
@@ -1059,11 +1059,11 @@ public class Scanner implements java_cup.runtime.Scanner {
           }
         case 133: break;
         case 86: 
-          { return sf.newSymbol("Number", sym.NUMBER, new Double(Double.NEGATIVE_INFINITY));
+          { return sf.newSymbol("Number", sym.NUMBER, Double.NEGATIVE_INFINITY);
           }
         case 134: break;
         case 85: 
-          { return sf.newSymbol("Number", sym.NUMBER, new Double(Double.POSITIVE_INFINITY));
+          { return sf.newSymbol("Number", sym.NUMBER, Double.POSITIVE_INFINITY);
           }
         case 135: break;
         case 28: 

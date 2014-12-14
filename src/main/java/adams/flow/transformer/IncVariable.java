@@ -349,7 +349,7 @@ public class IncVariable
       if (getVariables().has(m_VariableName.getValue()))
 	value = new Double(getVariables().get(m_VariableName.getValue()));
       else
-	value = new Double(0.0);
+	value = 0.0;
     }
     catch (Exception e) {
       value = null;
@@ -358,10 +358,10 @@ public class IncVariable
     if (value != null) {
       switch (m_IncrementType) {
 	case INTEGER:
-	  value = new Integer(value.intValue() + m_IntegerIncrement);
+	  value = value.intValue() + m_IntegerIncrement;
 	  break;
 	case DOUBLE:
-	  value = new Double(value.doubleValue() + m_DoubleIncrement);
+	  value = value.doubleValue() + m_DoubleIncrement;
 	  break;
 	default:
 	  throw new IllegalStateException("Unhandled increment type: " + m_IncrementType);

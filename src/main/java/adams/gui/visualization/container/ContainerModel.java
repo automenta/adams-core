@@ -369,9 +369,9 @@ public class ContainerModel<M extends AbstractContainerManager, C extends Abstra
 
     if (rowIndex < m_Manager.count()) {
       if (columnIndex == getVisibilityColumn())
-        return new Boolean(((VisibilityContainerManager) getManager()).isVisible(rowIndex));
+        return ((VisibilityContainerManager) getManager()).isVisible(rowIndex);
       else if (columnIndex == getDatabaseIDColumn())
-        return new Integer(((DatabaseIDHandler) getManager().get(rowIndex)).getDatabaseID());
+        return ((DatabaseIDHandler) getManager().get(rowIndex)).getDatabaseID();
       else if (columnIndex == getDataColumn())
 	return m_Generator.getDisplay(getManager().get(rowIndex));
 

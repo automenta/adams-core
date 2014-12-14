@@ -53,8 +53,7 @@ public class AnyToStringTest
   @Override
   protected Object[] getRegressionInput() {
     return new Object[]{
-	new File("/home/sweet/home.txt"),
-	new Double(1.345),
+	new File("/home/sweet/home.txt"), 1.345,
 	new String("./some/place.txt"),
 	new BaseText("hello world")
     };

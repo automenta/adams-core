@@ -50,7 +50,7 @@ public class ByteEditor
    *     modified value.
    */
   public void setValue(Object value) {
-    m_CurrentValue = new Byte(((Number) value).byteValue());
+    m_CurrentValue = ((Number) value).byteValue();
     firePropertyChange();
   }
 
@@ -94,12 +94,12 @@ public class ByteEditor
    */
   protected void updateBounds(SpinnerNumberModel model) {
     if (m_LowerBound == null)
-      model.setMinimum(new Byte(Byte.MIN_VALUE));
+      model.setMinimum(Byte.MIN_VALUE);
     else
       model.setMinimum(m_LowerBound.byteValue());
 
     if (m_UpperBound == null)
-      model.setMaximum(new Byte(Byte.MAX_VALUE));
+      model.setMaximum(Byte.MAX_VALUE);
     else
       model.setMaximum(m_UpperBound.byteValue());
   }

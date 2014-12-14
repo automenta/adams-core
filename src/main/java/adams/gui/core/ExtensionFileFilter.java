@@ -206,7 +206,7 @@ public class ExtensionFileFilter
     result = m_Description.compareTo(o.m_Description);
 
     if (result == 0)
-      result = new Integer(m_Extensions.length).compareTo(new Integer(o.m_Extensions.length));
+      result = new Integer(m_Extensions.length).compareTo(o.m_Extensions.length);
 
     if (result == 0) {
       for (i = 0; i < m_Extensions.length; i++) {

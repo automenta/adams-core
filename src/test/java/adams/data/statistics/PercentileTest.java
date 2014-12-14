@@ -56,12 +56,12 @@ public class PercentileTest
     int			i;
     int			index;
     Percentile<Integer>	q;
-    Integer		q1;
-    Integer		q3;
+    int		q1;
+    int		q3;
 
     values = new Vector<>();
     for (i = 1; i <= 100; i++)
-      values.add(new Integer(i));
+      values.add(i);
 
     q    = new Percentile<>();
     rand = new Random(1);
@@ -74,8 +74,8 @@ public class PercentileTest
     q1 = q.getPercentile(0.25);
     q3 = q.getPercentile(0.75);
 
-    assertEquals(new Integer(25), q1);
-    assertEquals(new Integer(75), q3);
+    assertEquals(25, q1);
+    assertEquals(75, q3);
   }
 
   /**
@@ -92,7 +92,7 @@ public class PercentileTest
 
     values = new Vector<>();
     for (i = 1; i <= 100; i++)
-      values.add(new Double(((double) i) / 10));
+      values.add(((double) i) / 10);
 
     q    = new Percentile<>();
     rand = new Random(1);
@@ -105,8 +105,8 @@ public class PercentileTest
     q1 = q.getPercentile(0.25);
     q3 = q.getPercentile(0.75);
 
-    assertEquals(new Double(2.5), q1);
-    assertEquals(new Double(7.5), q3);
+    assertEquals(2.5, q1);
+    assertEquals(7.5, q3);
   }
 
   /**

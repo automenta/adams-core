@@ -67,13 +67,11 @@ public class ShortOptionTest
 	  "short-prim-array", "shortPrimArray",
 	  new short[]{1, 2, 3});
 
-      m_OptionManager.add(
-	  "short-obj", "shortObj",
-	  new Short((short) 2), new Short((short) -10), new Short((short) +10));
+      m_OptionManager.add("short-obj", "shortObj", (short) 2, (short) -10, (short) +10);
 
       m_OptionManager.add(
 	  "short-obj-array", "shortObjArray",
-	  new Short[]{new Short((short) 4), new Short((short) 5), new Short((short) 6)});
+	  new Short[]{(short) 4, (short) 5, (short) 6});
     }
 
     public void setShortPrim(short value) {
@@ -158,7 +156,7 @@ public class ShortOptionTest
    * @return		the value
    */
   protected Short getLowerBoundTestValue() {
-    return new Short((short) -100);
+    return (short) -100;
   }
 
   /**
@@ -176,7 +174,7 @@ public class ShortOptionTest
    * @return		the value
    */
   protected Short getUpperBoundTestValue() {
-    return new Short((short) 100);
+    return (short) 100;
   }
 
   /**

@@ -37,7 +37,7 @@ public class FloatEditor
   public FloatEditor() {
     super();
 
-    m_CurrentValue = new Float(0.0f);
+    m_CurrentValue = 0.0f;
   }
 
   /**
@@ -62,7 +62,7 @@ public class FloatEditor
    */
   @Override
   public void setValue(Object value) {
-    m_CurrentValue = new Float(((Number) value).floatValue());
+    m_CurrentValue = ((Number) value).floatValue();
     firePropertyChange();
   }
 

@@ -50,7 +50,7 @@ public class StatUtils {
 
     result = new Byte[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Byte(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -67,7 +67,7 @@ public class StatUtils {
 
     result = new Short[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Short(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -84,7 +84,7 @@ public class StatUtils {
 
     result = new Integer[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Integer(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -101,7 +101,7 @@ public class StatUtils {
 
     result = new Long[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Long(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -118,7 +118,7 @@ public class StatUtils {
 
     result = new Float[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Float(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -135,7 +135,7 @@ public class StatUtils {
 
     result = new Double[array.length];
     for (i = 0; i < array.length; i++)
-      result[i] = new Double(array[i]);
+      result[i] = array[i];
 
     return result;
   }
@@ -912,7 +912,7 @@ public class StatUtils {
    * @return		the index
    */
   public static int findFirst(int[] array, int toFind) {
-    return findFirst(toNumberArray(array), new Integer(toFind));
+    return findFirst(toNumberArray(array), toFind);
   }
 
   /**
@@ -924,7 +924,7 @@ public class StatUtils {
    * @return		the index
    */
   public static int findFirst(double[] array, double toFind) {
-    return findFirst(toNumberArray(array), new Double(toFind));
+    return findFirst(toNumberArray(array), toFind);
   }
 
   /**
@@ -964,7 +964,7 @@ public class StatUtils {
    * @return		the index
    */
   public static int findClosest(int[] array, int toFind) {
-    return findClosest(toNumberArray(array), new Integer(toFind));
+    return findClosest(toNumberArray(array), toFind);
   }
 
   /**
@@ -976,7 +976,7 @@ public class StatUtils {
    * @return		the index
    */
   public static int findClosest(double[] array, double toFind) {
-    return findClosest(toNumberArray(array), new Double(toFind));
+    return findClosest(toNumberArray(array), toFind);
   }
 
   /**

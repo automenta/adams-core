@@ -56,9 +56,9 @@ public class JsonArrayToArrayTest
     result = new Object[2];
     result[0] = new JSONArray();
     result[1] = new JSONArray();
-    ((Collection<Object>) result[1]).add(new Integer(1));
-    ((Collection<Object>) result[1]).add(new Integer(2));
-    ((Collection<Object>) result[1]).add(new Integer(3));
+    ((Collection<Object>) result[1]).add(1);
+    ((Collection<Object>) result[1]).add(2);
+    ((Collection<Object>) result[1]).add(3);
     
     return result;
   }

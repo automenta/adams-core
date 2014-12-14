@@ -911,11 +911,11 @@ public class Range
     indicesThis  = getIntIndices();
     indicesOther = o.getIntIndices();
 
-    result = new Integer(indicesThis.length).compareTo(new Integer(indicesOther.length));
+    result = new Integer(indicesThis.length).compareTo(indicesOther.length);
 
     if (result == 0) {
       for (i = 0; i < indicesThis.length; i++) {
-	result = new Integer(indicesThis[i]).compareTo(new Integer(indicesOther[i]));
+	result = new Integer(indicesThis[i]).compareTo(indicesOther[i]);
 	if (result != 0)
 	  break;
       }
